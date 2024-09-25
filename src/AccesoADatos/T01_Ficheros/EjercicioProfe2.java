@@ -9,7 +9,7 @@ public class EjercicioProfe2 {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		File fichero = new File("C:/Users/Ruper/eclipse-workspace/ACCESO_DATOS/src/FICHEROS/pruebaData.txt");
+		File fichero = new File("./src//AccesoADatos//T01_Ficheros/pruebaData.txt");
 		FileOutputStream fileout = new FileOutputStream(fichero);
 		DataOutputStream dataOS = new DataOutputStream(fileout);
 		

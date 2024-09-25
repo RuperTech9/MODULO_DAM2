@@ -11,7 +11,7 @@ public class EjercicioProfe1 {
 
 	public static void main(String[] args) {
 		// Ruta del fichero de texto que se va a leer
-        File fichero = new File("./src/FICHEROS/pruebaFichTexto.txt");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/pruebaFichTexto.txt");
         
         try {
             // Comprobar si el fichero existe

@@ -11,7 +11,7 @@ public class EjercicioProfe3 {
 
 	public static void main(String[] args) throws IOException {
         // Archivo donde se guardarán los datos
-        File fichero = new File("./src/FICHEROS/personasReunion.dat");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/personasReunion.dat");
         FileOutputStream fileOut = new FileOutputStream(fichero);
         DataOutputStream dataOut = new DataOutputStream(fileOut);
 
