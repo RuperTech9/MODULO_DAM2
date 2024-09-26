@@ -5,7 +5,7 @@ public class E01a_LeerNombre {
         if(args.length == 0){
             System.err.println("Error: No se ha proporcionado ningún nombre.");
             System.exit(-1);
-        } else if(args.length == 1){
+        } else if(args.length > 0){
             System.out.println("Nombre recibido: " + args[0]);
             System.exit(0);
         }
