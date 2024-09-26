@@ -47,15 +47,14 @@ public class EjercicioProfe3 {
                 if (vaAsistir) {
                     asistentes.append(nombre).append(" (Edad: ").append(edad).append(")\n");
                 } else {
-                    noAsistentes.append(nombre).append(" (Edad: ").append(edad).append(")\n");
+                    noAsistentes.append(nombre + "\n");
                 }
             }
-        } catch (EOFException e) {
+        } catch (IOException e) {
             // Se alcanza el final del archivo
         } finally {
         	dataIn.close(); // Cerramos el flujo de datos
         }
-
         // Mostrar listas de asistentes y no asistentes
         System.out.println(asistentes);
         System.out.println(noAsistentes);
