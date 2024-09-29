@@ -5,7 +5,7 @@ import java.io.*;
 
 /**
  * Ejercicio 1.1(b).
- * A continuación, haz un programa parecido a Ejemplo3.java para ejecutar
+ * A continuación, haz un programa parecido a E01c_Ejemplo.java para ejecutar
  * LeerNombre.java. Utiliza el método waitFor() para comprobar el valor de salida del
  * proceso que se ejecuta. Prueba la ejecución del programa dando valor a los
  * argumentos de main() y sin darle valor. ¿Qué valor devuelve waitFor() en un caso y otro?
@@ -13,7 +13,7 @@ import java.io.*;
  * 
  * @author Ruper
  */
-public class Ejemplo3 {
+public class E01c_Ejemplo {
     public static void main(String[] args) {
         try {
             // Comando para ejecutar LeerNombre con un argumento
@@ -44,10 +44,10 @@ public class Ejemplo3 {
 /*
 C:\Users\Ruper\IdeaProjects\MODULO_DAM2\src\ProgramacionServiciosYProcesos\Ejercicios
 cd C:\Users\Ruper\Documents\NetBeansProjects\PROGRAMACION\src\main\java
-javac TEMA1_PROCESOS\LeerNombre.java TEMA1_PROCESOS\Ejemplo3.java
+javac TEMA1_PROCESOS\LeerNombre.java TEMA1_PROCESOS\E01c_Ejemplo.java
 
 Esto creará los archivos .class dentro de la carpeta TEMA1_PROCESOS
 
-java TEMA1_PROCESOS.Ejemplo3
+java TEMA1_PROCESOS.E01c_Ejemplo
 
 */
