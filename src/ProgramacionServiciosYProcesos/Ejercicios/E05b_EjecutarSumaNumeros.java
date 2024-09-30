@@ -16,27 +16,15 @@ public class E05b_EjecutarSumaNumeros {
                     "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2",
                     "ProgramacionServiciosYProcesos.Ejercicios.E05a_SumaNumeros");
 
-            Process process = pb.start();
 
-            // Redirigir la entrada estándar del proceso (System.in) y enviar los números
-            try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()))) {
-                writer.write("5\n");  // Primer número
-                writer.write("10\n");  // Segundo número
-                writer.flush(); // Asegurarse de que los datos se envían al proceso hijo
-            }
+            // Iniciar el proceso
+            Process process = pb.inheritIO().start();
+            //Esto es clave. Al utilizar inheritIO() en ProcessBuilder, el proceso E05a_SumaNumeros hereda los flujos de entrada y salida estándar del proceso padre.
 
-            // Capturar la salida estándar del proceso hijo (System.out)
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            String line;
-
-            // Leer la salida del proceso hijo
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-
-            // Capturar el valor de salida del proceso
+            // Esperar a que el proceso termine
             int exitCode = process.waitFor();
 
+            // Verificar si el proceso terminó correctamente o con un error
             if (exitCode == 1) {
                 System.out.println("El proceso terminó con un error (no se introdujeron números válidos).");
             } else {
