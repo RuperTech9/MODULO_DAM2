@@ -2,6 +2,12 @@ package ProgramacionServiciosYProcesos.Ejercicios;
 
 import java.io.*;
 
+/*
+ * Realiza un segundo programa java que ejecute al anterior. Este segundo programa
+ * deberá mostrar en pantalla lo que pasa dependiendo del valor devuelto al ejecutar el
+ * programa anterior.
+ */
+
 public class E02b_LanzaValidador {
     public static void main(String[] args) throws IOException {
         // Directorio donde se encuentra el archivo .class compilado
@@ -9,8 +15,7 @@ public class E02b_LanzaValidador {
 
         // Proceso a ejecutar con el nombre del programa y el argumento
         ProcessBuilder pb = new ProcessBuilder("java", "-cp",
-                "C:\\Users\\Ruper\\IdeaProjects\\MODULO_DAM2\\out\\production\\MODULO_DAM2",
-                "ValidadorArgumentos", "5"); // Cambia el argumento "5" según sea necesario.
+                "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2", "ProgramacionServiciosYProcesos.Ejercicios.E02a_ValidadorArgumentos", "5"); // Cambia el argumento "5" según sea necesario.
 
         // Establecemos el directorio de trabajo
         pb.directory(directorio);

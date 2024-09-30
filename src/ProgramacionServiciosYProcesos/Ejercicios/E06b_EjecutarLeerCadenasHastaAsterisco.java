@@ -15,12 +15,12 @@ public class E06b_EjecutarLeerCadenasHastaAsterisco {
             Process process = pb.start();
 
             // Redirigir la entrada estándar del proceso (System.in) para enviar cadenas
-            try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()))) {
+            try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()))) {
                 // Enviar varias cadenas al proceso
-                writer.write("Hola\n");  // Primera cadena
-                writer.write("Mundo\n"); // Segunda cadena
-                writer.write("*\n");     // Asterisco para finalizar
-                writer.flush();          // Asegurarse de enviar los datos
+                bw.write("Hola\n");  // Primera cadena
+                bw.write("Mundo\n"); // Segunda cadena
+                bw.write("*\n");     // Asterisco para finalizar
+                bw.flush();          // Asegurarse de enviar los datos
             }
 
             // Esperar a que el proceso termine

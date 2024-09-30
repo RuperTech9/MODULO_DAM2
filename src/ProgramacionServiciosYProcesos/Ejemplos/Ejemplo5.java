@@ -6,8 +6,10 @@ public class Ejemplo5 {
 
 	public static void main(String[] args) throws IOException {
 
-		File directorio = new File(".\\bin");
-		ProcessBuilder pb = new ProcessBuilder("java", "EjemploLectura");
+		File directorio = new File("./src/ProgramacionServiciosYProcesos//Ejemplos");
+		ProcessBuilder pb = new ProcessBuilder("java",
+				"-cp", "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2",
+				"ProgramacionServiciosYProcesos.Ejemplos.EjemploLectura");
 
 		pb.directory(directorio);
 
@@ -37,9 +39,9 @@ public class Ejemplo5 {
 
 		try {
 			InputStream er = p.getErrorStream();
-			BufferedReader brer = new BufferedReader(new InputStreamReader(er));
+			BufferedReader br = new BufferedReader(new InputStreamReader(er));
 			String liner = null;
-			while ((liner = brer.readLine()) != null)
+			while ((liner = br.readLine()) != null)
 				System.out.println("ERROR >" + liner);
 		} catch (IOException ioe) {
 			ioe.printStackTrace();

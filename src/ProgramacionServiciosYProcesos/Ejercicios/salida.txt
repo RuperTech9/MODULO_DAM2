@@ -1,0 +1,5 @@
+1: Salir
+2: Salir
+3: Salir
+4: Salir
+5: Salir

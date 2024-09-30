@@ -1,7 +1,10 @@
 package ProgramacionServiciosYProcesos.Ejercicios;
 
 import java.io.*;
-import java.util.Scanner;
+
+/*
+ * Crea un programa Java que ejecute el anterior.
+ */
 
 public class E05b_EjecutarSumaNumeros {
     public static void main(String[] args) {
