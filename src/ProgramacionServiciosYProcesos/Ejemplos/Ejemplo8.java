@@ -7,9 +7,9 @@ public class Ejemplo8 {
   public static void main(String args[]) throws IOException {
     ProcessBuilder pb = new ProcessBuilder("CMD");
     
-    File fBat = new File("fichero.bat");
-    File fOut = new File("salida.txt");
-    File fErr = new File("error.txt");
+    File fBat = new File("./src/ProgramacionServiciosYProcesos/Ejemplos/fichero.bat");
+    File fOut = new File("./src/ProgramacionServiciosYProcesos/Ejemplos/salida.txt");
+    File fErr = new File("./src/ProgramacionServiciosYProcesos/Ejemplos/error.txt");
  
     pb.redirectInput(fBat);
     pb.redirectOutput(fOut);

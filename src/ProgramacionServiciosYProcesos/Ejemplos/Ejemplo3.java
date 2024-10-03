@@ -1,5 +1,9 @@
 package ProgramacionServiciosYProcesos.Ejemplos;
 
+/*
+El siguiente ejemplo es un programa Java que ejecuta el programa Java anterior.
+ */
+
 import java.io.*;
 
 public class Ejemplo3 {

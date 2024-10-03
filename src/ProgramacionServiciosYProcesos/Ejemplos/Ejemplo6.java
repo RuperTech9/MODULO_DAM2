@@ -1,5 +1,12 @@
 package ProgramacionServiciosYProcesos.Ejemplos;
 
+/*
+Ejemplo 6: Usa 2 métodos de la clase ProcessBuilder:
+- environment(): Devuelve las variables de entorno del proceso
+- command() Sin parámetros devuelve los argumentos del proceso definido en el objeto ProcessBuilder,
+- y command() con parámetros define un nuevo proceso y sus argumentos.
+ */
+
 import java.io.*;
 import java.util.*;
 
@@ -26,7 +33,7 @@ public class Ejemplo6 {
 		test = test.command("CMD", "/C", "DIR");
 		try {
 			Process p = test.start();
-			InputStream is = p.getInputStream();
+			InputStream is = p.getInputStream(); //Recojo los caracteres que devuelve
 		    
 			System.out.println();
 			// mostramos en pantalla caracter a caracter

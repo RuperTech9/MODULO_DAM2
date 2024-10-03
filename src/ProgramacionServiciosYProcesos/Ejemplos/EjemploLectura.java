@@ -1,4 +1,8 @@
 package ProgramacionServiciosYProcesos.Ejemplos;
+/*
+Supongamos que tenemos un programa Java que lee una cadena desde
+la entrada estándar y la visualiza:
+ */
 
 import java.io.*;
 public class EjemploLectura{

@@ -1,5 +1,10 @@
 package ProgramacionServiciosYProcesos.Ejemplos;
 
+/*
+REDIRECCIONANDO LA ENTRADA Y LA SALIDA
+Ejemplo 9: se muestra en la consola la salida del comando DIR:
+ */
+
 import java.io.IOException;
 
 public class Ejemplo9 {

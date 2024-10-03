@@ -1,5 +1,10 @@
 package ProgramacionServiciosYProcesos.Ejemplos;
 
+/*
+Ejemplo 4: Ejecutar el proceso DATE con el valor de la fecha actual.
+El metodo write() envía los datos al stream, el metodo getBytes() codifica la cadena.
+ */
+
 import java.io.*;
 
 public class Ejemplo4 {
