@@ -1,18 +1,18 @@
-package AccesoADatos.T01_Ficheros;
+package AccesoADatos.T01_Ficheros.Aleatorios;
 
 import java.io.*;
 
 public class EmpleadoInsertar {
     public static void main(String[] args) {
         try {
-            File fichero = new File("./src//AccesoADatos//T01_Ficheros/AleatorioEmple.dat");
+            File fichero = new File("./src//AccesoADatos//T01_Ficheros/Aleatorios/AleatorioEmple.dat");
             RandomAccessFile file = new RandomAccessFile(fichero, "rw");
 
             long posicion = file.length(); // Posicionar al final del archivo
             file.seek(posicion); // Nos posicionamos al final
 
             // Datos del nuevo empleado
-            int id = 6; // ID del nuevo empleado
+            int id = 8; // ID del nuevo empleado
             String apellido = "MARTINEZ"; // Apellido
             int dep = 30; // Departamento
             double salario = 2500.45; // Salario

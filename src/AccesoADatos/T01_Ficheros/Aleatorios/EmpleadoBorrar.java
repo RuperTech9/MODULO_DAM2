@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros;
+package AccesoADatos.T01_Ficheros.Aleatorios;
 
 import java.io.*;
 import java.util.Scanner;
@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class EmpleadoBorrar {
     public static void main(String[] args) {
         try {
-            File fichero = new File("./src//AccesoADatos//T01_Ficheros/AleatorioEmple.dat");
+            File fichero = new File("./src//AccesoADatos//T01_Ficheros/Aleatorios/AleatorioEmple.dat");
             RandomAccessFile file = new RandomAccessFile(fichero, "rw");
 
             //int idBorrar = 4; // ID del empleado a borrar
-            // Crear un objeto Scanner para leer la entrada del usuario
+
             Scanner sc = new Scanner(System.in);
             // Solicitar el ID del empleado a buscar
             System.out.print("Introduce el ID del empleado que deseas borrar: ");

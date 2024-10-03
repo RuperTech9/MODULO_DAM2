@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros;
+package AccesoADatos.T01_Ficheros.Aleatorios;
 
 import java.io.*;
 import java.util.Scanner;
@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class EmpleadoConsulta {
     public static void main(String[] args) {
         try {
-            File fichero = new File("./src//AccesoADatos//T01_Ficheros/AleatorioEmple.dat");
+            File fichero = new File("./src//AccesoADatos//T01_Ficheros/Aleatorios/AleatorioEmple.dat");
             RandomAccessFile file = new RandomAccessFile(fichero, "r");
 
             //int identificador = 5; // ID del empleado a consultar
@@ -16,12 +16,12 @@ public class EmpleadoConsulta {
             System.out.print("Introduce el ID del empleado que deseas consultar: ");
             int identificador = sc.nextInt();
 
-            long posicion = (identificador - 1) * 36; // Calcular posición del registro
+            long posicion = (identificador - 1) * 36; // La fórmula (identificador - 1) * 36 determina la posición del registro correspondiente a ese ID.
 
             if (posicion >= file.length()) {
                 System.out.printf("ID: %d, NO EXISTE EMPLEADO...\n", identificador);
             } else {
-                file.seek(posicion); // Nos posicionamos
+                file.seek(posicion); // seek para mover el puntero del archivo a la posición calculada.
                 int id = file.readInt(); // Obtengo ID del empleado
 
                 char[] apellido = new char[10];

@@ -1,9 +1,9 @@
-package AccesoADatos.T01_Ficheros;
+package AccesoADatos.T01_Ficheros.Aleatorios;
 
 import java.io.*;
 public class AleatorioLeerFich {
     public static void main(String[] args) throws IOException {
-        File fichero = new File("./src//AccesoADatos//T01_Ficheros/AleatorioEmple.dat");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/Aleatorios/AleatorioEmple.dat");
         //declara el fichero de acceso aleatorio
         RandomAccessFile file = new RandomAccessFile(fichero, "r");
 

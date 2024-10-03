@@ -1,11 +1,11 @@
-package AccesoADatos.T01_Ficheros;
+package AccesoADatos.T01_Ficheros.Aleatorios;
 
 import java.io.*;
 
 public class EmpleadoModificarSalario {
     public static void main(String[] args) {
         try {
-            File fichero = new File("./src//AccesoADatos//T01_Ficheros/AleatorioEmple.dat");
+            File fichero = new File("./src//AccesoADatos//T01_Ficheros/Aleatorios/AleatorioEmple.dat");
             RandomAccessFile file = new RandomAccessFile(fichero, "rw");
 
             int idModificar = 3; // ID del empleado a modificar
