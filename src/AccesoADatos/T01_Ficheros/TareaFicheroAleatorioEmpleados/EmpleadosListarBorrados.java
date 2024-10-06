@@ -1,11 +1,11 @@
-package AccesoADatos.T01_Ficheros.Aleatorios;
+package AccesoADatos.T01_Ficheros.TareaFicheroAleatorioEmpleados;
 
 import java.io.*;
 
 public class EmpleadosListarBorrados {
     public static void main(String[] args) {
         try {
-            File fichero = new File("./src//AccesoADatos//T01_Ficheros/Aleatorios/AleatorioEmple.dat");
+            File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioEmpleados/EmpleadosAleatorio.dat");
             RandomAccessFile file = new RandomAccessFile(fichero, "r");
 
             long posicion = 0;
