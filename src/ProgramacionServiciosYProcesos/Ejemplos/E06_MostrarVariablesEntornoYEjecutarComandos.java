@@ -10,7 +10,7 @@ Ejemplo 6: Usa 2 métodos de la clase ProcessBuilder:
 import java.io.*;
 import java.util.*;
 
-public class Ejemplo6 {
+public class E06_MostrarVariablesEntornoYEjecutarComandos {
 	public static void main(String args[]) {
 		
 		//File directorio = new File(".\\bin");
@@ -46,4 +46,4 @@ public class Ejemplo6 {
 			e.printStackTrace();
 		}
 	}
-}// Ejemplo6
+}// E06_MostrarVariablesEntornoYEjecutarComandos

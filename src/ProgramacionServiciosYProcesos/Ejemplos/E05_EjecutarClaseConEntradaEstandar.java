@@ -2,12 +2,12 @@ package ProgramacionServiciosYProcesos.Ejemplos;
 
 /*
 Con el metodo getOutputStream() podemos enviar datos a la entrada estándar del programa EjemploLectura.java.
-Por ejemplo, si queremos enviar la cadena “Hola Manuel” cambiaríamos varias cosas en el Ejemplo5.java
+Por ejemplo, si queremos enviar la cadena “Hola Manuel” cambiaríamos varias cosas en el E05_EjecutarClaseConEntradaEstandar.java
  */
 
 import java.io.*;
 
-public class Ejemplo5 {
+public class E05_EjecutarClaseConEntradaEstandar {
 
 	public static void main(String[] args) throws IOException {
 
@@ -52,4 +52,4 @@ public class Ejemplo5 {
 			ioe.printStackTrace();
 		}
 	}
-}// Ejemplo5
+}// E05_EjecutarClaseConEntradaEstandar

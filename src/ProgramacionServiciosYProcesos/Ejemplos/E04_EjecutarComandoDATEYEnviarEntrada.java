@@ -7,7 +7,7 @@ El metodo write() envía los datos al stream, el metodo getBytes() codifica la c
 
 import java.io.*;
 
-public class Ejemplo4 {
+public class E04_EjecutarComandoDATEYEnviarEntrada {
 	public static void main(String[] args) throws IOException {
 		Process p = new ProcessBuilder("CMD", "/C", "DATE").start();
 
@@ -32,4 +32,4 @@ public class Ejemplo4 {
 			e.printStackTrace();
 		}
 	}
-}//Ejemplo4
+}//E04_EjecutarComandoDATEYEnviarEntrada

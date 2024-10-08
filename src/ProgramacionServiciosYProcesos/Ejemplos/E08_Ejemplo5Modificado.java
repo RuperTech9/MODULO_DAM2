@@ -1,7 +1,7 @@
 package ProgramacionServiciosYProcesos.Ejemplos;
 
 /*
-Usando ProcessBuilder.Redirect, modifica el Ejemplo5.java para que la salida del proceso se muestre en la consola,
+Usando ProcessBuilder.Redirect, modifica el E05_EjecutarClaseConEntradaEstandar.java para que la salida del proceso se muestre en la consola,
 la entrada la tome desde un fichero de texto, y la salida la lleve a un fichero de texto.
  */
 
@@ -29,6 +29,16 @@ public class E08_Ejemplo5Modificado {
 
         // Redirigir la salida de error a un archivo "error.txt"
         File fErr = new File("./src/ProgramacionServiciosYProcesos/Ejemplos/error.txt");
+
+        /* OTRA FORMA
+        // Verifica que el archivo de error pueda ser creado
+        if (!fErr.exists()) {
+            fErr.createNewFile();
+        }
+
+        // Aseguramos la redirección de errores
+        pb.redirectError(ProcessBuilder.Redirect.appendTo(fErr)); // Cambiado a appendTo para no sobreescribir contenido
+         */
         pb.redirectError(fErr);
 
         // Ejecutamos el proceso

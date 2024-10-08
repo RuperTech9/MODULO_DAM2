@@ -1,7 +1,7 @@
 package ProgramacionServiciosYProcesos.Ejemplos;
 
 /*
-El siguiente ejemplo ejecuta el comando DIR usando el método getInputStream() de Process para leer el stream de salida del proceso.
+El siguiente ejemplo ejecuta el comando DIR usando el metodo getInputStream() de Process para leer el stream de salida del proceso.
 InputStream is = p.getInputStream();
 Para leer la salida se usa el metodo read() de InputStream que devolverá la salida carácter a carácter.
 Process
@@ -9,7 +9,7 @@ Process
 
 import java.io.*;
 
-public class Ejemplo2 {
+public class E02_EjecutarComandoDIRYLeerSalida {
 	public static void main(String[] args) throws IOException {
 
 		Process p = new ProcessBuilder("CMD", "/C", "DIR").start();
@@ -37,4 +37,4 @@ public class Ejemplo2 {
 			e.printStackTrace();
 		}
 	}
-}// Ejemplo2
+}// E02_EjecutarComandoDIRYLeerSalida

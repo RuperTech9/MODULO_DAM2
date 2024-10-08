@@ -1,23 +1,20 @@
 package ProgramacionServiciosYProcesos.Ejemplos;
 
-/*
-Ejemplo 7: ejecuta el comando DIR y envía la salida al fichero salida.txt.
-Si hay algún error lo envía al fichero error.txt
- */
-
-
 import java.io.File;
-import java.io.IOException;
- 
-public class Ejemplo7 { 
+import java.io.IOException; 
+
+public class E08_EjecutarScriptBatYRedirigirIOAArchivos {
   public static void main(String args[]) throws IOException {
-    ProcessBuilder pb = new ProcessBuilder("CMD","/C" ,"DIRR");
+    ProcessBuilder pb = new ProcessBuilder("CMD");
     
+    File fBat = new File("./src/ProgramacionServiciosYProcesos/Ejemplos/fichero.bat");
     File fOut = new File("./src/ProgramacionServiciosYProcesos/Ejemplos/salida.txt");
     File fErr = new File("./src/ProgramacionServiciosYProcesos/Ejemplos/error.txt");
  
+    pb.redirectInput(fBat);
     pb.redirectOutput(fOut);
     pb.redirectError(fErr); 
     pb.start(); 
+
   }
-}// Ejemplo7
+}// E08_EjecutarScriptBatYRedirigirIOAArchivos

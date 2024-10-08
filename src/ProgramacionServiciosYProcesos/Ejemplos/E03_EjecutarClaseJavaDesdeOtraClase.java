@@ -6,14 +6,14 @@ El siguiente ejemplo es un programa Java que ejecuta el programa Java anterior.
 
 import java.io.*;
 
-public class Ejemplo3 {
+public class E03_EjecutarClaseJavaDesdeOtraClase {
   public static void main(String[] args) throws IOException {
 
-	//creamos objeto File al directorio donde esta Ejemplo2
+	//creamos objeto File al directorio donde esta E02_EjecutarComandoDIRYLeerSalida
 	File directorio = new File("./src/ProgramacionServiciosYProcesos//Ejemplos");
 
-	//El proceso a ejecutar es Ejemplo2			
-	ProcessBuilder pb = new ProcessBuilder("java", "Ejemplo2");
+	//El proceso a ejecutar es E02_EjecutarComandoDIRYLeerSalida
+	ProcessBuilder pb = new ProcessBuilder("java", "E02_EjecutarComandoDIRYLeerSalida");
 
     //se establece el directorio donde se encuentra el ejecutable
     pb.directory(directorio);
@@ -35,4 +35,4 @@ public class Ejemplo3 {
 	}
 		
   }
-}// E01c_Ejemplo
+}// E03_EjecutarClaseJavaDesdeOtraClase

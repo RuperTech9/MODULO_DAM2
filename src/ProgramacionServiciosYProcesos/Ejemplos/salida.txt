@@ -1,2 +1,27 @@
-Introduce una cadena....
-Cadena escrita: null
+Microsoft Windows [Versi¢n 10.0.22621.4249]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\Ruper\IdeaProjects\MODULO_DAM2>MKDIR NUEVO
+
+C:\Users\Ruper\IdeaProjects\MODULO_DAM2>CD NUEVO
+
+C:\Users\Ruper\IdeaProjects\MODULO_DAM2\NUEVO>ECHO CREO FICHERO > Mifichero.txt
+
+C:\Users\Ruper\IdeaProjects\MODULO_DAM2\NUEVO>DIR
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: 2638-6160
+
+ Directorio de C:\Users\Ruper\IdeaProjects\MODULO_DAM2\NUEVO
+
+06/10/2024  18:53    <DIR>          .
+06/10/2024  19:32    <DIR>          ..
+08/10/2024  16:09                15 Mifichero.txt
+               1 archivos             15 bytes
+               2 dirs  324.743.598.080 bytes libres
+
+C:\Users\Ruper\IdeaProjects\MODULO_DAM2\NUEVO>DIRR
+
+C:\Users\Ruper\IdeaProjects\MODULO_DAM2\NUEVO>ECHO FIN COMANDOS 
+FIN COMANDOS 
+
+C:\Users\Ruper\IdeaProjects\MODULO_DAM2\NUEVO>

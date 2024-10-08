@@ -14,6 +14,11 @@ public class EjemploLectura{
    try {
     System.out.println("Introduce una cadena....");
     texto= br.readLine();
+
+   // Generar un NullPointerException a propósito
+   String cadenaNula = null;
+   cadenaNula.length();  // Esto lanzará NullPointerException
+
     System.out.println("Cadena escrita: " + texto); 
     in.close();	 
    }catch (Exception e) { e.printStackTrace();}	

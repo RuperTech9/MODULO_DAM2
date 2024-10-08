@@ -7,7 +7,7 @@ Ejemplo 9: se muestra en la consola la salida del comando DIR:
 
 import java.io.IOException;
 
-public class Ejemplo9 {
+public class E09_EjecutarComandoDIRYMostrarSalidaEnConsola {
 	public static void main(String args[]) throws IOException {
 		ProcessBuilder pb = new ProcessBuilder("CMD", "/C", "DIR");
 
@@ -16,4 +16,4 @@ public class Ejemplo9 {
 		Process p = pb.start();		
 	
 	}
-}// Ejemplo9
+}// E09_EjecutarComandoDIRYMostrarSalidaEnConsola
