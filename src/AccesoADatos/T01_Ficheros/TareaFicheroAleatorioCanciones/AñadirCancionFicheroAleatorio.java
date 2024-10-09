@@ -1,7 +1,7 @@
 package AccesoADatos.T01_Ficheros.TareaFicheroAleatorioCanciones;
 
 import java.io.*;
-import java.util.Scanner;
+        import java.util.Scanner;
 
 public class AñadirCancionFicheroAleatorio {
     public static void main(String[] args) {
