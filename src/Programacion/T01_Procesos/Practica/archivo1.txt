@@ -1,0 +1,15 @@
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: 96C6-5894
+
+ Directorio de C:\Users\Ruper\IdeaProjects\MODULO_DAM2
+
+09/10/2024  12:00    <DIR>          .
+09/10/2024  12:00    <DIR>          ..
+02/10/2024  11:54               372 .gitignore
+10/10/2024  12:02    <DIR>          .idea
+02/10/2024  11:54               433 MODULO_DAM2.iml
+03/10/2024  13:08    <DIR>          NUEVO
+02/10/2024  12:02    <DIR>          out
+02/10/2024  11:54    <DIR>          src
+               2 archivos            805 bytes
+               6 dirs  877.853.786.112 bytes libres

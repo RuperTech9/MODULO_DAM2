@@ -1,0 +1,27 @@
+package Programacion.T01_Procesos.Ejemplos;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Incrementador1 {
+    public static void main(String[] args) {
+        try {
+            File file = new File("./src/ProgramacionServiciosYProcesos/Ejemplos/contador.txt");
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            int contador = Integer.parseInt(reader.readLine());
+            reader.close();
+
+            contador++;
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            writer.write(Integer.toString(contador));
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

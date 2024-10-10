@@ -1,0 +1,2 @@
+java.lang.NullPointerException: Cannot invoke "String.length()" because "cadenaNula" is null
+	at Programacion.T01_Procesos.Ejemplos.EjemploLectura.main(EjemploLectura.java:20)
