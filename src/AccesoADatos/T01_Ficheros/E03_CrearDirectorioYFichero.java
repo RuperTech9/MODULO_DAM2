@@ -2,13 +2,13 @@ package AccesoADatos.T01_Ficheros;
 
 import java.io.*;
 
-public class CrearDirectorioYFichero {
+public class E03_CrearDirectorioYFichero {
     public static void main(String[] args) {
         File d = new File("./src//AccesoADatos//T01_Ficheros//DIRECTORIO");
         File f1 = new File(d,"FICHERO1.TXT");
         File f2 = new File(d,"FICHERO2.TXT");
 
-        d.mkdir();
+        d.mkdir(); //Crear Directorio
 
         try{
             if(f1.createNewFile())
@@ -24,12 +24,14 @@ public class CrearDirectorioYFichero {
         }catch (IOException ioe){ ioe.printStackTrace(); }
 
         // Renombrar Fichero1
+        f1.renameTo(new File(d,"FICHERO1NUEVO.TXT"));
+        /*
         File f1Nuevo = new File(d, "Fichero1Nuevo");
         if (f1.renameTo(f1Nuevo)) {
             System.out.println("Fichero1 renombrado a 'Fichero1Nuevo'.");
         } else {
             System.out.println("No se pudo renombrar el Fichero1.");
-        }
+        }*/
 
         try {
             File f3 = new File("./src//AccesoADatos//T01_Ficheros//DIRECTORIO/FICHERO3.TXT");

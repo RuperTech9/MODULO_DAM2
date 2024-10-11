@@ -2,7 +2,7 @@ package AccesoADatos.T01_Ficheros;
 
 import java.io.*;
 
-public class EscribirFichTexto {
+public class E07_EscribirFichTexto {
     public static void main(String[] args) throws IOException {
         File fichero = new File ("./src//AccesoADatos//T01_Ficheros//pruebaFichTexto.txt"); //declarar fichero
         FileWriter fw = new FileWriter(fichero);//crear flujo de salida
@@ -13,9 +13,8 @@ public class EscribirFichTexto {
 
             for (int i = 0; i < cad.length; i++) {
                 fw.write(cad[i]);//se va escribiendo un carácter
-                fw.append('*');//se añade al final un *
-
             }
+            fw.append('*');//se añade al final un *
         }finally {
             if (fw != null) {
                 fw.close(); // cierro el fichero fuera del bucle

@@ -3,7 +3,7 @@ package AccesoADatos.T01_Ficheros;
 import java.io.*;
 
 
-public class LeerFichero {
+public class E05_LeerFichero {
     public static void main(String[] args) throws IOException {
         File fichero = new File("./src//AccesoADatos//T01_Ficheros//pruebaFichTexto1.txt");
         FileReader fr = new FileReader(fichero);

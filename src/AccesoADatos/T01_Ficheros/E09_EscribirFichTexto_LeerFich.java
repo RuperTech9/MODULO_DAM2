@@ -2,7 +2,7 @@ package AccesoADatos.T01_Ficheros;
 
 import java.io.*;
 
-public class EscribirFichTexto1 {
+public class E09_EscribirFichTexto_LeerFich {
     public static void main(String[] args) {
         // Definir el archivo
         File fichero = new File("./src//AccesoADatos//T01_Ficheros/pruebaFichTexto1.txt");

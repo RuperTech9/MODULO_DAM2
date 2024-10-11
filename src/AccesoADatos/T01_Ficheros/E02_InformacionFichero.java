@@ -2,7 +2,7 @@ package AccesoADatos.T01_Ficheros;
 
 import java.io.*;
 
-public class InformacionFichero {
+public class E02_InformacionFichero {
     public static void main(String[] args) {
         System.out.println("INFORMACIÓN SOBRE EL FICHERO");
         File f = new File("./src//AccesoADatos//T01_Ficheros//prueba1.txt");

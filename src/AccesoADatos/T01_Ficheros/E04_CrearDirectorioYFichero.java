@@ -1,7 +1,7 @@
 package AccesoADatos.T01_Ficheros;
 import java.io.*;
 
-public class CrearDirectorioYFichero1 {
+public class E04_CrearDirectorioYFichero {
     public static void main(String[] args) {
         File d = new File("NuevoDIR"); // Directorio que se va a crear
         File f1 = new File(d, "Fichero1.txt");
