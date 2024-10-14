@@ -5,10 +5,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class EscribirFichBytes {
+public class E14_EscribirFichBytes {
     public static void main(String[] args) throws IOException {
         // Declara el fichero
-        File fichero = new File("./src//AccesoADatos//T01_Ficheros/prueba3.dat");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/prueba1.dat");
         
         // Crea flujo de salida hacia el fichero
         FileOutputStream fileout = new FileOutputStream(fichero);

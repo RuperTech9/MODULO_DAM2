@@ -2,7 +2,7 @@ package AccesoADatos.T01_Ficheros;
 
 import java.io.*;
 
-public class E03_CrearDirectorioYFichero {
+public class E03_CrearDirectorioYFichTexto {
     public static void main(String[] args) {
         File d = new File("./src//AccesoADatos//T01_Ficheros//DIRECTORIO");
         File f1 = new File(d,"FICHERO1.TXT");

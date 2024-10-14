@@ -1,7 +1,7 @@
 package AccesoADatos.T01_Ficheros;
 // realizar un programa que añada al fichero de los datos primitivos un long, y al final visualizar el fichero
 import java.io.*;
-public class DatosPrimitivos2 {
+public class E16_LeerFichBytes_DatosPrimitivos {
     public static void main(String[] args) throws IOException {
         // Creación del archivo donde se almacenarán los datos primitivos
         File f2 = new File("./src//AccesoADatos//T01_Ficheros/primitivos.dat");

@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * y lo vuelva a ordenar descendentemente, y lo escriba.
  */
 
-public class EscribirFichTexto3 {
+public class E11_AñadirAFichTexto_LeerFich {
 
 	public static void main(String[] args) throws IOException {
 		//ABRIR FICHERO

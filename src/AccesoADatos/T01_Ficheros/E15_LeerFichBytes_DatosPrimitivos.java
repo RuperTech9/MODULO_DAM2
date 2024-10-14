@@ -3,11 +3,9 @@ package AccesoADatos.T01_Ficheros;
 import java.io.*;
 
 
-public class DatosPrimitivos {
+public class E15_LeerFichBytes_DatosPrimitivos {
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-
 		File f2 = new File("./src//AccesoADatos//T01_Ficheros/primitivos.dat");//crea un objeto File que representa el archivo
 		f2.createNewFile();// crea un nuevo archivo físico en el disco. Si el archivo ya existe, el metodo no hace nada y devuelve false; si no existe, lo crea y devuelve true.
 		

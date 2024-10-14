@@ -15,7 +15,7 @@ import java.util.Collections;
  * y lo vuelva a ordenar descendentemente, y lo escriba.
  */
 
-public class EscribirFichTexto2 {
+public class E10_AñadirAFichTexto_Provincias {
 	public static void main(String[] args) throws IOException {
         File fichero = new File("./src//AccesoADatos//T01_Ficheros/pruebaFichTexto1.txt");
         //File fichero = new File("C:\\Users\\aludam2\\eclipse-workspace\\Acceso_Datos\\src\\Tema1\\EscribirFicheroTexto.txt");

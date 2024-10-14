@@ -3,7 +3,7 @@ package Programacion.T01_Procesos.Practica;
 import java.io.*;
 
 /**
- * La clase {@code EjecutorComandos} proporciona métodos para ejecutar comandos del
+ * La clase {@code EjecutarComandos} proporciona métodos para ejecutar comandos del
  * sistema operativo, manejar la entrada estándar y redirigir la salida de los subprocesos.
  */
 public class EjecutarComandos {

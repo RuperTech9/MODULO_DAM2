@@ -1,7 +1,7 @@
 package AccesoADatos.T01_Ficheros;
 import java.io.*;
 
-public class E06_LeerFichero_20Caracteres {
+public class E06_LeerFichTexto_20Caracteres {
 	public static void main(String[] args) throws IOException {
 		//Declarar el fichero
 		File fichero = new File("./src//AccesoADatos//T01_Ficheros//pruebaFichTexto1.txt");
