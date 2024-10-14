@@ -1,4 +1,4 @@
-package Programacion.T02_Multihilo.Ejemplos;
+package Programacion.T02_Multihilo.Ejemplos.GestionHilos;
 
 public class HiloEjemploDead extends Thread {
   private boolean stopHilo= false; 
@@ -14,7 +14,7 @@ public class HiloEjemploDead extends Thread {
   public static void main(String[] args) {
 	HiloEjemploDead h = new HiloEjemploDead ();
     h.start();
-	for(int i=0;i<100000; i++) ;//no hago nada	
+	for(int i=0;i<100000; i++) ;//no hago nada
 	
 	h.pararHilo();
   }// main   

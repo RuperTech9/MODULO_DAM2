@@ -1,4 +1,4 @@
-package Programacion.T02_Multihilo.Ejemplos.CrearHilos;
+package Programacion.T02_Multihilo.Ejemplos.CreacionHilos;
 
 public class PrimerHilo extends Thread {
 	private int x;

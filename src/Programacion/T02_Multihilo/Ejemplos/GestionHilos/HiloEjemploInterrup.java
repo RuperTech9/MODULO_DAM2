@@ -1,4 +1,4 @@
-package Programacion.T02_Multihilo.Ejemplos;
+package Programacion.T02_Multihilo.Ejemplos.GestionHilos;
 
 public class HiloEjemploInterrup extends Thread {
   public void run() {

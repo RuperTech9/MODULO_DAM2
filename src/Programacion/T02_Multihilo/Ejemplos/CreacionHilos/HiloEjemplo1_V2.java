@@ -1,8 +1,8 @@
-package Programacion.T02_Multihilo.Ejemplos.CrearHilos;
+package Programacion.T02_Multihilo.Ejemplos.CreacionHilos;
 
-public class HiloEjemplo1 extends Thread {
+public class HiloEjemplo1_V2  extends Thread{
 	// constructor
-	public HiloEjemplo1(String nombre) {
+	public  HiloEjemplo1_V2(String nombre) {
 		super(nombre);
 		System.out.println("CREANDO HILO:" + getName());
 	}
@@ -12,18 +12,15 @@ public class HiloEjemplo1 extends Thread {
 		for (int i=0; i<5; i++) 
 			System.out.println("Hilo:" + getName() + " C = " + i);
 	}
-
-	//
 	public static void main(String[] args) {
 		HiloEjemplo1 h1 = new HiloEjemplo1("Hilo 1");
 		HiloEjemplo1 h2 = new HiloEjemplo1("Hilo 2");
 		HiloEjemplo1 h3 = new HiloEjemplo1("Hilo 3");
-			
+
 		h1.start();
 		h2.start();
 		h3.start();
-		
+
 		System.out.println("3 HILOS INICIADOS...");
 	}// main
-	
-}// HiloEjemplo1
+}// HiloEjemplo1_V2

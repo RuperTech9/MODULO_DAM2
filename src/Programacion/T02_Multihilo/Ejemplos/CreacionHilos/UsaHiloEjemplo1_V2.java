@@ -1,4 +1,4 @@
-package Programacion.T02_Multihilo.Ejemplos.CrearHilos;
+package Programacion.T02_Multihilo.Ejemplos.CreacionHilos;
 
 public class UsaHiloEjemplo1_V2 {
 	public static void main(String[] args) {

@@ -10,6 +10,7 @@ public class E01_TicTac {
             t1.start();
             try {
                 // Esperar a que el hilo Tic termine antes de iniciar el hilo Tac
+                // Se puede hacer con el sleep también
                 t1.join();
 
             } catch (InterruptedException e) {
