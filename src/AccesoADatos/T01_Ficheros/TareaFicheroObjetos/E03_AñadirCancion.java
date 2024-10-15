@@ -3,7 +3,7 @@ package AccesoADatos.T01_Ficheros.TareaFicheroObjetos;
 import java.io.*;
 import java.util.Scanner;
 
-public class AñadirCancion {
+public class E03_AñadirCancion {
     public static void main(String[] args) {
         try {
             File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroObjetos/canciones.dat");
@@ -11,7 +11,7 @@ public class AñadirCancion {
             // Abrir el fichero en modo append (añadir)
             ObjectOutputStream objOut;
             if (fichero.exists()) {
-                objOut = new MiObjectOutputStream(new FileOutputStream(fichero, true)); // No escribimos cabecera
+                objOut = new E07_MiObjectOutputStream(new FileOutputStream(fichero, true)); // No escribimos cabecera
             } else {
                 objOut = new ObjectOutputStream(new FileOutputStream(fichero)); // Si no existe, escribimos cabecera
             }
@@ -34,7 +34,7 @@ public class AñadirCancion {
             boolean esEspanola = sc.nextBoolean();
 
             // Crear el objeto Cancion2
-            Cancion nuevaCancion = new Cancion(id, anio, titulo, artista, duracion, esEspanola);
+            E01_Cancion nuevaCancion = new E01_Cancion(id, anio, titulo, artista, duracion, esEspanola);
 
             // Escribir la nueva canción en el fichero
             objOut.writeObject(nuevaCancion);

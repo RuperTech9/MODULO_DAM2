@@ -3,10 +3,10 @@ package AccesoADatos.T01_Ficheros.TareaFicheroAleatorioCanciones;
 import java.io.*;
 import java.util.Scanner;
 
-public class BuscarCancionPorIDAleatorio {
+public class E05_BuscarCancionPorIDAleatorio {
     public static void main(String[] args) {
         try {
-            RandomAccessFile ficheroAleatorio = new RandomAccessFile("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioCanciones/canciones_aleatorio.dat", "r");
+            RandomAccessFile ficheroAleatorio = new RandomAccessFile("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioCanciones/cancionesAleatorio.dat", "r");
 
             Scanner sc = new Scanner(System.in);
             System.out.print("Introduce el ID de la canción a buscar: ");

@@ -7,9 +7,9 @@ import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
 import java.io.*;
 
-public class CrearCancionesXml {
+public class E06_CrearCancionesXml {
     public static void main(String[] args) throws IOException {
-        File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioCanciones/canciones_aleatorio.dat");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioCanciones/cancionesAleatorio.dat");
         RandomAccessFile file = new RandomAccessFile(fichero, "r");
 
         int id, anio, posicion = 0; // para situarnos al principio del fichero
@@ -75,7 +75,7 @@ public class CrearCancionesXml {
                         CrearElemento("esEspanola", Boolean.toString(esEspanola), raiz, document);
                     }
 
-                    posicion += 98; // Avanzar al siguiente registro (4 + 4 + 40 + 40 + 40 + 1 bytes)
+                    posicion += 129; // Avanzar al siguiente registro (4 + 4 + 40 + 40 + 40 + 1 bytes)
 
                     // Verificar si hemos llegado al final del archivo
                     if (file.getFilePointer() == file.length()) break;

@@ -7,7 +7,7 @@ import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
 import java.io.*;
 
-public class CrearCancionXml {
+public class E05_CrearCancionXml {
     public static void main(String[] args) throws IOException {
         File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroObjetos/canciones.dat");
         ObjectInputStream objIn = new ObjectInputStream(new FileInputStream(fichero));
@@ -23,7 +23,7 @@ public class CrearCancionXml {
             // Leer cada canción del fichero
             while (true) {
                 try {
-                    Cancion cancion = (Cancion) objIn.readObject();
+                    E01_Cancion cancion = (E01_Cancion) objIn.readObject();
 
                     if (cancion.getId() > 0) { // Si el ID es válido (> 0)
                         Element raiz = document.createElement("cancion");

@@ -4,7 +4,7 @@ import java.io.File;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
 
-public class LeerCancionXml {
+public class E06_LeerCancionXml {
     public static void main(String[] args) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 

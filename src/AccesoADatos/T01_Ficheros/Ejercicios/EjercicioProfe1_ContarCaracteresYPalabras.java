@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros;
+package AccesoADatos.T01_Ficheros.Ejercicios;
 
 import java.io.*;
 
@@ -11,7 +11,7 @@ public class EjercicioProfe1_ContarCaracteresYPalabras {
 
 	public static void main(String[] args) {
 		// Ruta del fichero de texto que se va a leer
-        File fichero = new File("./src//AccesoADatos//T01_Ficheros/PruebaProfe1_ContarCaracteresYPalabras.txt");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/Ejercicios/PruebaProfe1_ContarCaracteresYPalabras.txt");
         
         try {
             // Comprobar si el fichero existe

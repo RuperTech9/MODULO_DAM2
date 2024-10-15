@@ -2,7 +2,7 @@ package AccesoADatos.T01_Ficheros.TareaFicheroAleatorioCanciones;
 
 import java.io.Serializable;
 
-public class Cancion{
+public class E01_Cancion implements Serializable {
 
     private int id; // 4B
     private int ano; // 4B
@@ -13,7 +13,7 @@ public class Cancion{
 
     // TAMAÑO TOTAL CANCION = 129 Bytes;
 
-    Cancion(int vid, int vano, String vtitulo, String vartista, String vduracion, boolean vcancion_espanola)
+    E01_Cancion(int vid, int vano, String vtitulo, String vartista, String vduracion, boolean vcancion_espanola)
     {
         id = vid;
         ano = vano;
@@ -23,7 +23,7 @@ public class Cancion{
         cancion_espanola = vcancion_espanola;
     }
 
-    Cancion()
+    E01_Cancion()
     {
         id = 0;
         ano = 0;

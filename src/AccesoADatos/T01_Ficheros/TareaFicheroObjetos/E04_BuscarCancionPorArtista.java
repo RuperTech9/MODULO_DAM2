@@ -3,7 +3,7 @@ package AccesoADatos.T01_Ficheros.TareaFicheroObjetos;
 import java.io.*;
 import java.util.Scanner;
 
-public class BuscarCancionPorArtista {
+public class E04_BuscarCancionPorArtista {
     public static void main(String[] args) {
         try {
             File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroObjetos/canciones.dat");
@@ -24,7 +24,7 @@ public class BuscarCancionPorArtista {
             // Leer el fichero secuencialmente para encontrar todas las canciones del artista
             while (true) {
                 try {
-                    Cancion cancion = (Cancion) objIn.readObject();
+                    E01_Cancion cancion = (E01_Cancion) objIn.readObject();
                     if (cancion.getArtista().equalsIgnoreCase(artistaBuscado)) {
                         System.out.println("Canción encontrada: " + cancion);
                         encontrado = true;

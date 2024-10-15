@@ -1,19 +1,19 @@
-package AccesoADatos.T01_Ficheros.TareaFicheroObjetos;
+package AccesoADatos.T01_Ficheros.TareaFicheroAleatorioCanciones;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-public class CrearFicheroCanciones {
+public class E02_CrearFicheroCanciones {
     public static void main(String[] args) {
         try {
             // Crea el fichero binario de canciones
-            FileOutputStream fileOut = new FileOutputStream("./src//AccesoADatos//T01_Ficheros/TareaFicheroObjetos/canciones.dat");
+            FileOutputStream fileOut = new FileOutputStream("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioCanciones/canciones.dat");
             ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
 
             // Inicializamos el fichero con canciones vacías
             for (int i = 0; i < 5; i++) {
-                Cancion cancion = new Cancion();
+                E01_Cancion cancion = new E01_Cancion();
                 objOut.writeObject(cancion); // Escribimos las canciones en el fichero
             }
 

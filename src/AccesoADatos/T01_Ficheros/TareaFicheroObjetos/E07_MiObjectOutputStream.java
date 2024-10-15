@@ -4,13 +4,13 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 
-public class MiObjectOutputStream extends ObjectOutputStream {
+public class E07_MiObjectOutputStream extends ObjectOutputStream {
 
-    public MiObjectOutputStream(OutputStream out) throws IOException {
+    public E07_MiObjectOutputStream(OutputStream out) throws IOException {
         super(out);
     }
 
-    protected MiObjectOutputStream() throws IOException, SecurityException {
+    protected E07_MiObjectOutputStream() throws IOException, SecurityException {
         super();
     }
 

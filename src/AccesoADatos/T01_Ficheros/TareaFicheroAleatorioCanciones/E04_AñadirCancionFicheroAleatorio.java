@@ -3,10 +3,10 @@ package AccesoADatos.T01_Ficheros.TareaFicheroAleatorioCanciones;
 import java.io.*;
         import java.util.Scanner;
 
-public class AñadirCancionFicheroAleatorio {
+public class E04_AñadirCancionFicheroAleatorio {
     public static void main(String[] args) {
         try {
-            RandomAccessFile ficheroAleatorio = new RandomAccessFile("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioCanciones/canciones_aleatorio.dat", "rw");
+            RandomAccessFile ficheroAleatorio = new RandomAccessFile("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioCanciones/cancionesAleatorio.dat", "rw");
 
             // Calcular el último ID en el fichero aleatorio
             long numRegistros = ficheroAleatorio.length() / 129; // 129 bytes por canción

@@ -8,7 +8,7 @@ package AccesoADatos.T01_Ficheros.TareaFicheroObjetos;
 
 import java.io.Serializable;
 
-public class Cancion implements Serializable {
+public class E01_Cancion implements Serializable {
     private int id;
     private int anio;
     private String titulo;
@@ -16,7 +16,7 @@ public class Cancion implements Serializable {
     private String duracion;
     private boolean esEspanola;
 
-    public Cancion() {
+    public E01_Cancion() {
         this.id = 0;
         this.anio = 0;
         this.titulo = "";
@@ -25,7 +25,7 @@ public class Cancion implements Serializable {
         this.esEspanola = false;
     }
 
-    public Cancion(int id, int anio, String titulo, String artista, String duracion, boolean esEspanola) {
+    public E01_Cancion(int id, int anio, String titulo, String artista, String duracion, boolean esEspanola) {
         this.id = id;
         this.anio = anio;
         this.titulo = titulo;
