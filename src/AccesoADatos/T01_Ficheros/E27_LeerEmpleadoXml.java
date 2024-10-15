@@ -1,16 +1,16 @@
-package AccesoADatos.T01_Ficheros.TareaFicheroAleatorioEmpleados;
+package AccesoADatos.T01_Ficheros;
 
 import java.io.File;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
 
-public class LecturaEmpleadoXml {
+public class E27_LeerEmpleadoXml {
     public static void main(String[] args) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse(new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioEmpleados/Empleados.xml"));
+            Document document = builder.parse(new File("./src//AccesoADatos//T01_Ficheros/Empleados.xml"));
             document.getDocumentElement().normalize();
 
             System.out.printf("Elemento raíz: %s %n",

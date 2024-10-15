@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros;
+package AccesoADatos.T01_Ficheros.Objetos;
 
 import java.io.*;
 
@@ -6,7 +6,7 @@ public class EscribirFichObjeto {
     public static void main(String[] args) throws IOException {
         Persona persona = new Persona();
 
-        File fichero = new File("./src//AccesoADatos//T01_Ficheros/Fichero.dat");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/Objetos/PruebaPersonas.dat");
 
         FileOutputStream fileOut = new FileOutputStream(fichero);
         ObjectOutputStream dataOS = new ObjectOutputStream(fileOut);

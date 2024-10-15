@@ -7,11 +7,11 @@ import java.io.*;
  * 
  * Hay que detectar cadenas y caractéres
 */
-public class EjercicioProfe1 {
+public class EjercicioProfe1_ContarCaracteresYPalabras {
 
 	public static void main(String[] args) {
 		// Ruta del fichero de texto que se va a leer
-        File fichero = new File("./src//AccesoADatos//T01_Ficheros/pruebaFichTexto.txt");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/PruebaProfe1_ContarCaracteresYPalabras.txt");
         
         try {
             // Comprobar si el fichero existe

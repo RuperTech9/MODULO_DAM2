@@ -19,7 +19,7 @@ public class E11_AñadirAFichTexto_LeerFich {
 
 	public static void main(String[] args) throws IOException {
 		//ABRIR FICHERO
-		File fichero = new File("./src//AccesoADatos//T01_Ficheros/pruebaFichTexto1.txt");
+		File fichero = new File("./src//AccesoADatos//T01_Ficheros/FichProvincias.txt");
 
         FileWriter fw = new FileWriter(fichero, true); // El 'true' habilita el modo "append"
         fw.append(" Valencia ");

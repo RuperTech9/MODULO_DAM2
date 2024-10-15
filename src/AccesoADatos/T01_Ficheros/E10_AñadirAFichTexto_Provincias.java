@@ -17,7 +17,7 @@ import java.util.Collections;
 
 public class E10_AñadirAFichTexto_Provincias {
 	public static void main(String[] args) throws IOException {
-        File fichero = new File("./src//AccesoADatos//T01_Ficheros/pruebaFichTexto1.txt");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/FichProvincias.txt");
         //File fichero = new File("C:\\Users\\aludam2\\eclipse-workspace\\Acceso_Datos\\src\\Tema1\\EscribirFicheroTexto.txt");
 
         // Paso 1: Añadir "Valencia" al final del fichero sin borrar el contenido previo
@@ -53,5 +53,15 @@ public class E10_AñadirAFichTexto_Provincias {
         writer.close(); // Cerrar el escritor
         
         System.out.println("Provincias ordenadas en orden inverso alfabético correctamente.");
+
+        // Leer el contenido del archivo y mostrarlo en la consola
+        try (FileReader fr = new FileReader(fichero)) {
+            int i;
+            while ((i = fr.read()) != -1) { // Se va leyendo un carácter
+                System.out.print((char) i);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

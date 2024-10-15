@@ -5,7 +5,7 @@ import java.io.*;
 public class E02_InfoFichero {
     public static void main(String[] args) {
         System.out.println("INFORMACIÓN SOBRE EL FICHERO");
-        File f = new File("./src//AccesoADatos//T01_Ficheros//prueba1.txt");
+        File f = new File("./src//AccesoADatos//T01_Ficheros//InfoFich.txt");
         if(f.exists()){
             System.out.println("Nombre del fichero: " +f.getName());
             System.out.println("Ruta: " +f.getPath());

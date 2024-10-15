@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros;
+package AccesoADatos.T01_Ficheros.Objetos;
 
 import java.io.Serializable;
 

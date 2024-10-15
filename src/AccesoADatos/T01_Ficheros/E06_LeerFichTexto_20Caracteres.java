@@ -4,7 +4,7 @@ import java.io.*;
 public class E06_LeerFichTexto_20Caracteres {
 	public static void main(String[] args) throws IOException {
 		//Declarar el fichero
-		File fichero = new File("./src//AccesoADatos//T01_Ficheros//pruebaFichTexto1.txt");
+		File fichero = new File("./src//AccesoADatos//T01_Ficheros//InfoFich.txt");
 		
 		//Crear el flujo de entrada hacie el fichero
 		FileReader fic = new FileReader(fichero);

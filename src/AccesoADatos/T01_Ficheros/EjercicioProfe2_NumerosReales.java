@@ -8,10 +8,10 @@ package AccesoADatos.T01_Ficheros;
 import java.io.*;
 import java.util.Scanner;
 
-public class EscribirFichBinario {
+public class EjercicioProfe2_NumerosReales {
     public static void main(String[] args) {
         // Ruta del archivo binario
-        File fichero = new File("./src/FICHEROS/numerosReales.dat");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/PruebaProfe2_numerosReales.dat");
         
         // Utilizamos Scanner para leer la entrada por teclado
         Scanner scanner = new Scanner(System.in);

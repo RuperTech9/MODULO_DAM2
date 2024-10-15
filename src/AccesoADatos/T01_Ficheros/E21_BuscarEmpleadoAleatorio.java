@@ -1,25 +1,27 @@
-package AccesoADatos.T01_Ficheros.TareaFicheroAleatorioEmpleados;
+package AccesoADatos.T01_Ficheros;
 
 import java.io.*;
 import java.util.Scanner;
 
-public class LocalizarEmpleadoPorID {
+public class E21_BuscarEmpleadoAleatorio {
     public static void main(String[] args) {
         try {
-            File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioEmpleados/EmpleadosAleatorio.dat");
+            File fichero = new File("./src/AccesoADatos/T01_Ficheros/PruebaAleatorioEmpl.dat");
             RandomAccessFile file = new RandomAccessFile(fichero, "r");
 
             Scanner sc = new Scanner(System.in);
-            System.out.print("Introduce el ID del empleado: ");
+            System.out.print("Introduce el ID del empleado que deseas buscar: ");
             int idBuscado = sc.nextInt();
 
-            long posicion = (idBuscado - 1) * 36;
+            // Calcular la posición basándose en el ID
+            long posicionBusqueda = (idBuscado - 1) * 36;
 
-            if (posicion >= file.length()) {
+            // Verificar si la posición es válida
+            if (posicionBusqueda >= file.length()) {
                 System.out.println("El empleado con ID " + idBuscado + " no existe.");
             } else {
-                file.seek(posicion);
-                int id = file.readInt();
+                file.seek(posicionBusqueda); // Posicionar el puntero en la posición calculada
+                int id = file.readInt(); // Leer el ID del empleado
 
                 char[] apellido = new char[10];
                 for (int i = 0; i < apellido.length; i++) {
@@ -37,7 +39,7 @@ public class LocalizarEmpleadoPorID {
                 }
             }
 
-            file.close();
+            file.close(); // Cerrar el archivo
         } catch (IOException e) {
             e.printStackTrace();
         }

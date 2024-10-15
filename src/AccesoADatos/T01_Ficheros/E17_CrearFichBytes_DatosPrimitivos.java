@@ -3,11 +3,10 @@ package AccesoADatos.T01_Ficheros;
 import java.io.*;
 
 
-public class E15_LeerFichBytes_DatosPrimitivos {
+public class E17_CrearFichBytes_DatosPrimitivos {
 
 	public static void main(String[] args) throws IOException {
 		File f2 = new File("./src//AccesoADatos//T01_Ficheros/primitivos.dat");//crea un objeto File que representa el archivo
-		f2.createNewFile();// crea un nuevo archivo físico en el disco. Si el archivo ya existe, el metodo no hace nada y devuelve false; si no existe, lo crea y devuelve true.
 		
 		FileOutputStream fileOut = new FileOutputStream(f2);// Clase que permite escribir bytes en un archivo (f2), Si ya existe, se sobrescribirá el contenido del archivo (si quieres añadir datos, puedes usar new FileOutputStream(f2, true)).
 		DataOutputStream dataOut = new DataOutputStream(fileOut);// se utiliza para escribir datos primitivos (int, char, boolean, etc.) en un flujo de salida de forma binaria.

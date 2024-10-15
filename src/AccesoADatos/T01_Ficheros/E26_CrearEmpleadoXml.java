@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros.TareaFicheroAleatorioEmpleados;
+package AccesoADatos.T01_Ficheros;
 
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
@@ -7,9 +7,9 @@ import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
 import java.io.*;
 
-public class CrearEmpleadoXml {
+public class E26_CrearEmpleadoXml {
     public static void main(String args[]) throws IOException {
-        File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioEmpleados/EmpleadosAleatorio.dat");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/PruebaAleatorioEmpl.dat");
         RandomAccessFile file = new RandomAccessFile(fichero, "r");
 
         int id, dep, posicion=0; // para situarnos al principio del fichero
@@ -55,7 +55,7 @@ public class CrearEmpleadoXml {
             }// Fin del for que recorre el fichero
 
             Source source = new DOMSource(document);
-            Result result = new StreamResult(new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroAleatorioEmpleados/Empleados.xml"));
+            Result result = new StreamResult(new File("./src//AccesoADatos//T01_Ficheros/Empleados.xml"));
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
             transformer.transform(source, result);
 

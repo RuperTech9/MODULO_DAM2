@@ -20,5 +20,15 @@ public class E07_EscribirFichTexto {
                 fw.close(); // cierro el fichero fuera del bucle
             }
         }
+
+        // Leer el contenido del archivo y mostrarlo en la consola
+        try (FileReader fr = new FileReader(fichero)) {
+            int i;
+            while ((i = fr.read()) != -1) { // Se va leyendo un carácter
+                System.out.print((char) i);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

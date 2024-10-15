@@ -3,10 +3,10 @@ package AccesoADatos.T01_Ficheros;
 import java.util.Scanner;
 import java.io.*;
 
-public class EscribirLinea {
+public class EjercicioProfe4_EscribirLinea {
     public static void main(String[] args) throws IOException{
         Scanner sc = new Scanner(System.in);
-        File fichero1 = new File("./src//AccesoADatos//T01_Ficheros//pruebaEscribirLinea.txt");
+        File fichero1 = new File("./src//AccesoADatos//T01_Ficheros//pruebaEscribir.txt");
 
         //Compruebo que el directorio existe.
         if(!fichero1.exists()){
@@ -34,8 +34,8 @@ public class EscribirLinea {
         } // PRIMER IF CREACION DEL FICHERO
         else{
             try { //usaremos BufferedReader y BufferedWriter
-                BufferedReader br = new BufferedReader(new FileReader("./src//AccesoADatos//T01_Ficheros//pruebaEscribirLinea.txt")); //Lectura
-                BufferedWriter bw = new BufferedWriter(new FileWriter("./src//AccesoADatos//T01_Ficheros//pruebaEscribirLinea.txt")); //Escritura
+                BufferedReader br = new BufferedReader(new FileReader("./src//AccesoADatos//T01_Ficheros//pruebaEscribir.txt")); //Lectura
+                BufferedWriter bw = new BufferedWriter(new FileWriter("./src//AccesoADatos//T01_Ficheros//pruebaEscribir.txt")); //Escritura
 
                 //Escribimos en el fichero
                 bw.write("LINEA 1");

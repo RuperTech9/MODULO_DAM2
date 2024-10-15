@@ -1,15 +1,18 @@
 package AccesoADatos.T01_Ficheros;
 
-import java.io.*;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /*
  * Vamos a añadir un array de alturas que sean números reales
  */
-public class EjercicioProfe2 {
+public class E15_EscribirFichData_NombresEdadesAlturas {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		File fichero = new File("./src//AccesoADatos//T01_Ficheros/pruebaData.txt");
+		File fichero = new File("./src//AccesoADatos//T01_Ficheros/InfoUser.dat");
 		FileOutputStream fileout = new FileOutputStream(fichero);
 		DataOutputStream dataOS = new DataOutputStream(fileout);
 		

@@ -3,7 +3,7 @@ import java.io.*;
 
 public class E04_CrearDirectorioYFichTexto {
     public static void main(String[] args) {
-        File d = new File("NuevoDIR"); // Directorio que se va a crear
+        File d = new File("./src//AccesoADatos//T01_Ficheros//NuevoDIR"); // Directorio que se va a crear
         File f1 = new File(d, "Fichero1.txt");
         File f2 = new File(d, "Fichero2.txt");
 

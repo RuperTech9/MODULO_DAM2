@@ -1,11 +1,10 @@
 package AccesoADatos.T01_Ficheros;
 // realizar un programa que añada al fichero de los datos primitivos un long, y al final visualizar el fichero
 import java.io.*;
-public class E16_LeerFichBytes_DatosPrimitivos {
+public class E18_AñadirFichBytes_DatosPrimitivos {
     public static void main(String[] args) throws IOException {
         // Creación del archivo donde se almacenarán los datos primitivos
         File f2 = new File("./src//AccesoADatos//T01_Ficheros/primitivos.dat");
-        f2.createNewFile();
 
 
         // Escritura adicional en el archivo en modo append (agregar al final)
@@ -14,9 +13,7 @@ public class E16_LeerFichBytes_DatosPrimitivos {
 
         long l = 123456789L; // Nuevo valor de tipo long
         dataOutAppend.writeLong(l);
-
         dataOutAppend.close();
-
         System.out.println("Valor long añadido al archivo.");
 
         // Lectura de datos del archivo

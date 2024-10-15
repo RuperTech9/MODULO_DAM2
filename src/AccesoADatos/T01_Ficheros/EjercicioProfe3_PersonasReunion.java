@@ -7,11 +7,11 @@ import java.io.*;
  * Falso que no va a asistir, Verdadero que va a acudir. Array asociado a cada persona, y que segun elijan me cree una lista de asistentes y otra lista de no asistentes
  */
 
-public class EjercicioProfe3 {
+public class EjercicioProfe3_PersonasReunion {
 
 	public static void main(String[] args) throws IOException {
         // Archivo donde se guardarán los datos
-        File fichero = new File("./src//AccesoADatos//T01_Ficheros/personasReunion.dat");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/PruebaProfe3_personasReunion.dat");
         FileOutputStream fileOut = new FileOutputStream(fichero);
         DataOutputStream dataOut = new DataOutputStream(fileOut);
 
