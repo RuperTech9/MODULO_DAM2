@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros.TareaFicheroBinarioAleatorioCanciones;
+package AccesoADatos.T01_Ficheros.TareaFichAleatorioBinarioCanciones;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;

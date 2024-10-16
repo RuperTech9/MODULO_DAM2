@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros.TareaFicheroObjetos;
+package AccesoADatos.T01_Ficheros.TareaFichObjetoCanciones;
 
 import org.w3c.dom.*;
 import javax.xml.parsers.*;

@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros.TareaFicheroBinarioAleatorioCanciones;
+package AccesoADatos.T01_Ficheros.TareaFichAleatorioBinarioCanciones;
 
 
 import org.w3c.dom.*;

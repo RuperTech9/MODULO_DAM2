@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros.TareaFicheroObjetos;
+package AccesoADatos.T01_Ficheros.TareaFichObjetoCanciones;
 /*
     Clase Cancion2 Serializable
     identificador, año, titulo, artista, duración y canción española (verdadero/falso)

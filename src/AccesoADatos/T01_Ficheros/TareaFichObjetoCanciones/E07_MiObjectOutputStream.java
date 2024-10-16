@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros.TareaFicheroObjetos;
+package AccesoADatos.T01_Ficheros.TareaFichObjetoCanciones;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;

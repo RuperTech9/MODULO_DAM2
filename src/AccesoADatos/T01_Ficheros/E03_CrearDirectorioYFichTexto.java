@@ -14,7 +14,7 @@ public class E03_CrearDirectorioYFichTexto {
             if(f1.createNewFile())
                 System.out.println("FICHERO1 creado correctamente");
             else
-                System.out.println("No se ha podido creal el FICHERO1");
+                System.out.println("No se ha podido crear el FICHERO1");
 
             if(f2.createNewFile())
                 System.out.println("FICHERO2 creado correctamente");

@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros.TareaFicheroAleatorioCanciones;
+package AccesoADatos.T01_Ficheros.TareaFichAleatorioCanciones;
 
 import org.w3c.dom.*;
 import javax.xml.parsers.*;

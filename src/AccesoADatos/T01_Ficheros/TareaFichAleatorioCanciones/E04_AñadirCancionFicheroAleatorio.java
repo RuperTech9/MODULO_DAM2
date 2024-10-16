@@ -1,4 +1,4 @@
-package AccesoADatos.T01_Ficheros.TareaFicheroAleatorioCanciones;
+package AccesoADatos.T01_Ficheros.TareaFichAleatorioCanciones;
 
 import java.io.*;
         import java.util.Scanner;
