@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class E04_BuscarCancionPorArtista {
     public static void main(String[] args) {
         try {
-            File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroObjetos/canciones.dat");
+            File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFichObjetoCanciones/canciones.dat");
             if (!fichero.exists()) {
                 System.out.println("El fichero no existe.");
                 return;

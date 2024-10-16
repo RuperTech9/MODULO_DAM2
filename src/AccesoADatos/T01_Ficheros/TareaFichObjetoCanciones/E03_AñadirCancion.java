@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class E03_AñadirCancion {
     public static void main(String[] args) {
         try {
-            File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroObjetos/canciones.dat");
+            File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFichObjetoCanciones/canciones.dat");
 
             // Abrir el fichero en modo append (añadir)
             ObjectOutputStream objOut;

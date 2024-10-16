@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Libreria>
+    <ListaLibros>
+        <Libro>
+            <autor>Alicia Bancs</autor>
+            <nombre>Entornos de Desarrollo</nombre>
+            <editorial>Garveta</editorial>
+            <isbn>578-64-1545-257-3</isbn>
+        </Libro>
+        <Libro>
+            <autor>Maria Jesús Rance</autor>
+            <nombre>Acceso a Datos</nombre>
+            <editorial>Garceta</editorial>
+            <isbn>978-84-1545-228-74</isbn>
+        </Libro>
+    </ListaLibros>
+    <lugar>Talavera, como nos</lugar>
+    <nombre>Prueba de libreria JAXB</nombre>
+</Libreria>

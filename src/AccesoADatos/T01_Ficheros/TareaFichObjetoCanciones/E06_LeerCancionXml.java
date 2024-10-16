@@ -10,7 +10,7 @@ public class E06_LeerCancionXml {
 
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse(new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroObjetos/canciones.xml"));
+            Document document = builder.parse(new File("./src//AccesoADatos//T01_Ficheros/TareaFichObjetoCanciones/canciones.xml"));
             document.getDocumentElement().normalize();
 
             System.out.printf("Elemento raíz: %s %n", document.getDocumentElement().getNodeName());

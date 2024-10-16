@@ -9,7 +9,7 @@ import java.io.*;
 
 public class E05_CrearCancionXml {
     public static void main(String[] args) throws IOException {
-        File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroObjetos/canciones.dat");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/TareaFichObjetoCanciones/canciones.dat");
         ObjectInputStream objIn = new ObjectInputStream(new FileInputStream(fichero));
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -49,7 +49,7 @@ public class E05_CrearCancionXml {
 
             // Guardar el documento XML en un archivo
             Source source = new DOMSource(document);
-            Result result = new StreamResult(new File("./src//AccesoADatos//T01_Ficheros/TareaFicheroObjetos/canciones.xml"));
+            Result result = new StreamResult(new File("./src//AccesoADatos//T01_Ficheros/TareaFichObjetoCanciones/canciones.xml"));
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
             transformer.transform(source, result);
 

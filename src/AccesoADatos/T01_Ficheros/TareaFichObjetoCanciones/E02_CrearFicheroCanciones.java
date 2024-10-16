@@ -1,5 +1,6 @@
 package AccesoADatos.T01_Ficheros.TareaFichObjetoCanciones;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -8,7 +9,7 @@ public class E02_CrearFicheroCanciones {
     public static void main(String[] args) {
         try {
             // Crea el fichero binario de canciones
-            FileOutputStream fileOut = new FileOutputStream("./src//AccesoADatos//T01_Ficheros/TareaFicheroObjetos/canciones.dat");
+            FileOutputStream fileOut = new FileOutputStream("./src//AccesoADatos//T01_Ficheros/TareaFichObjetoCanciones/canciones.dat");
             ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
 
             // Inicializamos el fichero con canciones vacías
