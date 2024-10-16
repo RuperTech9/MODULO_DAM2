@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Departamentos>
+    <departamento>
+        <numero>1</numero>
+        <nombre>1</nombre>
+        <localidad>1</localidad>
+    </departamento>
+    <departamento>
+        <numero>2</numero>
+        <nombre>2</nombre>
+        <localidad>2</localidad>
+    </departamento>
+</Departamentos>

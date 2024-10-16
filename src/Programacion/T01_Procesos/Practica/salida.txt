@@ -1,15 +1,39 @@
- El volumen de la unidad C no tiene etiqueta.
- El n£mero de serie del volumen es: 96C6-5894
 
- Directorio de C:\Users\Ruper\IdeaProjects\MODULO_DAM2
+Configuraci¢n IP de Windows
 
-09/10/2024  12:00    <DIR>          .
-09/10/2024  12:00    <DIR>          ..
-02/10/2024  11:54               372 .gitignore
-14/10/2024  10:22    <DIR>          .idea
-02/10/2024  11:54               433 MODULO_DAM2.iml
-03/10/2024  13:08    <DIR>          NUEVO
-02/10/2024  12:02    <DIR>          out
-10/10/2024  13:12    <DIR>          src
-               2 archivos            805 bytes
-               6 dirs  876.749.111.296 bytes libres
+
+Adaptador de Ethernet Ethernet:
+
+   Estado de los medios. . . . . . . . . . . : medios desconectados
+   Sufijo DNS espec¡fico para la conexi¢n. . : 
+
+Adaptador de Ethernet Ethernet 2:
+
+   Sufijo DNS espec¡fico para la conexi¢n. . : 
+   V¡nculo: direcci¢n IPv6 local. . . : fe80::62be:bb96:642a:ad2%16
+   Direcci¢n IPv4. . . . . . . . . . . . . . : 192.168.56.1
+   M scara de subred . . . . . . . . . . . . : 255.255.255.0
+   Puerta de enlace predeterminada . . . . . : 
+
+Adaptador de LAN inal mbrica Conexi¢n de  rea local* 1:
+
+   Estado de los medios. . . . . . . . . . . : medios desconectados
+   Sufijo DNS espec¡fico para la conexi¢n. . : 
+
+Adaptador de LAN inal mbrica Conexi¢n de  rea local* 10:
+
+   Estado de los medios. . . . . . . . . . . : medios desconectados
+   Sufijo DNS espec¡fico para la conexi¢n. . : 
+
+Adaptador de LAN inal mbrica Wi-Fi:
+
+   Sufijo DNS espec¡fico para la conexi¢n. . : 
+   V¡nculo: direcci¢n IPv6 local. . . : fe80::84ad:925e:c009:9b5c%12
+   Direcci¢n IPv4. . . . . . . . . . . . . . : 192.168.0.11
+   M scara de subred . . . . . . . . . . . . : 255.255.255.0
+   Puerta de enlace predeterminada . . . . . : 192.168.0.1
+
+Adaptador de Ethernet Conexi¢n de red Bluetooth 2:
+
+   Estado de los medios. . . . . . . . . . . : medios desconectados
+   Sufijo DNS espec¡fico para la conexi¢n. . : 
