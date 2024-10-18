@@ -6,7 +6,7 @@ import java.io.*;
 
 public class E29_Convertidor {
     public static void main(String[] args) throws IOException {
-        String hojaEstilo = "./src//AccesoADatos//T01_Ficheros/XMLconvertir/cancionesPlantilla.xsl";
+        String hojaEstilo = "./src//AccesoADatos//T01_Ficheros/XMLconvertir/alumnosPlantilla.xsl";
         String datosAlumnos = "./src//AccesoADatos//T01_Ficheros/XMLconvertir/alumnos.xml";
         File pagHTML = new File("./src//AccesoADatos//T01_Ficheros/XMLconvertir/mipagina.html");
 

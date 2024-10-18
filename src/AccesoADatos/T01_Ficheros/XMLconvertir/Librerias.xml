@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MISLIBRERIAS>
+    <Libreria>
+        <ListaLibros>
+            <Libro>
+                <autor>Autor1</autor>
+                <nombre>Libro1</nombre>
+                <editorial>Editorial1</editorial>
+                <isbn>1111</isbn>
+            </Libro>
+            <Libro>
+                <autor>Autor2</autor>
+                <nombre>Libro2</nombre>
+                <editorial>Editorial2</editorial>
+                <isbn>2222</isbn>
+            </Libro>
+        </ListaLibros>
+        <lugar>Ciudad1</lugar>
+        <nombre>Libreria1</nombre>
+    </Libreria>
+    <Libreria>
+        <ListaLibros>
+            <Libro>
+                <autor>Autor3</autor>
+                <nombre>Libro3</nombre>
+                <editorial>Editorial3</editorial>
+                <isbn>3333</isbn>
+            </Libro>
+            <Libro>
+                <autor>Autor4</autor>
+                <nombre>Libro4</nombre>
+                <editorial>Editorial4</editorial>
+                <isbn>4444</isbn>
+            </Libro>
+        </ListaLibros>
+        <lugar>Ciudad2</lugar>
+        <nombre>Libreria2</nombre>
+    </Libreria>
+</MISLIBRERIAS>

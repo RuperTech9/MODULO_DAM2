@@ -1,11 +1,11 @@
 package AccesoADatos.T01_Ficheros.XMLconvertir;
 
 import java.util.ArrayList;
-/*import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement*/
+@XmlRootElement
 public class Libreria {
     private ArrayList<Libro> listaLibros;
     private String nombre;
@@ -40,11 +40,11 @@ public class Libreria {
     }
 
     // Wrapper, envoltura alrededor de la representación XML
-    /*@XmlElementWrapper(name = "ListaLibros")
+    @XmlElementWrapper(name = "ListaLibros")
     @XmlElement(name = "Libro")
     public ArrayList<Libro> getListaLibros() {
         return listaLibros;
-    }*/
+    }
 
     public void setListaLibros(ArrayList<Libro> listaLibros) {
         this.listaLibros = listaLibros;
