@@ -10,11 +10,14 @@ public class E01_FicheroODirectorio {
         System.out.printf("Ficheros en el directorio actual: %d %n", archivos.length);
         for (int i = 0; i < archivos.length; i++) {
             File f2 = new File(f, archivos[i]);
-            System.out.printf("Nombre: %s, es fichero?: %b. es directorio?: %b %n", archivos[i], f2.isFile(), f2.isDirectory());
+            System.out.printf("Nombre: %s, es fichero?: %b. es directorio?: %b %n",
+                    archivos[i], f2.isFile(), f2.isDirectory());
         }
-        dir = args[0];
-
     }
 }
+
+/*
+Se crea un objeto File utilizando la ruta definida en dir. La clase File representa tanto archivos como directorios en Java, y en este caso, se usa para interactuar con el directorio especificado.
+ */
 
 
