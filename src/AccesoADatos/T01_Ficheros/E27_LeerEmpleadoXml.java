@@ -9,6 +9,7 @@ public class E27_LeerEmpleadoXml {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
         try {
+            // Se crea el DocumentBuilder: Un objeto que se usará para construir el documento XML.
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document document = builder.parse(new File("./src//AccesoADatos//T01_Ficheros/Empleados.xml"));
             document.getDocumentElement().normalize();
