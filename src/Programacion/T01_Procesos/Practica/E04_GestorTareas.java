@@ -50,15 +50,15 @@ public class E04_GestorTareas {
         // Selección de archivos
         System.out.println("Introduce las rutas de los archivos a comprimir (separados por enter). Introduce 'fin' para terminar:");
         while (true) {
-            String input = scanner.nextLine();
-            if (input.equalsIgnoreCase("fin")) {
+            String ruta = scanner.nextLine();
+            if (ruta.equalsIgnoreCase("fin")) {
                 break;
             }
-            File archivo = new File(input);
+            File archivo = new File(ruta);
             if (archivo.exists()) {
                 archivos.add(archivo);
             } else {
-                System.err.println("El archivo " + input + " no existe, por favor introduce una ruta válida.");
+                System.err.println("El archivo " + ruta + " no existe, por favor introduce una ruta válida.");
             }
         }
 
