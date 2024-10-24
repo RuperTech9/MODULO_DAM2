@@ -9,89 +9,78 @@ public class E04_GestorTareas {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Ruta donde se guardarán los archivos .tar comprimidos
-        String rutaSalida = "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/src/Programacion/T01_Procesos/Practica/";
-
-        // Paso 1: Solicitar al usuario que introduzca las rutas de los archivos para comprimir
-        System.out.println("Introduce la ruta completa de los archivos que deseas comprimir (separados por comas):");
-        String entrada = scanner.nextLine();
-
-        // Dividir las rutas proporcionadas por el usuario
-        String[] rutasArchivos = entrada.split(",");
-
-        // Almacenar los archivos en una lista
         List<File> archivos = new ArrayList<>();
-        for (String ruta : rutasArchivos) {
-            File archivo = new File(ruta.trim());
-            if (archivo.exists() && archivo.isFile()) {
+
+        // Ruta donde se guardarán los archivos comprimidos
+        String rutaDestinoCompresion = "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/src/Programacion/T01_Procesos/Practica";
+
+        // Paso 1: Selección de archivos
+        System.out.println("Introduce las rutas de los archivos a comprimir (separados por enter). Introduce 'fin' para terminar:");
+        while (true) {
+            String input = scanner.nextLine();
+            if (input.equalsIgnoreCase("fin")) {
+                break;
+            }
+            File archivo = new File(input);
+            if (archivo.exists()) {
                 archivos.add(archivo);
             } else {
-                System.err.println("El archivo " + archivo.getAbsolutePath() + " no existe o no es válido.");
+                System.err.println("El archivo " + input + " no existe, por favor introduce una ruta válida.");
             }
         }
 
-        // Si no hay archivos válidos, terminar el programa
         if (archivos.isEmpty()) {
-            System.err.println("No se encontraron archivos válidos para procesar.");
+            System.out.println("No se seleccionaron archivos. Saliendo.");
             return;
         }
 
-        // Lista para almacenar los procesos
+        // Paso 2: Crear y ejecutar los procesos de compresión en paralelo (usando PowerShell en Windows)
         List<Process> procesos = new ArrayList<>();
-        List<String> nombresArchivosComprimidos = new ArrayList<>();
-
-        // Paso 2: Iniciar un proceso de compresión para cada archivo
-        for (File archivo : archivos) {
+        for (int i = 0; i < archivos.size(); i++) {
+            File archivo = archivos.get(i);
             try {
-                // Nombre del archivo comprimido (.tar) con la ruta de salida
-                String nombreArchivoComprimido = rutaSalida + archivo.getName().replace(".", "")+ "Comprimido" + ".tar";
-                nombresArchivosComprimidos.add(nombreArchivoComprimido);
+                // Nombre del archivo comprimido en la ruta destino
+                String archivoComprimido = rutaDestinoCompresion + "\\" + archivo.getName() + ".zip";
 
-                // Crear el comando para comprimir el archivo
-                ProcessBuilder pb = new ProcessBuilder("tar", "-czf", nombreArchivoComprimido, archivo.getAbsolutePath());
-                pb.redirectErrorStream(true); // Redirigir la salida de error a la salida estándar
+                // Comandos para comprimir PowerShell
+                String comando = String.format("powershell Compres-Archive -Path %s -DestinationPath %s", archivo.getAbsolutePath(), archivoComprimido);
+                //String comando = String.format("tar -cvf %s %s", archivoComprimido, archivo.getAbsolutePath());
 
-                // Iniciar el proceso
+                // Iniciar el proceso con cmd.exe para ejecutar PowerShell
+                ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", comando);
+                pb.directory(archivo.getParentFile());
                 Process proceso = pb.start();
                 procesos.add(proceso);
 
+                System.out.println("Iniciando compresión de: " + archivo.getName());
+
             } catch (IOException e) {
-                System.err.println("Error al iniciar el proceso de compresión para " + archivo.getName());
+                System.err.println("Error al iniciar el proceso para el archivo: " + archivo.getName());
                 e.printStackTrace();
             }
         }
 
-        // Paso 3: Esperar a que todos los procesos terminen y verificar el estado de cada uno
+        // Paso 3: Esperar a que todos los procesos terminen
         for (int i = 0; i < procesos.size(); i++) {
             Process proceso = procesos.get(i);
-            String nombreArchivoComprimido = nombresArchivosComprimidos.get(i);
+            File archivo = archivos.get(i);
 
             try {
-                // Esperar a que el proceso termine
                 int exitCode = proceso.waitFor();
-                if (exitCode == 0) {
-                    System.out.println("Compresión del archivo " + nombreArchivoComprimido + " completada con éxito.");
-                } else {
-                    System.err.println("Error durante la compresión del archivo " + nombreArchivoComprimido + ". Código de salida: " + exitCode);
-                }
-            } catch (InterruptedException e) {
-                System.err.println("El proceso de compresión fue interrumpido para el archivo " + nombreArchivoComprimido);
-                e.printStackTrace();
-            }
 
-            // Leer la salida estándar del proceso
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(proceso.getInputStream()))) {
-                String linea;
-                while ((linea = reader.readLine()) != null) {
-                    System.out.println(linea); // Imprimir cada línea de salida del proceso
+                // Paso 4: Mostrar el estado de cada tarea
+                if (exitCode == 0) {
+                    System.out.println("Compresión exitosa: " + archivo.getName());
+                } else {
+                    System.err.println("Error en la compresión: " + archivo.getName());
                 }
-            } catch (IOException e) {
-                System.err.println("Error al leer la salida del proceso para " + nombreArchivoComprimido);
+
+            } catch (InterruptedException e) {
+                System.err.println("Proceso interrumpido para el archivo: " + archivo.getName());
                 e.printStackTrace();
             }
         }
 
-        System.out.println("Todos los procesos de compresión han terminado.");
+        System.out.println("Todas las tareas de compresión han finalizado.");
     }
 }
