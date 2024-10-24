@@ -8,24 +8,24 @@ import java.util.Scanner;
 public class GestorTareas {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         List<File> archivos = new ArrayList<>();
 
         // Ruta donde se guardarán los archivos comprimidos
         String rutaDestinoCompresion = "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/src/Programacion/T01_Procesos/Practica";
 
-        // Paso 1: Selección de archivos
+        // Selección de archivos
         System.out.println("Introduce las rutas de los archivos a comprimir (separados por enter). Introduce 'fin' para terminar:");
         while (true) {
-            String input = scanner.nextLine();
-            if (input.equalsIgnoreCase("fin")) {
+            String ruta = sc.nextLine();
+            if (ruta.equalsIgnoreCase("fin")) {
                 break;
             }
-            File archivo = new File(input);
+            File archivo = new File(ruta);
             if (archivo.exists()) {
                 archivos.add(archivo);
             } else {
-                System.out.println("El archivo " + input + " no existe, por favor introduce una ruta válida.");
+                System.out.println("El archivo " + ruta + " no existe, por favor introduce una ruta válida.");
             }
         }
 
@@ -34,9 +34,11 @@ public class GestorTareas {
             return;
         }
 
-        // Paso 2: Crear y ejecutar los procesos de compresión en paralelo (usando PowerShell en Windows)
+        // Crear y ejecutar los procesos de compresión en paralelo (usando PowerShell en Windows)
         List<Process> procesos = new ArrayList<>();
-        for (File archivo : archivos) {
+
+        for (int i = 0; i < archivos.size(); i++) {
+            File archivo = archivos.get(i);
             try {
                 // Nombre del archivo comprimido en la ruta destino
                 String archivoComprimido = rutaDestinoCompresion + "\\" + archivo.getName() + ".zip";
@@ -46,9 +48,9 @@ public class GestorTareas {
                 //String comando = String.format("tar -cvf %s %s", archivoComprimido, archivo.getAbsolutePath());
 
                 // Iniciar el proceso con cmd.exe para ejecutar PowerShell
-                ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", comando);
-                processBuilder.directory(archivo.getParentFile());
-                Process proceso = processBuilder.start();
+                ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", comando);
+                pb.directory(archivo.getParentFile());
+                Process proceso = pb.start();
                 procesos.add(proceso);
 
                 System.out.println("Iniciando compresión de: " + archivo.getName());
@@ -59,7 +61,7 @@ public class GestorTareas {
             }
         }
 
-        // Paso 3: Esperar a que todos los procesos terminen
+        // Esperar a que todos los procesos terminen
         for (int i = 0; i < procesos.size(); i++) {
             Process proceso = procesos.get(i);
             File archivo = archivos.get(i);
