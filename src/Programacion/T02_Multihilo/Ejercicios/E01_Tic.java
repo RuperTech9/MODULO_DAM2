@@ -1,8 +1,8 @@
 package Programacion.T02_Multihilo.Ejercicios;
 
-public class Tic extends Thread {
+public class E01_Tic extends Thread {
     @Override
     public void run() {
-        System.out.print("Tic ");
+        System.out.print("E01_Tic ");
     }
 }
