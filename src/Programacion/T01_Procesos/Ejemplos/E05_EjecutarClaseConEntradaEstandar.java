@@ -11,10 +11,10 @@ public class E05_EjecutarClaseConEntradaEstandar {
 
 	public static void main(String[] args) throws IOException {
 
-		File directorio = new File("./src/ProgramacionServiciosYProcesos/Ejemplos");
+		File directorio = new File("./src/Programacion/T01_Procesos/Ejemplos");
 		ProcessBuilder pb = new ProcessBuilder("java",
 				"-cp", "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2",
-				"ProgramacionServiciosYProcesos.T01_Procesos.Ejemplos.EjemploLectura");
+				"Programacion.T01_Procesos.Ejemplos.EjemploLectura");
 
 		pb.directory(directorio);
 
