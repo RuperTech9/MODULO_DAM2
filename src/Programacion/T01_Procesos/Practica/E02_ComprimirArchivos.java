@@ -59,18 +59,18 @@ public class E02_ComprimirArchivos {
             Process proceso = pb.start();
 
             // Enviar la lista de archivos al subproceso a través de la entrada estándar
-            try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(proceso.getOutputStream()))) {
+            try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(proceso.getOutputStream()))) {
                 for (int i = 0; i < archivosAComprimir.length; i++) {
-                    writer.write(archivosAComprimir[i]);
-                    writer.newLine(); // Asegurarse de que cada archivo se escribe en una nueva línea
+                    bw.write(archivosAComprimir[i]);
+                    bw.newLine(); // Asegurarse de que cada archivo se escribe en una nueva línea
                 }
-                writer.flush(); // Asegurarse de que los datos se envían al subproceso
+                bw.flush(); // Asegurarse de que los datos se envían al subproceso
             }
 
             // Leer la respuesta del subproceso (salida estándar)
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(proceso.getInputStream()))) {
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()))) {
                 String linea;
-                while ((linea = reader.readLine()) != null) {
+                while ((linea = br.readLine()) != null) {
                     // Leer cada línea de la salida estándar del proceso tar
                     System.out.println(linea);
                 }

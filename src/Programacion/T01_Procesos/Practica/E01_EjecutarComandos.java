@@ -136,7 +136,7 @@ public class E01_EjecutarComandos {
     } //FIN ejecutarComandoConRedireccion
 
     /**
-     * Método auxiliar que imprime la salida estándar y la salida de error del proceso.
+     * Metodo auxiliar que imprime la salida estándar y la salida de error del proceso.
      * Lee y muestra en consola la salida generada por el proceso.
      *
      * @param proceso El objeto de tipo Process cuya salida sera leida.
@@ -148,14 +148,6 @@ public class E01_EjecutarComandos {
             String linea;
             while ((linea = reader.readLine()) != null) {
                 System.out.println(linea);
-            }
-        }
-
-        // Leer la salida de error del proceso
-        try (BufferedReader errorReader = new BufferedReader(new InputStreamReader(proceso.getErrorStream()))) {
-            String errorLinea;
-            while ((errorLinea = errorReader.readLine()) != null) {
-                System.err.println("Error: " + errorLinea);
             }
         }
     }

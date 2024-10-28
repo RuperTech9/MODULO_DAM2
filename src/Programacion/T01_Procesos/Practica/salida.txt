@@ -4,36 +4,31 @@ Configuraci¢n IP de Windows
 
 Adaptador de Ethernet Ethernet:
 
-   Estado de los medios. . . . . . . . . . . : medios desconectados
    Sufijo DNS espec¡fico para la conexi¢n. . : 
+   V¡nculo: direcci¢n IPv6 local. . . : fe80::2564:555:373d:4589%12
+   Direcci¢n IPv4. . . . . . . . . . . . . . : 192.168.30.19
+   M scara de subred . . . . . . . . . . . . : 255.255.255.0
+   Puerta de enlace predeterminada . . . . . : 192.168.30.1
 
 Adaptador de Ethernet Ethernet 2:
 
    Sufijo DNS espec¡fico para la conexi¢n. . : 
-   V¡nculo: direcci¢n IPv6 local. . . : fe80::62be:bb96:642a:ad2%16
+   V¡nculo: direcci¢n IPv6 local. . . : fe80::7185:ecd5:551f:53d2%11
    Direcci¢n IPv4. . . . . . . . . . . . . . : 192.168.56.1
    M scara de subred . . . . . . . . . . . . : 255.255.255.0
    Puerta de enlace predeterminada . . . . . : 
 
-Adaptador de LAN inal mbrica Conexi¢n de  rea local* 1:
+Adaptador de LAN inal mbrica Wi-Fi:
+
+   Estado de los medios. . . . . . . . . . . : medios desconectados
+   Sufijo DNS espec¡fico para la conexi¢n. . : 
+
+Adaptador de LAN inal mbrica Conexi¢n de  rea local* 9:
 
    Estado de los medios. . . . . . . . . . . : medios desconectados
    Sufijo DNS espec¡fico para la conexi¢n. . : 
 
 Adaptador de LAN inal mbrica Conexi¢n de  rea local* 10:
-
-   Estado de los medios. . . . . . . . . . . : medios desconectados
-   Sufijo DNS espec¡fico para la conexi¢n. . : 
-
-Adaptador de LAN inal mbrica Wi-Fi:
-
-   Sufijo DNS espec¡fico para la conexi¢n. . : 
-   V¡nculo: direcci¢n IPv6 local. . . : fe80::84ad:925e:c009:9b5c%12
-   Direcci¢n IPv4. . . . . . . . . . . . . . : 192.168.0.11
-   M scara de subred . . . . . . . . . . . . : 255.255.255.0
-   Puerta de enlace predeterminada . . . . . : 192.168.0.1
-
-Adaptador de Ethernet Conexi¢n de red Bluetooth 2:
 
    Estado de los medios. . . . . . . . . . . : medios desconectados
    Sufijo DNS espec¡fico para la conexi¢n. . : 

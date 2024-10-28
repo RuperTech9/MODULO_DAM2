@@ -103,7 +103,7 @@ public class E03_SincronizacionSubprocesos {
             BufferedReader reader = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
             String linea;
             while ((linea = reader.readLine()) != null) {
-                if (linea.matches("\\d+")) {
+                if (linea.matches("\\d+")) { //"\\d"indica que la línea debe contener uno o más dígitos.
                     return Integer.parseInt(linea.trim()); // Devolver el número encontrado
                 }
             }
