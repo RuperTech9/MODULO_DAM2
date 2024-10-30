@@ -6,7 +6,7 @@ import java.io.*;
 public class EjercicioProfe4_EscribirLinea {
     public static void main(String[] args) throws IOException{
         Scanner sc = new Scanner(System.in);
-        File fichero1 = new File("./src//AccesoADatos//T01_Ficheros//Ejercicios//pruebaEscribir.txt");
+        File fichero1 = new File("./src//AccesoADatos//T01_Ficheros//DB4O//pruebaEscribir.txt");
 
         //Compruebo que el directorio existe.
         if(!fichero1.exists()){
@@ -17,7 +17,7 @@ public class EjercicioProfe4_EscribirLinea {
                 System.out.println("Nombre del nuevo fichero: ");
                 String nombreFichero = sc.nextLine();
 
-                File ficheroUser = new File("./src//AccesoADatos//T01_Ficheros//Ejercicios//" + nombreFichero);
+                File ficheroUser = new File("./src//AccesoADatos//T01_Ficheros//DB4O//" + nombreFichero);
 
                 //Posibles excepciones de espacio y permisos. InputException o OutputException
                 try {
@@ -34,8 +34,8 @@ public class EjercicioProfe4_EscribirLinea {
         } // PRIMER IF CREACION DEL FICHERO
         else{
             try { //usaremos BufferedReader y BufferedWriter
-                BufferedReader br = new BufferedReader(new FileReader("./src//AccesoADatos//T01_Ficheros//Ejercicios//pruebaEscribir.txt")); //Lectura
-                BufferedWriter bw = new BufferedWriter(new FileWriter("./src//AccesoADatos//T01_Ficheros//Ejercicios//pruebaEscribir.txt")); //Escritura
+                BufferedReader br = new BufferedReader(new FileReader("./src//AccesoADatos//T01_Ficheros//DB4O//pruebaEscribir.txt")); //Lectura
+                BufferedWriter bw = new BufferedWriter(new FileWriter("./src//AccesoADatos//T01_Ficheros//DB4O//pruebaEscribir.txt")); //Escritura
 
                 //Escribimos en el fichero
                 bw.write("LINEA 1");

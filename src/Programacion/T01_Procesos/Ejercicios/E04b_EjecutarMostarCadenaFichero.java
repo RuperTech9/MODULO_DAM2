@@ -17,7 +17,7 @@ public class E04b_EjecutarMostarCadenaFichero {
                     "java",
                     "-cp",
                     "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2",
-                    "ProgramacionServiciosYProcesos.T01_Procesos.Ejercicios.E04a_MostrarCadenaFichero",
+                    "ProgramacionServiciosYProcesos.T01_Procesos.DB4O.E04a_MostrarCadenaFichero",
                     cadena);
             Process process = pb.start();
 

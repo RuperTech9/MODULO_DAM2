@@ -4,7 +4,7 @@ import java.io.*;
 
 public class E02_LeerDepartamentos {
     public static void main(String[] args) {
-        File archivo = new File("./src//AccesoADatos//T01_Ficheros/Ejercicios/Departamentos.dat");
+        File archivo = new File("./src//AccesoADatos//T01_Ficheros/DB4O/Departamentos.dat");
 
         // Verificar si el archivo existe
         if (!archivo.exists()) {

@@ -12,8 +12,8 @@ public class E05_EliminarDepartamento {
         int numDeptEliminar = sc.nextInt();
 
         // Archivos para el original y temporal
-        File archivoOriginal = new File("./src//AccesoADatos//T01_Ficheros/Ejercicios/Departamentos.dat");
-        File archivoTemporal = new File("./src//AccesoADatos//T01_Ficheros/Ejercicios/TempDepartamentos.dat");
+        File archivoOriginal = new File("./src//AccesoADatos//T01_Ficheros/DB4O/Departamentos.dat");
+        File archivoTemporal = new File("./src//AccesoADatos//T01_Ficheros/DB4O/TempDepartamentos.dat");
 
         try (DataInputStream dis = new DataInputStream(new FileInputStream(archivoOriginal));
              DataOutputStream dos = new DataOutputStream(new FileOutputStream(archivoTemporal))) {

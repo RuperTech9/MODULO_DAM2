@@ -12,8 +12,8 @@ import java.io.*;
 public class E08_CrearDepartamentoXML {
     public static void main(String[] args) {
         // Ruta del archivo Departamentos.dat
-        String rutaArchivoDepartamentos = "./src//AccesoADatos//T01_Ficheros/Ejercicios/Departamentos.dat"; // Cambia esta ruta a la correcta
-        String rutaArchivoXML = "./src//AccesoADatos//T01_Ficheros/Ejercicios/Departamentos.xml"; // Ruta para guardar el archivo XML
+        String rutaArchivoDepartamentos = "./src//AccesoADatos//T01_Ficheros/DB4O/Departamentos.dat"; // Cambia esta ruta a la correcta
+        String rutaArchivoXML = "./src//AccesoADatos//T01_Ficheros/DB4O/Departamentos.xml"; // Ruta para guardar el archivo XML
 
         // Verificar si el archivo existe
         File archivo = new File(rutaArchivoDepartamentos);

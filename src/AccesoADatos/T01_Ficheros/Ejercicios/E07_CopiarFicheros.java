@@ -4,7 +4,7 @@ import java.io.*;
 
 public class E07_CopiarFicheros {
     public static void main(String[] args) {
-        String rutaArchivoOrigen = "./src//AccesoADatos//T01_Ficheros/Ejercicios/Departamentos.dat";
+        String rutaArchivoOrigen = "./src//AccesoADatos//T01_Ficheros/DB4O/Departamentos.dat";
         String rutaArchivoDestino = "./src//AccesoADatos//T01_Ficheros/Objetos/Departamentos.dat";
 
         File archivoOrigen = new File(rutaArchivoOrigen);

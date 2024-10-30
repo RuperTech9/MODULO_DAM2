@@ -18,7 +18,7 @@ public class E04a_MostrarCadenaFichero {
         String cadena = args[0];
 
         // Modificamos la ruta para guardar en la ubicación solicitada
-        String rutaArchivo = "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/src/ProgramacionServiciosYProcesos/Ejercicios/salida.txt";
+        String rutaArchivo = "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/src/ProgramacionServiciosYProcesos/DB4O/salida.txt";
 
         try (FileWriter writer = new FileWriter(rutaArchivo)) {
             for (int i = 0; i < 5; i++) {

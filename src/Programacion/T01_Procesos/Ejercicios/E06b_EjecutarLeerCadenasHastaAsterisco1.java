@@ -10,7 +10,7 @@ public class E06b_EjecutarLeerCadenasHastaAsterisco1 {
                     "java",
                     "-cp",
                     "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2",
-                    "ProgramacionServiciosYProcesos.T01_Procesos.Ejercicios.E06a_LeerCadenasHastaAsterisco");
+                    "ProgramacionServiciosYProcesos.T01_Procesos.DB4O.E06a_LeerCadenasHastaAsterisco");
 
             // Iniciar el proceso
             Process process = pb.inheritIO().start();

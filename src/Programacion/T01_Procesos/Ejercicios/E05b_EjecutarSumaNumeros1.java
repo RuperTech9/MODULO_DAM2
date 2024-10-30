@@ -14,7 +14,7 @@ public class E05b_EjecutarSumaNumeros1 {
                     "java",
                     "-cp",
                     "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2",
-                    "ProgramacionServiciosYProcesos.T01_Procesos.Ejercicios.E05a_SumaNumeros");
+                    "ProgramacionServiciosYProcesos.T01_Procesos.DB4O.E05a_SumaNumeros");
 
             // Iniciar el proceso
             Process process = pb.inheritIO().start();

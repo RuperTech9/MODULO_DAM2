@@ -15,7 +15,7 @@ public class E02b_LanzaValidador {
 
         // Proceso a ejecutar con el nombre del programa y el argumento
         ProcessBuilder pb = new ProcessBuilder("java", "-cp",
-                "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2", "ProgramacionServiciosYProcesos.T01_Procesos.Ejercicios.E02a_ValidadorArgumentos", "5"); // Cambia el argumento "5" según sea necesario.
+                "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2", "5"); // Cambia el argumento "5" según sea necesario.
 
         // Establecemos el directorio de trabajo
         pb.directory(directorio);

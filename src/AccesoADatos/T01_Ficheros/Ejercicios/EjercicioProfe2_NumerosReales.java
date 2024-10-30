@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class EjercicioProfe2_NumerosReales {
     public static void main(String[] args) {
         // Ruta del archivo binario
-        File fichero = new File("./src//AccesoADatos//T01_Ficheros/Ejercicios/PruebaProfe2_numerosReales.dat");
+        File fichero = new File("./src//AccesoADatos//T01_Ficheros/DB4O/PruebaProfe2_numerosReales.dat");
         
         // Utilizamos Scanner para leer la entrada por teclado
         Scanner scanner = new Scanner(System.in);

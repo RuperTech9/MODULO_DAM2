@@ -18,7 +18,7 @@ public class E03b_EjecutarMostrarCadena {
 
         try {
             // Crear el proceso para ejecutar MostrarCadena con la cadena introducida
-            ProcessBuilder pb = new ProcessBuilder("java", "-cp", "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2", "ProgramacionServiciosYProcesos.T01_Procesos.Ejercicios.E03a_MostrarCadena", cadena);
+            ProcessBuilder pb = new ProcessBuilder("java", "-cp", "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2",cadena);
             Process process = pb.start();
 
             // Capturar la salida del proceso (salida estándar)

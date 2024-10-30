@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class E01_CrearFicheroDepartamentos {
     public static void main(String[] args) {
-        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream("./src//AccesoADatos//T01_Ficheros/Ejercicios/Departamentos.dat"))) {
+        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream("./src//AccesoADatos//T01_Ficheros/DB4O/Departamentos.dat"))) {
             Scanner sc = new Scanner(System.in);
 
             System.out.println("Introduce los datos de los departamentos (escribe -1 para terminar):");

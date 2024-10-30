@@ -19,7 +19,7 @@ public class E03_ModificarDepartamento {
         String nuevaLocalidad = sc.nextLine();
 
         // Archivo que contiene los departamentos
-        File archivo = new File("./src//AccesoADatos//T01_Ficheros/Ejercicios/Departamentos.dat");
+        File archivo = new File("./src//AccesoADatos//T01_Ficheros/DB4O/Departamentos.dat");
 
         try (RandomAccessFile raf = new RandomAccessFile(archivo, "rw")) {
             boolean encontrado = false;

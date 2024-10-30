@@ -8,7 +8,7 @@ public class E09b_EjecutarVerificarPalindromo {
         // Usamos ProcessBuilder para ejecutar el programa VerificarPalindromo
         ProcessBuilder pb = new ProcessBuilder("java",
                 "-cp", "C:/Users/Ruper/IdeaProjects/MODULO_DAM2/out/production/MODULO_DAM2",
-                "ProgramacionServiciosYProcesos.T01_Procesos.Ejercicios.VerificarPalindromo");
+                "ProgramacionServiciosYProcesos.T01_Procesos.DB4O.VerificarPalindromo");
 
         // Redirigir la salida estándar a la consola
         pb.inheritIO();

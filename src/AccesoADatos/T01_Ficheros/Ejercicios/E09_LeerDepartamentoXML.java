@@ -8,7 +8,7 @@ import java.io.File;
 public class E09_LeerDepartamentoXML {
     public static void main(String[] args) {
         // Especifica la ruta del archivo XML
-        String rutaArchivoXML = "./src//AccesoADatos//T01_Ficheros/Ejercicios/Departamentos.xml"; // Cambia esta ruta por la correcta
+        String rutaArchivoXML = "./src//AccesoADatos//T01_Ficheros/DB4O/Departamentos.xml"; // Cambia esta ruta por la correcta
 
         try {
             // Crear la fábrica y el builder para leer el archivo XML
