@@ -1,17 +1,18 @@
 <component name="libraryTable">
   <library name="Java EE 6-Java EE 6">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Documents/jar_files_IntelliJ/jar_files/David/jakarta.activation-api-2.1.0.jar!/" />
-      <root url="jar://$USER_HOME$/Documents/jar_files_IntelliJ/jar_files/David/jaxb-api-2.3.1.jar!/" />
-      <root url="jar://$USER_HOME$/Documents/jar_files_IntelliJ/jar_files/David/jaxb-core-2.2.11.jar!/" />
-      <root url="jar://$USER_HOME$/Documents/jar_files_IntelliJ/jar_files/David/jaxb-core-2.3.0.jar!/" />
-      <root url="jar://$USER_HOME$/Documents/jar_files_IntelliJ/jar_files/David/jaxb-impl-2.2.11.jar!/" />
-      <root url="jar://$USER_HOME$/Documents/jar_files_IntelliJ/jar_files/David/jaxb-runtime-2.3.1.jar!/" />
-      <root url="jar://$USER_HOME$/Documents/jar_files_IntelliJ/jar_files/David/jaxb-xjc-2.2.11.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/jar_files/David/jakarta.activation-api-2.1.0.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/jar_files/David/jaxb-api-2.3.1.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/jar_files/David/jaxb-core-2.2.11.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/jar_files/David/jaxb-core-2.3.0.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/jar_files/David/jaxb-impl-2.2.11.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/jar_files/David/jaxb-runtime-2.3.1.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/jar_files/David/jaxb-xjc-2.2.11.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/db4o-8.0/lib/db4o-8.0.276.16149-all-java5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/Documents/jar_files_IntelliJ/jar_files/David/jaxb-xjc-2.2.11.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/jar_files/David/jaxb-xjc-2.2.11.jar!/" />
     </SOURCES>
   </library>
 </component>
