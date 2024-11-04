@@ -7,7 +7,7 @@ public class Ejemplo2URL {
   public static void main(String[] args) {
 	URL url=null;
 	try {
-		url = new URL("https://www.geo-fs.com/");
+		url = new URL("https://www.discoduroderoer.es/");
 	} catch (MalformedURLException e) {	e.printStackTrace();}
 		
 	BufferedReader in;

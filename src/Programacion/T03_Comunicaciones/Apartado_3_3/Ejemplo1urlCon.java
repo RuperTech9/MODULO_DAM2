@@ -8,7 +8,7 @@ public class Ejemplo1urlCon {
 	URL url=null;
 	URLConnection urlCon=null;
 	try {
-		url = new URL("https://www.discoduroderoer.es/");		
+		url = new URL("https://www.discoduroderoer.es//");
 		urlCon= url.openConnection();
 		
 		BufferedReader in;
