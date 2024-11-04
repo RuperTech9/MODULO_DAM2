@@ -1,22 +1,18 @@
 package Programacion.T02_Multihilo.Practica;
 
-import java.util.Random;
 
 public class TareaCalculo_c implements Runnable{
-    int suma=0;
-    Random random = new Random();
+    int sumaHilos =0;
+    int n;
     int sumaFinal = 2000;
     String nombre;
 
-    public TareaCalculo_c(String nombre){
-        this.nombre = nombre;
-    }
 
     public void run() {
-        while(suma < sumaFinal){
-            int numero = random.nextInt(901) + 100;
-            suma = suma + numero;
-            System.out.println(nombre + " - Suma hilo: " + suma);
+        while(sumaHilos < sumaFinal){
+            n = (int)(Math.random()*901) + 100;
+            sumaHilos = sumaHilos + n;
+            System.out.println(nombre + " - Suma hilo: " + sumaHilos);
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {

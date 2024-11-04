@@ -1,24 +1,24 @@
 package Programacion.T02_Multihilo.Practica;
 
-import java.util.Random;
-
 public class TareaCalculo extends Thread{
     int sumaHilos =0;
-    Random random = new Random();
+    int n;
 
     public TareaCalculo(String nombre){
         super(nombre);
+        System.out.println("CREANDO HILO:" + getName());
     }
 
     public void run() {
         while(true){
-            int numero = random.nextInt(901) + 100;
-            sumaHilos = sumaHilos + numero;
+            n = (int)(Math.random() * 901) + 100;
+            sumaHilos = sumaHilos + n;
             System.out.println(getName() + " - Suma hilo: " + sumaHilos);
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("Hilo " + getName() + " interrumpido.");
+                break;
             }
         }
     }
