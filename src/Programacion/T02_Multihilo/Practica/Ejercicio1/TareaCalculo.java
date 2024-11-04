@@ -1,4 +1,4 @@
-package Programacion.T02_Multihilo.Practica;
+package Programacion.T02_Multihilo.Practica.Ejercicio1;
 
 public class TareaCalculo extends Thread{
     int sumaHilos =0;
@@ -13,9 +13,9 @@ public class TareaCalculo extends Thread{
         while(true){
             n = (int)(Math.random() * 901) + 100;
             sumaHilos = sumaHilos + n;
-            System.out.println(getName() + " - Suma hilo: " + sumaHilos);
+            System.out.println(getName() + " - Suma: " + sumaHilos);
             try {
-                Thread.sleep(5000);
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 System.out.println("Hilo " + getName() + " interrumpido.");
                 break;

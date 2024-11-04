@@ -12,4 +12,4 @@ public class PrimerHiloR implements Runnable {
 			hilo.start();
 		}
 	}
-	}
+}
