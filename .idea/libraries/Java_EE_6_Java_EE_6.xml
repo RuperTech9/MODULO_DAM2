@@ -1,26 +1,18 @@
 <component name="libraryTable">
   <library name="Java EE 6-Java EE 6">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/javax.annotation.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/javax.ejb.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/javax.jms.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/javax.persistence.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/javax.resource.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/javax.transaction.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar JAXB/jakarta.activation-api-2.1.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar JAXB/jaxb-api-2.3.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar JAXB/jaxb-core-2.2.11.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar JAXB/jaxb-core-2.3.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar JAXB/jaxb-impl-2.2.11.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar JAXB/jaxb-runtime-2.3.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar JAXB/jaxb-xjc-2.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/db4o-8.0.276.16149-all-java5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jakarta.activation-api-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jaxb-api-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jaxb-core-2.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jaxb-core-2.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jaxb-impl-2.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jaxb-runtime-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jaxb-xjc-2.2.11.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar JAXB/jaxb-xjc-2.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jaxb-xjc-2.2.11.jar!/" />
     </SOURCES>
   </library>
 </component>
