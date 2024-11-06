@@ -6,11 +6,11 @@ public class Main_H2 {
     public static void main(String[] args) {
         try {
             // Cargar el driver
-            Class.forName("org.sqlite.JDBC");
+            Class.forName("org.h2.Driver");
 
             // Establecemos la conexion con la BD
             Connection conexion = DriverManager.getConnection(
-                    "jdbc:sqlite:C:/Users/Ruper/Documents/sqlite/ejemplo.db"
+                    "jdbc:h2:C:/Users/Ruper/Documents/h2/ejemplo","sa",""
             );
 
             // Preparamos la consulta

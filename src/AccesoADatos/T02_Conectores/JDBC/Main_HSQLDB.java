@@ -2,15 +2,15 @@ package AccesoADatos.T02_Conectores.JDBC;
 
 import java.sql.*;
 
-public class Main_Derby {
+public class Main_HSQLDB {
     public static void main(String[] args) {
         try {
             // Cargar el driver
-            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+            Class.forName("org.hsqldb.jdbcDriver");
 
             // Establecemos la conexion con la BD
             Connection conexion = DriverManager.getConnection(
-                    "jdbc:derby:C:/Users/Ruper/Documents/derby/ejemploDB"
+                    "jdbc:hsqldb:file:C:/Users/Ruper/Documents/hsqldb/ejemplo/ejemplo", "SA",""
             );
 
             // Preparamos la consulta
