@@ -9,10 +9,14 @@
       <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jaxb-impl-2.2.11.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jaxb-runtime-2.3.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jaxb-xjc-2.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/mysql-connector-java-5.1.18-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/sqlite-jdbc-3.8.11.2.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/derby/lib/derby.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/jaxb-xjc-2.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T01_Ficheros/Jar_JAXB/sqlite-jdbc-3.8.11.2.jar!/" />
     </SOURCES>
   </library>
 </component>
