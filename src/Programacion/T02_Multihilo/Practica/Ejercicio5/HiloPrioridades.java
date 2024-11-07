@@ -9,7 +9,7 @@ public class HiloPrioridades extends Thread {
 
     @Override
     public void run() {
-        System.out.println("Iniciando hilo [" + getName() + "] con prioridad " + getPriority());
+        System.out.println("Iniciando " + getName() + " con prioridad " + getPriority());
 
         while (true) {
             switch (getPriority()) {
@@ -30,7 +30,7 @@ public class HiloPrioridades extends Thread {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                System.out.println("Hilo [" + getName() + "] interrumpido.");
+                System.out.println(getName() + " interrumpido.");
                 break;
             }
         }
@@ -38,39 +38,16 @@ public class HiloPrioridades extends Thread {
 
     // Metodo que se ejecuta si la prioridad es 1
     private void tarea1() {
-        System.out.println("Ejecutando tarea1 en [" + getName() + "] con prioridad " + getPriority()+ " - Tarea lenta.");
+        System.out.println(getName() + " con prioridad: " + getPriority()+ " - Tarea lenta.");
     }
 
     // Metodo que se ejecuta si la prioridad es 3
     private void tarea3() {
-        System.out.println("Ejecutando tarea3 en [" + getName() + "] con prioridad " + getPriority()+ " - Tarea normal.");
+        System.out.println(getName() + " con prioridad: " + getPriority()+ " - Tarea normal.");
     }
 
     // Metodo que se ejecuta si la prioridad es 5
     private void tarea5() {
-        System.out.println("Ejecutando tarea5 en [" + getName() + "] con prioridad " + getPriority()+ " - Tarea rápida.");
-    }
-
-    public static void main(String[] args) {
-        HiloPrioridades h1 = new HiloPrioridades("Hilo1", 1);
-        HiloPrioridades h2 = new HiloPrioridades("Hilo2", 3);
-        HiloPrioridades h3 = new HiloPrioridades("Hilo3", 5);
-
-        h1.start();
-        h2.start();
-        h3.start();
-
-        // Ejecuto los hilos durante 5 segundos y luego los interrumpo
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        h1.interrupt();
-        h2.interrupt();
-        h3.interrupt();
-
-        System.out.println("Todos los hilos han sido interrumpidos.");
+        System.out.println(getName() + " con prioridad: " + getPriority()+ " - Tarea rápida.");
     }
 }

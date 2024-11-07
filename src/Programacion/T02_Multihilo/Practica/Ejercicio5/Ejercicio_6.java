@@ -4,27 +4,27 @@ public class Ejercicio_6 {
 
     public static void main(String[] args) {
         // Crear tres hilos con diferentes prioridades
-        HiloPrioridades hiloBajo = new HiloPrioridades("HiloBajo", 1);
-        HiloPrioridades hiloMedio = new HiloPrioridades("HiloMedio", 3);
-        HiloPrioridades hiloAlto = new HiloPrioridades("HiloAlto", 5);
+        HiloPrioridades hilo1 = new HiloPrioridades("Hilo 1", 1);
+        HiloPrioridades hilo2 = new HiloPrioridades("Hilo 2", 3);
+        HiloPrioridades hilo3 = new HiloPrioridades("Hilo 3", 5);
 
         // Iniciar los hilos
-        hiloBajo.start();
-        hiloMedio.start();
-        hiloAlto.start();
+        hilo1.start();
+        hilo2.start();
+        hilo3.start();
 
-        // Permitir que los hilos se ejecuten durante unos segundos
+        // Permito que los hilos se ejecuten durante 10 segundos
         try {
-            Thread.sleep(5000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        // Interrumpir los hilos después de 5 segundos
-        hiloBajo.interrupt();
-        hiloMedio.interrupt();
-        hiloAlto.interrupt();
+        // Interrumpo los hilos después de 10 segundos
+        hilo1.interrupt();
+        hilo2.interrupt();
+        hilo3.interrupt();
 
-        System.out.println("Todos los hilos han sido interrumpidos.");
+        System.out.println("\nTodos los hilos han sido interrumpidos.");
     }
 }
