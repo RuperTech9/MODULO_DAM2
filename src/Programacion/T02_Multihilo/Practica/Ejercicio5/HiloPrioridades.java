@@ -20,7 +20,6 @@ public class HiloPrioridades extends Thread {
                     tarea3();
                     break;
                 case 5:
-                case 10:  // Permitir que las prioridades 5 y 10 ejecuten tarea5()
                     tarea5();
                     break;
                 default:

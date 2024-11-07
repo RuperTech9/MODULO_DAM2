@@ -4,9 +4,9 @@ public class Ejercicio_6 {
 
     public static void main(String[] args) {
         // Crear tres hilos con diferentes prioridades
-        HiloPrioridades hiloBajo = new HiloPrioridades("HiloBajo", Thread.MIN_PRIORITY); // Prioridad mínima (1)
-        HiloPrioridades hiloMedio = new HiloPrioridades("HiloMedio", Thread.NORM_PRIORITY); // Prioridad normal (5)
-        HiloPrioridades hiloAlto = new HiloPrioridades("HiloAlto", Thread.MAX_PRIORITY); // Prioridad máxima (10)
+        HiloPrioridades hiloBajo = new HiloPrioridades("HiloBajo", 1);
+        HiloPrioridades hiloMedio = new HiloPrioridades("HiloMedio", 3);
+        HiloPrioridades hiloAlto = new HiloPrioridades("HiloAlto", 5);
 
         // Iniciar los hilos
         hiloBajo.start();
