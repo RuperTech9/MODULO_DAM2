@@ -1,8 +1,10 @@
 package Programacion.T02_Multihilo.Practica.Ejercicio3;
 
+import java.util.Scanner;
+
 public class CuentaVocales {
-    private final String texto;
-    private static int totalVocales = 0; // Variable compartida para el total de vocales
+    final String texto;
+    static int totalVocales = 0; // Variable compartida para el total de vocales
 
     public CuentaVocales(String texto) {
         this.texto = texto.toLowerCase(); // Convertimos a minúsculas para simplificar
@@ -60,11 +62,15 @@ public class CuentaVocales {
             e.printStackTrace();
         }
 
-        System.out.println("Total de vocales en el texto: " + totalVocales);
+        System.out.println("\nTotal de vocales en el texto: " + totalVocales);
     }
 
     public static void main(String[] args) {
-        String texto = "Este es un ejemplo de texto para contar las vocales en diferentes hilos.";
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduzca el texto: ");
+        String texto = sc.nextLine();
+        System.out.println();
+
         CuentaVocales cuentaVocales = new CuentaVocales(texto);
         cuentaVocales.contarVocales();
     }
