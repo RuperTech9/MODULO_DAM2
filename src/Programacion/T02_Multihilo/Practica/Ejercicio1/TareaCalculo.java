@@ -11,7 +11,7 @@ public class TareaCalculo extends Thread{
 
     public void run() {
         while(true){
-            n = (int)(Math.random() * 901) + 100;
+            n = (int)(Math.random() * 901) + 100; //  genero un número aleatorio entre 100 y 1000
             sumaHilos = sumaHilos + n;
             System.out.println(getName() + " - Suma: " + sumaHilos);
             try {

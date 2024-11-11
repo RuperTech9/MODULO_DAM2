@@ -34,9 +34,11 @@ public class GeneradorArchivos implements Runnable {
 
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-        // Generar identificadores
-        GeneradorIDs generadorIds = new GeneradorIDs();
-        ArrayList<String> identificadores = generadorIds.generarID();
+
+        // Crear una instancia de GeneradorIDs
+        GeneradorIDs generador = new GeneradorIDs();
+        // Generar los identificadores
+        ArrayList<String> identificadores = generador.generarID();
 
         // Crear y ejecutar 100 hilos para generar 100 archivos CSV
         for (int i = 1; i < 101; i++) {
@@ -44,6 +46,7 @@ public class GeneradorArchivos implements Runnable {
             Thread hilo = new Thread(new GeneradorArchivos(identificadores, nombreArchivo));
             hilo.start();
         }
+
         long endTime = System.currentTimeMillis();
         System.out.println("Tiempo de ejecución: " + (endTime - startTime) + " ms");
     }

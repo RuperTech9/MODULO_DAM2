@@ -11,7 +11,7 @@ public class Lenguaje {
         this.numPalabras = numPalabras;
     }
 
-    // Método para generar una palabra aleatoria de entre 5 y 10 caracteres
+    // Metodo para generar una palabra aleatoria de entre 5 y 10 caracteres
     public String generarPalabra() {
         String letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         StringBuilder palabra = new StringBuilder();

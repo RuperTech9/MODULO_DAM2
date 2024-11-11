@@ -46,21 +46,14 @@ public class Colaborar {
     }
 
     public static void main(String[] args) {
-        // Limpiar el archivo final antes de empezar
         limpiarArchivo();
-
-        // Crear una lista para almacenar los hilos
         List<Thread> hilos = new ArrayList<>();
-
-        // Crear e iniciar 10 hilos, cada uno generando un número creciente de palabras
         for (int i = 1; i <= 10; i++) {
             int numPalabras = i * 10;
             Thread hilo = new Thread(() -> escribirPalabrasEnArchivo(numPalabras));
             hilos.add(hilo);
             hilo.start();
         }
-
-        // Esperar a que todos los hilos terminen
         for (Thread hilo : hilos) {
             try {
                 hilo.join();

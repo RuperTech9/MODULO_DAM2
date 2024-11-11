@@ -29,15 +29,13 @@ public class GeneradorIDs {
     public static void main(String[] args) {
         // Crear una instancia de GeneradorIDs
         GeneradorIDs generador = new GeneradorIDs();
-
         // Generar los identificadores
-        ArrayList<String> idsGenerados = generador.generarID();
+        ArrayList<String> idebtificadores = generador.generarID();
 
         // Mostrar el total y cada identificador generado
-        System.out.println("Se generaron " + idsGenerados.size() + " identificadores únicos:");
-        for (int i = 0; i < idsGenerados.size(); i++) {
-            System.out.println(idsGenerados.get(i));
+        System.out.println("Se generaron " + idebtificadores.size() + " identificadores únicos:");
+        for (int i = 0; i < idebtificadores.size(); i++) {
+            System.out.println(idebtificadores.get(i));
         }
     }
-
 }

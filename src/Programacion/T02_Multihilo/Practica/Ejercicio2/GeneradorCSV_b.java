@@ -15,8 +15,13 @@ public class GeneradorCSV_b {
         // Generar el primer archivo
         try (FileWriter writer = new FileWriter(nombreArchivo1)) {
             for (int i = 0; i < 50000; i++) {
+                // Seleccionar un identificador aleatorio utilizando Math.random()
                 String id = identificadores.get((int) (Math.random() * identificadores.size()));
+
+                // Generar un número entre 0 y 20000 utilizando Math.random()
                 int numero = (int) (Math.random() * 20001);
+
+                // Escribir el par en el archivo CSV
                 writer.write(id + "," + numero + "\n");
             }
             System.out.println("Archivo " + nombreArchivo1 + " generado exitosamente.");
@@ -27,8 +32,13 @@ public class GeneradorCSV_b {
         // Generar el segundo archivo
         try (FileWriter writer = new FileWriter(nombreArchivo2)) {
             for (int i = 0; i < 50000; i++) {
+                // Seleccionar un identificador aleatorio utilizando Math.random()
                 String id = identificadores.get((int) (Math.random() * identificadores.size()));
+
+                // Generar un número entre 0 y 20000 utilizando Math.random()
                 int numero = (int) (Math.random() * 20001);
+
+                // Escribir el par en el archivo CSV
                 writer.write(id + "," + numero + "\n");
             }
             System.out.println("Archivo " + nombreArchivo2 + " generado exitosamente.");

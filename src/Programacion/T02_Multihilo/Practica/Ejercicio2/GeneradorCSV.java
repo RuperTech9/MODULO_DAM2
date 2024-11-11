@@ -14,13 +14,13 @@ public class GeneradorCSV {
     public void generarArchivoCSV(String nombreArchivo) {
         try (FileWriter writer = new FileWriter(nombreArchivo)) {
             for (int i = 0; i < 50000; i++) {
-                // Seleccionar un identificador aleatorio utilizando Math.random()
+                // Selecciono un identificador aleatorio utilizando Math.random()
                 String id = identificadores.get((int) (Math.random() * identificadores.size()));
 
-                // Generar un número entre 0 y 20000 utilizando Math.random()
+                // Genero un número entre 0 y 20000 utilizando Math.random()
                 int numero = (int) (Math.random() * 20001);
 
-                // Escribir el par en el archivo CSV
+                // Escribo el par en el archivo CSV
                 writer.write(id + "," + numero + "\n");
             }
             System.out.println("Archivo " + nombreArchivo + " generado exitosamente.");
@@ -30,12 +30,14 @@ public class GeneradorCSV {
     }
 
     public static void main(String[] args) {
-        // Generar identificadores
+        // Creo una instancia de GeneradorIDs
         GeneradorIDs generadorIds = new GeneradorIDs();
         ArrayList<String> identificadores = generadorIds.generarID();
 
-        // Generar archivo CSV con pares
+        // Creo una instancia de GeneradorCSV
         GeneradorCSV generadorCSV = new GeneradorCSV(identificadores);
+
+        // Genero el archivo CSV
         generadorCSV.generarArchivoCSV("./src/Programacion/T02_Multihilo/Practica/Ejercicio2/pares_identificadores.csv");
     }
 }

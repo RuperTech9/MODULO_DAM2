@@ -34,9 +34,11 @@ public class GeneradorArchivos_b implements Runnable {
 
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-        // Generar identificadores
-        GeneradorIDs generadorIds = new GeneradorIDs();
-        ArrayList<String> identificadores = generadorIds.generarID();
+
+        // Crear una instancia de GeneradorIDs
+        GeneradorIDs generador = new GeneradorIDs();
+        // Generar los identificadores
+        ArrayList<String> identificadores = generador.generarID();
 
         // Crear y ejecutar 50 hilos para generar 50 archivos CSV
         for (int i = 1; i < 51; i++) {
