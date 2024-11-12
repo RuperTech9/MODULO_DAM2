@@ -10,7 +10,7 @@ public class Main_HSQLDB {
 
             // Establecemos la conexion con la BD
             Connection conexion = DriverManager.getConnection(
-                    "jdbc:hsqldb:file:C:/Users/Ruper/Documents/hsqldb/ejemplo/ejemplo", "SA",""
+                    "jdbc:hsqldb:file:C:/Users/Ruper/Documents/BBDD/hsqldb/ejemplo/ejemplo", "SA",""
             );
 
             // Preparamos la consulta

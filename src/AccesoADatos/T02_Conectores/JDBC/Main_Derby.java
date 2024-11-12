@@ -10,7 +10,7 @@ public class Main_Derby {
 
             // Establecemos la conexion con la BD
             Connection conexion = DriverManager.getConnection(
-                    "jdbc:derby:C:/Users/Ruper/Documents/derby/ejemploDB"
+                    "jdbc:derby:C:/Users/Ruper/Documents/BBDD/derby/ejemploDB"
             );
 
             // Preparamos la consulta

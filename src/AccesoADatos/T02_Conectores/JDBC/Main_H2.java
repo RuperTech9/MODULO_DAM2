@@ -10,7 +10,7 @@ public class Main_H2 {
 
             // Establecemos la conexion con la BD
             Connection conexion = DriverManager.getConnection(
-                    "jdbc:h2:C:/Users/Ruper/Documents/h2/ejemplo","sa",""
+                    "jdbc:h2:C:/Users/Ruper/Documents/BBDD/h2/ejemplo","sa",""
             );
 
             // Preparamos la consulta
