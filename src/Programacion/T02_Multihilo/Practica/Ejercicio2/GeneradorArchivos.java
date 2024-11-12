@@ -75,6 +75,14 @@ public class GeneradorArchivos implements Runnable {
             hilo.start();
         }
 
+        // Parte B
+        // Crear y ejecutar 50 hilos para generar 50 archivos CSV
+        for (int i = 1; i < 51; i++) {
+            String nombreArchivo = "./src/Programacion/T02_Multihilo/Practica/Ejercicio2/Archivos/archivo_" + i + ".csv";
+            Thread hilo = new Thread(new GeneradorArchivos_b(identificadores, nombreArchivo));
+            hilo.start();
+        }
+
         long endTime = System.currentTimeMillis();
         System.out.println("Tiempo de ejecución: " + (endTime - startTime) + " ms");
     }
