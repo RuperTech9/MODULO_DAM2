@@ -4,13 +4,39 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * La clase GeneradorCSV_b genera dos archivos CSV, cada uno con 50,000 líneas de pares
+ * de identificadores y números aleatorios.
+ * Utiliza una lista de identificadores proporcionada como entrada.
+ *
+ * Ejemplo de uso:
+ * <pre>
+ *     ArrayList<String> ids = generadorIds.generarID();
+ *     GeneradorCSV_b generadorCSV = new GeneradorCSV_b(ids);
+ *     generadorCSV.generarArchivosCSV("archivo1.csv", "archivo2.csv");
+ * </pre>
+ *
+ * @author Ruper
+ * @version 1.0
+ */
 public class GeneradorCSV_b {
     private ArrayList<String> identificadores;
 
+    /**
+     * Constructor que recibe una lista de identificadores para usarlos en la generación de los archivos CSV.
+     *
+     * @param identificadores Lista de identificadores alfanuméricos.
+     */
     public GeneradorCSV_b(ArrayList<String> identificadores) {
         this.identificadores = identificadores;
     }
 
+    /**
+     * Genera dos archivos CSV con 50,000 líneas cada uno, cada línea contiene un identificador y un número aleatorio.
+     *
+     * @param nombreArchivo1 Ruta y nombre del primer archivo CSV.
+     * @param nombreArchivo2 Ruta y nombre del segundo archivo CSV.
+     */
     public void generarArchivosCSV(String nombreArchivo1, String nombreArchivo2) {
         // Generar el primer archivo
         try (FileWriter writer = new FileWriter(nombreArchivo1)) {
@@ -47,6 +73,11 @@ public class GeneradorCSV_b {
         }
     }
 
+    /**
+     * Metodo principal para ejecutar la generación de dos archivos CSV.
+     *
+     * @param args Argumentos de línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         // Generar identificadores
         GeneradorIDs generadorIds = new GeneradorIDs();

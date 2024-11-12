@@ -4,15 +4,40 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * La clase GeneradorArchivos_b implementa Runnable y genera un archivo CSV en un hilo independiente.
+ * Esta clase está diseñada para crear múltiples archivos en paralelo con pares de identificador y número aleatorio.
+ * En esta versión, se crean 50 hilos en lugar de 100 para observar el tiempo de ejecución y el rendimiento.
+ *
+ * Ejemplo de uso:
+ * <pre>
+ *     ArrayList<String> ids = generadorIds.generarID();
+ *     Thread hilo = new Thread(new GeneradorArchivos_b(ids, "archivo.csv"));
+ *     hilo.start();
+ * </pre>
+ *
+ * @author Ruper
+ * @version 1.0
+ */
 public class GeneradorArchivos_b implements Runnable {
     private ArrayList<String> identificadores;
     private String nombreArchivo;
 
+    /**
+     * Constructor que recibe una lista de identificadores y el nombre del archivo de salida.
+     *
+     * @param identificadores Lista de identificadores alfanuméricos.
+     * @param nombreArchivo Nombre del archivo CSV a generar.
+     */
     public GeneradorArchivos_b(ArrayList<String> identificadores, String nombreArchivo) {
         this.identificadores = identificadores;
         this.nombreArchivo = nombreArchivo;
     }
 
+    /**
+     * Metodo run() que genera un archivo CSV con 100,000 líneas de pares de identificador y número aleatorio.
+     * Este metodo se ejecuta en un hilo independiente.
+     */
     @Override
     public void run() {
         try (FileWriter writer = new FileWriter(nombreArchivo)) {
@@ -32,6 +57,12 @@ public class GeneradorArchivos_b implements Runnable {
         }
     }
 
+    /**
+     * Metodo principal que genera múltiples archivos CSV en hilos independientes.
+     * En esta versión se crean 50 hilos para generar 50 archivos CSV y se mide el tiempo de ejecución.
+     *
+     * @param args Argumentos de línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 

@@ -4,15 +4,38 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * La clase GeneradorArchivos implementa Runnable y genera un archivo CSV en un hilo independiente.
+ * Cada archivo contiene 100.000 pares de un identificador y un número aleatorio.
+ *
+ * Ejemplo de uso:
+ * <pre>
+ *     ArrayList<String> ids = generador.generarID();
+ *     Thread hilo = new Thread(new GeneradorArchivos(ids, "archivo.csv"));
+ *     hilo.start();
+ * </pre>
+ *
+ * @author Ruper
+ * @version 1.0
+ */
 public class GeneradorArchivos implements Runnable {
     private ArrayList<String> identificadores;
     private String nombreArchivo;
 
+    /**
+     * Constructor que recibe una lista de identificadores y el nombre del archivo de salida.
+     *
+     * @param identificadores Lista de identificadores alfanuméricos.
+     * @param nombreArchivo Nombre del archivo CSV a generar.
+     */
     public GeneradorArchivos(ArrayList<String> identificadores, String nombreArchivo) {
         this.identificadores = identificadores;
         this.nombreArchivo = nombreArchivo;
     }
 
+    /**
+     * Metodo run() que genera un archivo CSV con pares de identificador y número aleatorio.
+     */
     @Override
     public void run() {
         try (FileWriter writer = new FileWriter(nombreArchivo)) {
@@ -32,6 +55,11 @@ public class GeneradorArchivos implements Runnable {
         }
     }
 
+    /**
+     * Metodo principal que genera múltiples archivos CSV en hilos independientes.
+     *
+     * @param args Argumentos de línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 

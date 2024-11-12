@@ -4,13 +4,37 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * La clase GeneradorCSV genera un archivo CSV con pares de un identificador y un número aleatorio.
+ * Utiliza identificadores de una lista proporcionada.
+ *
+ * Ejemplo de uso:
+ * <pre>
+ *     ArrayList<String> ids = generador.generarID();
+ *     GeneradorCSV generadorCSV = new GeneradorCSV(ids);
+ *     generadorCSV.generarArchivoCSV("miArchivo.csv");
+ * </pre>
+ *
+ * @author Ruper
+ * @version 1.0
+ */
 public class GeneradorCSV {
     private ArrayList<String> identificadores;
 
+    /**
+     * Constructor que recibe una lista de identificadores para usarlos en la generación del CSV.
+     *
+     * @param identificadores Lista de identificadores alfanuméricos.
+     */
     public GeneradorCSV(ArrayList<String> identificadores) {
         this.identificadores = identificadores;
     }
 
+    /**
+     * Genera un archivo CSV con 50.000 líneas, cada una con un identificador y un número aleatorio.
+     *
+     * @param nombreArchivo Ruta y nombre del archivo CSV a generar.
+     */
     public void generarArchivoCSV(String nombreArchivo) {
         try (FileWriter writer = new FileWriter(nombreArchivo)) {
             for (int i = 0; i < 50000; i++) {
@@ -29,6 +53,11 @@ public class GeneradorCSV {
         }
     }
 
+    /**
+     * Metodo principal que genera un archivo CSV con identificadores y números aleatorios.
+     *
+     * @param args Argumentos de línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         // Creo una instancia de GeneradorIDs
         GeneradorIDs generadorIds = new GeneradorIDs();

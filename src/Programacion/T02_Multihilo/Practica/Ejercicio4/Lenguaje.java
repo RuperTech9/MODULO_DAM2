@@ -3,15 +3,38 @@ package Programacion.T02_Multihilo.Practica.Ejercicio4;
 import java.io.*;
 import java.util.Scanner;
 
+/**
+ * La clase Lenguaje genera palabras aleatorias de longitud variable y las guarda en un archivo.
+ * Permite al usuario definir el número de palabras que se generarán.
+ *
+ * Ejemplo de uso:
+ * <pre>
+ *     Lenguaje lenguaje = new Lenguaje(40);
+ *     lenguaje.escribirEnArchivo();
+ *     lenguaje.leerArchivo();
+ * </pre>
+ *
+ * @author Ruper
+ * @version 1.0
+ */
 public class Lenguaje {
     int numPalabras;      // Número de palabras a generar
-    final String RUTA_ARCHIVO = "./src/Programacion/T02_Multihilo/Practica/Ejercicio4/miFichero.txt"; // Nombre del archivo de salida
+    final String RUTA_ARCHIVO = "./src/Programacion/T02_Multihilo/Practica/Ejercicio4/miFicheroLenguaje.txt"; // Nombre del archivo de salida
 
+    /**
+     * Constructor que recibe el número de palabras a generar.
+     *
+     * @param numPalabras Número de palabras a generar.
+     */
     public Lenguaje(int numPalabras) {
         this.numPalabras = numPalabras;
     }
 
-    // Metodo para generar una palabra aleatoria de entre 5 y 10 caracteres
+    /**
+     * Genera una palabra aleatoria de entre 5 y 10 caracteres.
+     *
+     * @return Una palabra generada aleatoriamente.
+     */
     public String generarPalabra() {
         String letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         StringBuilder palabra = new StringBuilder();
@@ -26,7 +49,10 @@ public class Lenguaje {
         return palabra.toString();
     }
 
-    // Metodo para escribir las palabras generadas en el archivo
+    /**
+     * Escribe en el archivo cada palabra generada, una por línea.
+     * El archivo es creado o sobrescrito en cada ejecución.
+     */
     public void escribirEnArchivo() {
         try (FileWriter writer = new FileWriter(RUTA_ARCHIVO)) {
             for (int i = 0; i < numPalabras; i++) {
@@ -37,7 +63,10 @@ public class Lenguaje {
             e.printStackTrace();
         }
     }
-    // Metodo para leer el archivo y mostrar su contenido en la consola
+
+    /**
+     * Lee el contenido del archivo generado y lo muestra en la consola.
+     */
     public void leerArchivo() {
         try (FileReader reader = new FileReader(RUTA_ARCHIVO)) {
             int caracter;
@@ -51,7 +80,11 @@ public class Lenguaje {
         }
     }
 
-    // Metodo principal que solicita datos al usuario e inicia el proceso
+    /**
+     * Metodo principal que solicita el número de palabras al usuario, genera el archivo y lo lee.
+     *
+     * @param args Argumentos de línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

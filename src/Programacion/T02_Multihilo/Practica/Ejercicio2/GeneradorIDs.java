@@ -2,12 +2,29 @@ package Programacion.T02_Multihilo.Practica.Ejercicio2;
 
 import java.util.ArrayList;
 
+/**
+ * La clase GeneradorIDs genera una lista de identificadores alfanuméricos únicos de 6 caracteres.
+ * Cada identificador es único en una lista de tamaño definido.
+ *
+ * Ejemplo de uso:
+ * <pre>
+ *     GeneradorIDs generador = new GeneradorIDs();
+ *     ArrayList<String> ids = generador.generarID();
+ * </pre>
+ *
+ * @author Ruper
+ * @version 1.0
+ */
 public class GeneradorIDs {
     final String CARACTERES = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789";
     final int LONGITUD = 6;
     final int CANTIDAD = 200;
 
-    //  Metodo que crea una lista de IDs alfanuméricos de 6 caracteres cada uno, asegurando que todos sean únicos. Devuelve un ArrayList<String> con los IDs generados.
+    /**
+     * Genera una lista de IDs alfanuméricos de 6 caracteres, garantizando que todos sean únicos.
+     *
+     * @return Un ArrayList<String> que contiene los IDs generados.
+     */
     public ArrayList<String> generarID() {
         ArrayList<String> ID = new ArrayList<>();
 
@@ -26,6 +43,11 @@ public class GeneradorIDs {
         }
         return ID;
     }
+    /**
+     * Metodo principal para ejecutar la generación de identificadores y mostrar el resultado.
+     *
+     * @param args Argumentos de línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         // Crear una instancia de GeneradorIDs
         GeneradorIDs generador = new GeneradorIDs();

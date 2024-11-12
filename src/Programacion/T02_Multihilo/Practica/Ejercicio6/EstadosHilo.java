@@ -1,26 +1,42 @@
 package Programacion.T02_Multihilo.Practica.Ejercicio6;
 
+/**
+ * La clase EstadosHilo muestra los diferentes estados por los que puede pasar un hilo en Java.
+ * Utiliza métodos como wait(), notify(), join() y sleep() para simular la transición entre
+ * los estados NEW, RUNNABLE, TIMED_WAITING, WAITING y TERMINATED.
+ *
+ * Ejemplo de uso:
+ * <pre>
+ *     EstadosHilo estadosHilo = new EstadosHilo();
+ *     estadosHilo.verEstadoHilo();
+ * </pre>
+ *
+ * @author Ruper
+ * @version 1.0
+ */
 public class EstadosHilo {
-
+    /**
+     * Muestra los estados de los hilos a través de diferentes transiciones. Crea y controla
+     * dos hilos (hilo1 y hilo2) para observar sus estados en momentos específicos de ejecución.
+     * Utiliza los métodos wait(), notify(), join() y sleep() para simular transiciones.
+     *
+     * @throws InterruptedException Si el hilo principal es interrumpido.
+     */
     public void verEstadoHilo() throws InterruptedException {
-        // Hilo principal para demostrar los diferentes estados
         Thread hilo1 = new Thread(() -> {
             try {
                 // Sleep para simular el estado WAITING
                 Thread.sleep(1000);
-
                 synchronized (this) { // Solo se puede llamar a wait() dentro de un bloque sincronizado
                     System.out.println("Estado hilo 1 con wait(): WAITING");
                     wait(); // Entra en WAITING hasta que reciba notify()
                 }
-
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 System.out.println("Hilo interrumpido");
             }
         });
 
-        // Imprimir estados en diferentes puntos clave
         System.out.println("Estado hilo 1 inicial: " + hilo1.getState()); // NEW
         hilo1.start();
         System.out.println("Estado hilo 1 después de iniciar: " + hilo1.getState()); // RUNNABLE
@@ -54,7 +70,12 @@ public class EstadosHilo {
         System.out.println("Estado hilo1 despues de join(): " + hilo1.getState());
     }
 
-
+    /**
+     * Metodo principal para ejecutar el programa. Crea una instancia de EstadosHilo
+     * y ejecuta verEstadoHilo() para mostrar los estados de los hilos.
+     *
+     * @param args Argumentos de línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         EstadosHilo estadosHilo = new EstadosHilo();
         try {

@@ -2,27 +2,63 @@ package Programacion.T02_Multihilo.Practica.Ejercicio3;
 
 import java.util.Scanner;
 
+/**
+ * La clase CuentaVocales utiliza 5 hilos para contar el número total de vocales en un texto dado.
+ * Cada hilo cuenta una vocal específica (a, e, i, o, u) y actualiza de manera sincronizada
+ * una variable compartida que representa el total de vocales encontradas en el texto.
+ *
+ * Ejemplo de uso:
+ * <pre>
+ *     CuentaVocales cuentaVocales = new CuentaVocales("Este es un ejemplo de texto.");
+ *     cuentaVocales.contarVocales();
+ * </pre>
+ *
+ * @author Ruper
+ * @version 1.0
+ */
 public class CuentaVocales {
     final String texto;
     static int totalVocales = 0; // Variable compartida para el total de vocales
 
+    /**
+     * Constructor que recibe el texto en el cual se realizará el conteo de vocales.
+     *
+     * @param texto Texto sobre el cual se realizará el conteo de vocales.
+     */
     public CuentaVocales(String texto) {
         this.texto = texto.toLowerCase(); // Convertimos a minúsculas para simplificar
     }
 
-    // Metodo sincronizado para incrementar el conteo total de vocales
+    /**
+     * Incrementa el total de vocales de manera sincronizada para evitar problemas de concurrencia.
+     *
+     * @param cantidad Número de vocales encontradas que se sumarán al total.
+     */
     public synchronized static void incrementarTotal(int cantidad) {
         totalVocales += cantidad;
     }
 
-    // Clase interna para contar una vocal específica
+    /**
+     * Clase interna ContadorVocal que implementa Runnable y se encarga de contar la frecuencia
+     * de una vocal específica en el texto. Al finalizar, actualiza el total de vocales de manera
+     * sincronizada.
+     */
     private class ContadorVocal implements Runnable {
         private final char vocal;
 
+        /**
+         * Constructor que recibe la vocal específica a contar en el texto.
+         *
+         * @param vocal La vocal a contar.
+         */
         public ContadorVocal(char vocal) {
             this.vocal = vocal;
         }
 
+        /**
+         * Ejecuta el conteo de la vocal específica en el texto y actualiza el total
+         * de vocales. Imprime la cantidad encontrada de dicha vocal.
+         */
         @Override
         public void run() {
             int contador = 0;
@@ -36,7 +72,10 @@ public class CuentaVocales {
         }
     }
 
-    // Metodo para iniciar el conteo con 5 hilos, uno por cada vocal
+    /**
+     * Inicia el proceso de conteo de vocales usando 5 hilos, uno para cada vocal.
+     * Cada hilo cuenta su vocal respectiva y al finalizar se muestra el total de vocales encontradas.
+     */
     public void contarVocales() {
         Thread hiloA = new Thread(new ContadorVocal('a'));
         Thread hiloE = new Thread(new ContadorVocal('e'));
@@ -65,6 +104,12 @@ public class CuentaVocales {
         System.out.println("\nTotal de vocales en el texto: " + totalVocales);
     }
 
+    /**
+     * Metodo principal para ejecutar el programa. Solicita al usuario que ingrese un texto,
+     * crea una instancia de CuentaVocales y ejecuta el conteo de vocales.
+     *
+     * @param args Argumentos de línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduzca el texto: ");
@@ -75,25 +120,3 @@ public class CuentaVocales {
         cuentaVocales.contarVocales();
     }
 }
-
-
-/*
-Explicación del Código
-Variable Compartida:
-
-totalVocales: Es una variable estática que representa el número total de vocales en el texto. Se utiliza una única variable para que todos los hilos puedan acceder y actualizarla.
-Sincronización:
-
-El método incrementarTotal está sincronizado para evitar condiciones de carrera al actualizar totalVocales. Esto garantiza que solo un hilo pueda incrementar el total de vocales a la vez.
-Asignación de Tareas:
-
-La clase interna ContadorVocal implementa Runnable y representa un contador específico para cada vocal (a, e, i, o, u).
-Cada hilo cuenta una vocal específica y luego llama a incrementarTotal para actualizar el conteo total.
-Inicio y Ejecución de Hilos:
-
-En el método contarVocales, se crean 5 hilos, cada uno con una instancia de ContadorVocal para una vocal específica.
-Los hilos se inician y luego el método join se utiliza para esperar a que cada hilo termine antes de imprimir el total de vocales.
-Salida:
-
-El programa muestra el conteo de cada vocal en la consola y luego imprime el total de vocales al final.
- */

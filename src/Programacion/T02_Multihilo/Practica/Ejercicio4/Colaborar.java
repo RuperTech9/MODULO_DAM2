@@ -6,11 +6,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * La clase Colaborar utiliza múltiples hilos de la clase Lenguaje para generar palabras en un archivo común.
+ * Cada hilo genera un número creciente de palabras y las escribe en el archivo, colaborando en la escritura de un archivo final.
+ *
+ * Ejemplo de uso:
+ * <pre>
+ *     Colaborar.main(new String[]{});
+ * </pre>
+ *
+ * @author Ruper
+ * @version 1.0
+ */
 public class Colaborar {
 
     private static final String RUTA_ARCHIVO = "./src/Programacion/T02_Multihilo/Practica/Ejercicio4/miFicheroColaborar.txt";
 
-    // Metodo para limpiar el archivo al inicio
+    /**
+     * Limpia el contenido del archivo antes de iniciar la escritura de los hilos.
+     */
     private static void limpiarArchivo() {
         try (FileWriter writer = new FileWriter(RUTA_ARCHIVO)) {
             // Esto solo abre y cierra el archivo para borrarlo, no escribe nada
@@ -19,7 +33,12 @@ public class Colaborar {
         }
     }
 
-    // Metodo sincronizado que garantiza que solo un hilo pueda escribir en el archivo a la vez, evitando problemas de concurrencia.
+    /**
+     * Escribe palabras generadas por un hilo en el archivo, con un número de palabras específico.
+     * Este metodo es sincronizado para evitar problemas de concurrencia.
+     *
+     * @param numPalabras Número de palabras que el hilo generará y escribirá en el archivo.
+     */
     private static synchronized void escribirPalabrasEnArchivo(int numPalabras) {
         try (FileWriter writer = new FileWriter(RUTA_ARCHIVO, true)) { // Modo append para agregar sin sobrescribir
             Lenguaje lenguaje = new Lenguaje(numPalabras);
@@ -32,7 +51,9 @@ public class Colaborar {
         }
     }
 
-    // Metodo para leer y mostrar el contenido del archivo final
+    /**
+     * Lee y muestra el contenido del archivo generado por múltiples hilos.
+     */
     private static void leerArchivoFinal() {
         try (FileReader reader = new FileReader(RUTA_ARCHIVO)) {
             int caracter;
@@ -45,6 +66,12 @@ public class Colaborar {
         }
     }
 
+    /**
+     * Metodo principal que ejecuta la colaboración multihilo, creando y ejecutando 10 hilos,
+     * cada uno con un número creciente de palabras, y asegura la sincronización.
+     *
+     * @param args Argumentos de línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         limpiarArchivo();
         List<Thread> hilos = new ArrayList<>();
