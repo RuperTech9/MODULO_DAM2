@@ -12,8 +12,8 @@
       <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T02_Conectores/JAR_Conectores/derby.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T02_Conectores/JAR_Conectores/h2-2.3.232.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T02_Conectores/JAR_Conectores/hsqldb.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T02_Conectores/JAR_Conectores/mysql-connector-java-5.1.38.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T02_Conectores/JAR_Conectores/sqlite-jdbc-3.8.11.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T02_Conectores/JAR_Conectores/mysql-connector-j-8.0.31.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

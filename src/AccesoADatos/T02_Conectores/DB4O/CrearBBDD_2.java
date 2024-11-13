@@ -3,7 +3,7 @@ package AccesoADatos.T02_Conectores.DB4O;
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
-public class Main2 {
+public class CrearBBDD_2 {
     static String BDName = "./src//AccesoADatos//T02_Conectores//DB4O//EMPLEDEP.YAP";
 
     public static void main(String[] args) {

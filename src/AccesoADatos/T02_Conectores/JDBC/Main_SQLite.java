@@ -10,7 +10,7 @@ public class Main_SQLite {
 
             // Establecemos la conexion con la BD
             Connection conexion = DriverManager.getConnection(
-                    "jdbc:sqlite:C:/Users/Ruper/Documents/BBDD/sqlite/ejemplo.db"
+                    "jdbc:sqlite:C:/Users/Ruper/Documents/BBDD/SQLite3/ejemplo.db"
             );
 
             // Preparamos la consulta

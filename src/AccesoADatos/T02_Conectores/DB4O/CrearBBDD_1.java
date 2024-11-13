@@ -3,7 +3,7 @@ package AccesoADatos.T02_Conectores.DB4O;
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 
-public class Main {
+public class CrearBBDD_1 {
     static String BDPer = "./src//AccesoADatos//T02_Conectores//DB4O//DBPersonas.yap";
 
     public static void main(String[] args) {
@@ -21,6 +21,8 @@ public class Main {
         db.store(p3);
         db.store(p4);
 
+        System.out.println("Base de Datos creada: " + db);
+
         db.close(); // cerrar base de datos
     } // fin metodo main
-} // fin de la clase Main
+} // fin de la clase CrearBBDD_1

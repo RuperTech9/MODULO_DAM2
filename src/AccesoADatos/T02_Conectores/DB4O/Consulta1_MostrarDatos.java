@@ -4,7 +4,7 @@ import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 
-public class Consulta1 {
+public class Consulta1_MostrarDatos {
     static String BDPer = "./src//AccesoADatos//T02_Conectores//DB4O//DBPersonas.yap";
     public static void main(String[] args) {
         ObjectContainer db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), BDPer);

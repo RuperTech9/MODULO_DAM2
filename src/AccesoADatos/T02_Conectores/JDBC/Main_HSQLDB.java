@@ -10,12 +10,12 @@ public class Main_HSQLDB {
 
             // Establecemos la conexion con la BD
             Connection conexion = DriverManager.getConnection(
-                    "jdbc:hsqldb:file:C:/Users/Ruper/Documents/BBDD/hsqldb/ejemplo/ejemplo", "SA",""
+                    "jdbc:hsqldb:file:C:/Users/Ruper/Documents/BBDD/HSQLDB/ejemplo/ejemploDB", "SA",""
             );
 
             // Preparamos la consulta
             Statement sentencia = conexion.createStatement();
-            String sql = "SELECT * FROM departamentos";
+            String sql = "SELECT * FROM DEPARTAMENTOS";
             ResultSet resul = sentencia.executeQuery(sql);
 
             // Recorremos el resultado para visualizar cada fila

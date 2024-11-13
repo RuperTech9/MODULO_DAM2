@@ -6,11 +6,14 @@ public class Main_MYSQL {
     public static void main(String[] args) {
         try {
             // Cargar el driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            /*
+             * A partir de MySQL Connector/J versión 8.x, el controlador recomendado es com.mysql.cj.jdbc.Driver en lugar de com.mysql.jdbc.Driver.
+             */
 
             // Establecemos la conexion con la BD
             Connection conexion = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1/ejemplo", "ejemplo", "ejemplo"
+                    "jdbc:mysql://127.0.0.1/ejemplo", "ruper", "A1a2A3a4A5"
             );
 
             // Preparamos la consulta

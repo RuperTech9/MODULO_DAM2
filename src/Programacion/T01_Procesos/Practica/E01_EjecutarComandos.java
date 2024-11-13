@@ -173,5 +173,5 @@ public class E01_EjecutarComandos {
         System.out.println("\nMETODO 3: ejecuto 'ipconfig' con redirección a salida.txt:");
         ejecutar.ejecutarComandoConRedireccion("ipconfig", archivoSalida);
         System.out.println("Salida redirigida a 'salida.txt'");
-    } //FIN Main
+    } //FIN CrearBBDD_1
 } //FIN CLASE E01_EjecutarComandos
