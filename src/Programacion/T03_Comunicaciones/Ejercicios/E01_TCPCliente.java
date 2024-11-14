@@ -9,7 +9,7 @@ public class E01_TCPCliente {
         int puerto = 6000;
 
         // Abrir socket
-        Socket cliente = new Socket(host, puerto);
+        Socket cliente = new Socket(host, puerto); // El cliente se conecta al servidor
 
         // Mostrar información de la conexión
         InetAddress direccion = cliente.getInetAddress();
