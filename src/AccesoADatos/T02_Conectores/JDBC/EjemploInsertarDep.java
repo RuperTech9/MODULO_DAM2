@@ -2,6 +2,10 @@ package AccesoADatos.T02_Conectores.JDBC;
 
 import java.sql.*;
 
+/**
+ * En el campo Program arguments, ingresa los valores que deseas pasar
+ */
+
 public class EjemploInsertarDep {
     public static void main(String[] args) {
         try {

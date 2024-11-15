@@ -3,7 +3,7 @@ CREATE DATABASE ejemplo;
 USE ejemplo;
 
 CREATE TABLE departamentos (
-     dept_no TINYINT(2) NOT NULL PRIMARY KEY,
+     dept_no TINYINT NOT NULL PRIMARY KEY,
      dnombre VARCHAR(15),
      loc VARCHAR(15)
  );
