@@ -6,12 +6,12 @@ import java.net.*;
 public class E04_TCPServidorMulti {
     public static void main(String[] args) {
         int puerto = 6000;
-        int maxClientes = 3; // Máximo número de clientes a atender
+        int CLIENTES = 3; // Máximo número de clientes a atender
 
         try (ServerSocket servidor = new ServerSocket(puerto)) {
             System.out.println("Servidor escuchando en el puerto " + puerto);
 
-            for (int i = 1; i <= maxClientes; i++) {
+            for (int i = 1; i <= CLIENTES; i++) {
                 System.out.println("Esperando al cliente " + i + "...");
 
                 // Aceptar la conexión del cliente
@@ -26,7 +26,7 @@ public class E04_TCPServidorMulti {
                 System.out.println("Conexión con cliente " + i + " cerrada");
             }
 
-            System.out.println("\nClientes atendidos: " + maxClientes);
+            System.out.println("\nClientes atendidos: " + CLIENTES);
 
         } catch (IOException e) {
             System.err.println("Error en el servidor: " + e.getMessage());
