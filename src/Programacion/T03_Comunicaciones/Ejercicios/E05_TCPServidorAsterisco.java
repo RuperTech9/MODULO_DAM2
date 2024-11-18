@@ -3,7 +3,7 @@ package Programacion.T03_Comunicaciones.Ejercicios;
 import java.io.*;
 import java.net.*;
 
-public class E05_TCPServidorEcho {
+public class E05_TCPServidorAsterisco {
     public static void main(String[] args) {
         int puerto = 6000;
 
@@ -29,14 +29,13 @@ public class E05_TCPServidorEcho {
 
                 // Mostrar el mensaje recibido y enviarlo de vuelta al cliente
                 System.out.println("Mensaje recibido: " + mensaje);
-                salida.writeUTF("Echo: " + mensaje);
+                salida.writeUTF(mensaje);
             }
 
             // Cerrar conexiones
             entrada.close();
             salida.close();
             cliente.close();
-            System.out.println("Conexión cerrada");
 
         } catch (IOException e) {
             System.err.println("Error en el servidor: " + e.getMessage());

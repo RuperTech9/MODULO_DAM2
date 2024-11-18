@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
-public class E05_TCPClienteEcho {
+public class E05_TCPClienteAsterisco {
     public static void main(String[] args) {
         String host = "localhost";
         int puerto = 6000;
@@ -20,7 +20,7 @@ public class E05_TCPClienteEcho {
             // Enviar cadenas hasta introducir un asterisco
             String cadena;
             while (true) {
-                System.out.print("Introduce una cadena (o '*' para salir): ");
+                System.out.print("Introduce una cadena ('*' para salir): ");
                 cadena = sc.nextLine();
 
                 // Enviar el cadena al servidor
