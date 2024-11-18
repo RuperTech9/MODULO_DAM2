@@ -1,0 +1,18 @@
+Debes situarte en el directorio base del paquete: C:\Users\Ruper\IdeaProjects\MODULO_DAM2\src.
+
+Para hacerlo:
+Abre el CMD.
+
+2. Compilar el programa
+Desde el directorio raíz del paquete (src), compila el archivo .java indicando su ruta completa:
+
+cmd
+javac Programacion\T03_Comunicaciones\Ejercicios\E04_TCPServidorMulti.java
+Esto generará un archivo .class en la misma carpeta del archivo .java.
+
+3. Ejecutar el programa
+Después de compilar, ejecuta el programa especificando el paquete completo. Desde el directorio raíz del paquete:
+
+cmd
+Copiar código
+java Programacion.T03_Comunicaciones.Ejercicios.E04_TCPServidorMulti
