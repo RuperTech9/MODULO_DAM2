@@ -45,7 +45,7 @@ public class HiloPrioridades extends Thread {
                 case 3:
                     tarea3();
                     break;
-                case 10:
+                case 5:
                     tarea5();
                     break;
                 default:
