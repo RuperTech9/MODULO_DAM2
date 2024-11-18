@@ -15,19 +15,19 @@ public class E05_TCPClienteEcho {
             // Flujos de entrada y salida
             DataOutputStream salida = new DataOutputStream(cliente.getOutputStream());
             DataInputStream entrada = new DataInputStream(cliente.getInputStream());
-            Scanner scanner = new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
 
             // Enviar cadenas hasta introducir un asterisco
-            String mensaje;
+            String cadena;
             while (true) {
                 System.out.print("Introduce una cadena (o '*' para salir): ");
-                mensaje = scanner.nextLine();
+                cadena = sc.nextLine();
 
-                // Enviar el mensaje al servidor
-                salida.writeUTF(mensaje);
+                // Enviar el cadena al servidor
+                salida.writeUTF(cadena);
 
-                // Terminar si el mensaje es un asterisco
-                if (mensaje.equals("*")) {
+                // Terminar si el cadena es un asterisco
+                if (cadena.equals("*")) {
                     System.out.println("Terminando la conexión.");
                     break;
                 }
@@ -40,8 +40,8 @@ public class E05_TCPClienteEcho {
             // Cerrar conexiones
             entrada.close();
             salida.close();
-            scanner.close();
-            System.out.println("Conexión cerrada");
+            sc.close();
+
 
         } catch (IOException e) {
             System.err.println("Error en el cliente: " + e.getMessage());

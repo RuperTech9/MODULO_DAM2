@@ -2,6 +2,7 @@ package Programacion.T03_Comunicaciones.Ejercicios;
 
 import java.io.*;
 import java.net.*;
+import java.util.Scanner;
 
 public class E02_TCPServidorMayusculas {
     public static void main(String[] args) {
@@ -14,13 +15,16 @@ public class E02_TCPServidorMayusculas {
             Socket cliente = servidor.accept();
             System.out.println("Cliente conectado");
 
+            Scanner sc = new Scanner(System.in);
+
             // Flujos de entrada y salida
             DataOutputStream salida = new DataOutputStream(cliente.getOutputStream());
             DataInputStream entrada = new DataInputStream(cliente.getInputStream());
 
-            // Enviar mensaje en mayúsculas
-            String mensaje = "HOLA CLIENTE, ¿CÓMO ESTÁS?";
-            System.out.println("Enviando mensaje en mayúsculas: " + mensaje);
+            // Leer mensaje del usuario y enviarlo en mayúsculas
+            System.out.print("Escribe el mensaje en mayúsculas para enviar al cliente: ");
+            String mensaje = sc.nextLine().toUpperCase(); // Convertir a mayúsculas por si el usuario escribe en minúsculas
+            System.out.println("Envío mensaje en mayúsculas: " + mensaje);
             salida.writeUTF(mensaje);
 
             // Recibir el mensaje en minúsculas del cliente

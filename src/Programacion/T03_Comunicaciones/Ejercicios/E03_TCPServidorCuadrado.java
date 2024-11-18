@@ -10,7 +10,7 @@ public class E03_TCPServidorCuadrado {
         try (ServerSocket servidor = new ServerSocket(puerto)) {
             System.out.println("Servidor escuchando en el puerto " + puerto);
 
-            // Espera la conexión del cliente
+            // Espero la conexión del cliente
             Socket cliente = servidor.accept();
             System.out.println("Cliente conectado");
 
@@ -18,20 +18,19 @@ public class E03_TCPServidorCuadrado {
             DataInputStream entrada = new DataInputStream(cliente.getInputStream());
             DataOutputStream salida = new DataOutputStream(cliente.getOutputStream());
 
-            // Recibe el número del cliente
+            // Recibo el número del cliente
             int numero = entrada.readInt();
             System.out.println("Número recibido del cliente: " + numero);
 
-            // Calcula el cuadrado del número y lo envía al cliente
+            // Calculo el cuadrado del número y lo envío al cliente
             int cuadrado = numero * numero;
             System.out.println("Enviando el cuadrado del número: " + cuadrado);
             salida.writeInt(cuadrado);
 
-            // Cerrar conexiones
+            // Cierro conexiones
             entrada.close();
             salida.close();
             cliente.close();
-            System.out.println("Conexión cerrada");
 
         } catch (IOException e) {
             System.err.println("Error en el servidor: " + e.getMessage());

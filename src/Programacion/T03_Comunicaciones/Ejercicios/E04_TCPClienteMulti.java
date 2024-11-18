@@ -8,19 +8,17 @@ public class E04_TCPClienteMulti {
         String host = "localhost";
         int puerto = 6000;
 
-        try (Socket cliente = new Socket(host, puerto)) {
-            System.out.println("Conectado al servidor en " + host + ":" + puerto);
+        try (Socket socket = new Socket(host, puerto);
+             DataInputStream entrada = new DataInputStream(socket.getInputStream());
+             DataOutputStream salida = new DataOutputStream(socket.getOutputStream())) {
 
-            // Crear flujo de entrada para recibir el mensaje del servidor
-            DataInputStream entrada = new DataInputStream(cliente.getInputStream());
+            // Recibir mensaje del servidor
+            String mensajeServidor = entrada.readUTF();
+            System.out.println("Mensaje del servidor: " + mensajeServidor);
 
-            // Leer el mensaje recibido del servidor
-            String mensaje = entrada.readUTF();
-            System.out.println("Mensaje recibido del servidor: " + mensaje);
-
-            // Cerrar conexiones
-            entrada.close();
-            System.out.println("Conexión cerrada");
+            // Responder al servidor
+            String mensajeCliente = "Listo!";
+            salida.writeUTF(mensajeCliente);
 
         } catch (IOException e) {
             System.err.println("Error en el cliente: " + e.getMessage());

@@ -20,9 +20,9 @@ public class E02_TCPClienteMinusculas {
             System.out.println("Mensaje recibido del servidor en mayúsculas: " + mensajeServidor);
 
             // Convertir a minúsculas y enviar de vuelta al servidor
-            String mensajeEnMinusculas = mensajeServidor.toLowerCase();
-            salida.writeUTF(mensajeEnMinusculas);
-            System.out.println("Mensaje enviado en minúsculas al servidor: " + mensajeEnMinusculas);
+            String mensajeMinusculas = mensajeServidor.toLowerCase();
+            salida.writeUTF(mensajeMinusculas);
+            System.out.println("Mensaje enviado en minúsculas al servidor: " + mensajeMinusculas);
 
             // Cerrar conexiones
             entrada.close();
