@@ -24,3 +24,4 @@ public class ComunicacionHilos_Main {
         hilo2.start();
     }
 }
+
