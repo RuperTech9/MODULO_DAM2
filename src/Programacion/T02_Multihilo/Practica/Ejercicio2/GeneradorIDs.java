@@ -52,12 +52,12 @@ public class GeneradorIDs {
         // Crear una instancia de GeneradorIDs
         GeneradorIDs generador = new GeneradorIDs();
         // Generar los identificadores
-        ArrayList<String> idebtificadores = generador.generarID();
+        ArrayList<String> identificadores = generador.generarID();
 
         // Mostrar el total y cada identificador generado
-        System.out.println("Se generaron " + idebtificadores.size() + " identificadores únicos:");
-        for (int i = 0; i < idebtificadores.size(); i++) {
-            System.out.println(idebtificadores.get(i));
+        System.out.println("Se generaron " + identificadores.size() + " identificadores únicos:");
+        for (int i = 0; i < identificadores.size(); i++) {
+            System.out.println(identificadores.get(i));
         }
     }
 }

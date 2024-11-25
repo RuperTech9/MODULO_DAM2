@@ -17,7 +17,7 @@ package Programacion.T02_Multihilo.Practica.Ejercicio6;
 public class EstadosHilo {
     /**
      * Muestra los estados de los hilos a través de diferentes transiciones. Crea y controla
-     * dos hilos (hilo1 y hilo2) para observar sus estados en momentos específicos de ejecución.
+     * dos hilos (hilo1 e hilo2) para observar sus estados en momentos específicos de ejecución.
      * Utiliza los métodos wait(), notify(), join() y sleep() para simular transiciones.
      *
      * @throws InterruptedException Si el hilo principal es interrumpido.
