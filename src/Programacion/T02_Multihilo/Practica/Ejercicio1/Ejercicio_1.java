@@ -21,6 +21,7 @@ public class Ejercicio_1 {
 
             Thread hilo = new Thread(hilos); // Parte b y c
             hilo.start();
+
         }
         System.out.println("30 HILOS INICIADOS...");
     }
