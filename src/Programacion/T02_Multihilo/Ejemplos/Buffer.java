@@ -17,7 +17,7 @@ public class Buffer {
         while (buffer.isEmpty()) {
             wait();
         }
-        int elemento = buffer.remove(1);
+        int elemento = buffer.remove(0);
         System.out.println("Elemento eliminado del buffer: " + elemento);
     }
 

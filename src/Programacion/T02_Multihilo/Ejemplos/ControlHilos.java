@@ -1,8 +1,10 @@
 package Programacion.T02_Multihilo.Ejemplos;
 
 public class ControlHilos extends Thread {
-    private boolean ejecutar = true;
-    private static Buffer buffer = new Buffer();
+    boolean ejecutar = true;
+    Buffer buffer = new Buffer();
+
+
 
     @Override
     public void run() {
