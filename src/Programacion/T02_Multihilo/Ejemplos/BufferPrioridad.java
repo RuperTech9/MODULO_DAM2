@@ -2,9 +2,10 @@ package Programacion.T02_Multihilo.Ejemplos;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 
 public class BufferPrioridad {
-    private final ArrayList<Integer> lista = new ArrayList<>();
+    private final HashSet<Integer> lista = new HashSet<Integer>();
 
     public synchronized void agregar(int numero) {
         lista.add(numero);
