@@ -14,32 +14,34 @@ public class E07_MulticastServidor {
     private static InetAddress grupo;
 
     public static void main(String[] args) {
+        // Configuración del JFrame
         JFrame frame = new JFrame("Servidor Multicast");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
-        frame.setLayout(new BorderLayout());
+        frame.setLayout(null);
 
+        // Campo de texto para escribir el mensaje
         JTextField textField = new JTextField();
-        JLabel label = new JLabel("Texto a enviar");
-        JPanel inputPanel = new JPanel(new BorderLayout());
-        inputPanel.add(label, BorderLayout.NORTH);
-        inputPanel.add(textField, BorderLayout.CENTER);
+        textField.setBounds(20, 20, 240, 30);
+        frame.add(textField);
 
+        // Botón para enviar el mensaje
         JButton enviarButton = new JButton("Enviar");
-        JButton salirButton = new JButton("Salir");
+        enviarButton.setBounds(270, 20, 100, 30);
+        frame.add(enviarButton);
 
+        // Área de texto para mostrar mensajes enviados
         JTextArea textArea = new JTextArea();
         textArea.setEditable(false);
-        textArea.setBorder(BorderFactory.createTitledBorder("Visualización de mensajes enviados"));
         JScrollPane scrollPane = new JScrollPane(textArea);
+        scrollPane.setBounds(20, 60, 350, 150);
+        scrollPane.setBorder(BorderFactory.createTitledBorder("Visualización de mensajes enviados"));
+        frame.add(scrollPane);
 
-        JPanel buttonPanel = new JPanel(new GridLayout(2, 1, 5, 5));
-        buttonPanel.add(enviarButton);
-        buttonPanel.add(salirButton);
-
-        frame.add(inputPanel, BorderLayout.NORTH);
-        frame.add(scrollPane, BorderLayout.CENTER);
-        frame.add(buttonPanel, BorderLayout.EAST);
+        // Botón para salir
+        JButton salirButton = new JButton("Salir");
+        salirButton.setBounds(270, 220, 100, 30);
+        frame.add(salirButton);
 
         frame.setVisible(true);
 
@@ -47,6 +49,7 @@ public class E07_MulticastServidor {
             socket = new MulticastSocket();
             grupo = InetAddress.getByName(MULTICAST_IP);
 
+            // Acción del botón "Enviar"
             enviarButton.addActionListener(e -> {
                 String mensaje = textField.getText();
                 if (!mensaje.isEmpty()) {
@@ -63,6 +66,7 @@ public class E07_MulticastServidor {
                 }
             });
 
+            // Acción del botón "Salir"
             salirButton.addActionListener(e -> {
                 try {
                     if (socket != null && !socket.isClosed()) {

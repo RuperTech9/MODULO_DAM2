@@ -14,22 +14,27 @@ public class E07_MulticastCliente {
     private static InetAddress grupo;
 
     public static void main(String[] args) {
+        // Solicitar el nombre del cliente
         String nombre = JOptionPane.showInputDialog("Introduce tu nombre:");
 
+        // Configuración del JFrame
         JFrame frame = new JFrame("Cliente Multicast - " + nombre);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
-        frame.setLayout(new BorderLayout());
+        frame.setLayout(null);
 
+        // Área de texto para mostrar los mensajes recibidos
         JTextArea textArea = new JTextArea();
         textArea.setEditable(false);
-        textArea.setBorder(BorderFactory.createTitledBorder("Mensajes recibidos"));
         JScrollPane scrollPane = new JScrollPane(textArea);
+        scrollPane.setBounds(20, 20, 350, 200);
+        scrollPane.setBorder(BorderFactory.createTitledBorder("Mensajes recibidos"));
+        frame.add(scrollPane);
 
+        // Botón para salir
         JButton salirButton = new JButton("Salir");
-
-        frame.add(scrollPane, BorderLayout.CENTER);
-        frame.add(salirButton, BorderLayout.SOUTH);
+        salirButton.setBounds(270, 230, 100, 30);
+        frame.add(salirButton);
 
         frame.setVisible(true);
 
@@ -38,6 +43,7 @@ public class E07_MulticastCliente {
             grupo = InetAddress.getByName(MULTICAST_IP);
             socket.joinGroup(grupo);
 
+            // Hilo para escuchar mensajes multicast
             Thread escucha = new Thread(() -> {
                 try {
                     while (true) {
@@ -54,6 +60,7 @@ public class E07_MulticastCliente {
             });
             escucha.start();
 
+            // Acción del botón "Salir"
             salirButton.addActionListener(e -> {
                 try {
                     if (socket != null && !socket.isClosed()) {
