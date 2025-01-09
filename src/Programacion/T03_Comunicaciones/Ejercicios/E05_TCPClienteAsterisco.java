@@ -49,3 +49,23 @@ public class E05_TCPClienteAsterisco {
         }
     }
 }
+
+/*
+Ejercicio 5: Intercambio continuo de mensajes
+Objetivo:
+
+El cliente envía cadenas al servidor de manera iterativa.
+El servidor responde devolviendo las mismas cadenas.
+La comunicación termina cuando el cliente envía un asterisco (*).
+Explicación:
+
+Se utiliza un bucle en el cliente para enviar mensajes continuamente.
+El servidor también usa un bucle para responder a los mensajes.
+Si el mensaje es "*", ambos terminan la conexión.
+Aprendizaje:
+
+Implementación de comunicaciones iterativas.
+Condicionar la terminación de la conexión mediante señales (en este caso, "*").
+Uso de flujos para leer y escribir datos en un ciclo continuo.
+Práctica: Este patrón es esencial para sistemas de interacción continua como chats o aplicaciones de streaming.
+ */

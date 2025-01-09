@@ -50,3 +50,23 @@ public class E06_UDPClienteMayusculas {
         }
     }
 }
+
+/*
+Ejercicio 6: Comunicación UDP con manejo de tiempo
+Objetivo:
+
+El cliente envía texto al servidor mediante UDP.
+El servidor devuelve el texto en mayúsculas.
+El cliente maneja un timeout usando setSoTimeout para verificar si recibe respuesta en un tiempo límite.
+Explicación:
+
+Se usa DatagramSocket y DatagramPacket para enviar/recibir mensajes como datagramas.
+El cliente configura un tiempo de espera con setSoTimeout.
+Si el servidor no responde dentro del límite, se lanza una excepción (SocketTimeoutException), indicando que el paquete se perdió.
+El cliente y servidor terminan la conexión cuando se envía un asterisco.
+Aprendizaje:
+
+Configurar y manejar el tiempo de espera para evitar bloqueos indefinidos en comunicaciones UDP.
+Diferencias clave entre UDP (no orientado a conexión) y TCP (orientado a conexión).
+Gestión de errores y casos de pérdida de datos.
+ */
