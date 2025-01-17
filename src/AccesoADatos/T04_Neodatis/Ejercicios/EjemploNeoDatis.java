@@ -10,14 +10,16 @@ class Jugadores {
     private String deporte;
     private String ciudad;
     private int edad;
+    private Paises pais;
 
     public Jugadores() {}
 
-    public Jugadores(String nombre, String deporte, String ciudad, int edad) {
+    public Jugadores(String nombre, String deporte, String ciudad, int edad, Paises pais) {
         this.nombre = nombre;
         this.deporte = deporte;
         this.ciudad = ciudad;
         this.edad = edad;
+        this.pais = pais;
     }
 
     public void setNombre(String nombre) { this.nombre = nombre; }
@@ -31,15 +33,21 @@ class Jugadores {
 
     public void setEdad(int edad) { this.edad = edad; }
     public int getEdad() { return edad; }
+
+    public Paises getPais() { return pais; }
+    public void setPais(Paises pais) { this.pais = pais; }
 }
 
 public class EjemploNeoDatis {
     public static void main(String[] args) {
+        Paises espana = new Paises(1, "España");
+        Paises brasil = new Paises(2, "Brasil");
+
         // Crear instancias para almacenar en BD
-        Jugadores j1 = new Jugadores("María", "Voleibol", "Madrid", 14);
-        Jugadores j2 = new Jugadores("Miguel", "Tenis", "Madrid", 15);
-        Jugadores j3 = new Jugadores("Carlos", "Baloncesto", "Guadalajara", 15);
-        Jugadores j4 = new Jugadores("Alicia", "Tenis", "Madrid", 14);
+        Jugadores j1 = new Jugadores("María", "Voleibol", "Madrid", 14, espana);
+        Jugadores j2 = new Jugadores("Miguel", "Tenis", "Madrid", 15, espana);
+        Jugadores j3 = new Jugadores("Carlos", "Baloncesto", "Guadalajara", 15, brasil);
+        Jugadores j4 = new Jugadores("Alicia", "Tenis", "Madrid", 14, brasil);
 
         ODB odb = ODBFactory.open("neodatis.test"); // Abrir BD
 
@@ -59,7 +67,7 @@ public class EjemploNeoDatis {
         int i = 1;
         while (objects.hasNext()) {
             Jugadores jugador = objects.next();
-            System.out.println((i++) + ":\t" + jugador.getNombre() + ", " + jugador.getDeporte() + ", " + jugador.getEdad());
+            System.out.println((i++) + ":\t" + jugador.getNombre() + ", " + jugador.getDeporte() + ", " + jugador.getEdad() + ", " + jugador.getPais() );
         }
 
         odb.close(); // Cerrar BD
