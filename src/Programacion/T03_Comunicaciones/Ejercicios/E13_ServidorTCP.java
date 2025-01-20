@@ -7,18 +7,18 @@ public class E13_ServidorTCP {
     private static final int PUERTO = 11223; // Puerto donde el servidor escucha
 
     public static void main(String[] args) {
-        try (ServerSocket servidor = new ServerSocket(PUERTO)) { // Crear servidor en el puerto especificado
-            System.out.println("Servidor TCP escuchando en el puerto " + PUERTO);
+        try (ServerSocket servidor = new ServerSocket(PUERTO)) { // Crea un socket servidor en el puerto especificado
+            System.out.println("Servidor TCP escuchando en el puerto " + PUERTO); // Informa que el servidor está activo
 
             while (true) { // Bucle infinito para aceptar múltiples clientes
                 System.out.println("Esperando clientes...");
-                Socket cliente = servidor.accept(); // Esperar conexión de cliente
-                System.out.println("Cliente conectado: " + cliente.getInetAddress());
+                Socket cliente = servidor.accept(); // Acepta una conexión entrante de un cliente
+                System.out.println("Cliente conectado: " + cliente.getInetAddress()); // Muestra la dirección del cliente conectado
 
-                // Crear y ejecutar un hilo para manejar al cliente conectado
-                E13_ManejadorCliente manejador = new E13_ManejadorCliente(cliente);
+                // Crea un manejador para atender al cliente en un hilo separado
+                E13_ManejadorCliente manejador = new E13_ManejadorCliente(cliente); // Inicializa un manejador para el cliente
                 Thread hilo = new Thread(manejador); // Crear un hilo para el manejo
-                hilo.start(); // Iniciar el hilo
+                hilo.start(); // Inicia el hilo para atender al cliente
             }
         } catch (IOException e) {
             e.printStackTrace(); // Manejar excepciones relacionadas con E/S

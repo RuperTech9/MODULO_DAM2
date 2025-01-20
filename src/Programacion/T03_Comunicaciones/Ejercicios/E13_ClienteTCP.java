@@ -9,26 +9,24 @@ public class E13_ClienteTCP {
     private static final int PUERTO = 11223; // Puerto del servidor
 
     public static void main(String[] args) {
-        try (Socket cliente = new Socket(HOST, PUERTO)) { // Conectar al servidor
-            System.out.println("Conectado al servidor en " + HOST + ":" + PUERTO);
+        try (Socket cliente = new Socket(HOST, PUERTO)) { // Crea un socket cliente conectado al servidor
+            System.out.println("Conectado al servidor en " + HOST + ":" + PUERTO); // Informa que la conexión fue exitosa
 
-            // Crear flujos de entrada y salida para la comunicación
-            DataOutputStream salida = new DataOutputStream(cliente.getOutputStream());
-            DataInputStream entrada = new DataInputStream(cliente.getInputStream());
+            // Inicializa los flujos para enviar y recibir datos
+            DataOutputStream salida = new DataOutputStream(cliente.getOutputStream()); // Flujo para enviar datos al servidor
+            DataInputStream entrada = new DataInputStream(cliente.getInputStream()); // Flujo para recibir datos del servidor
             Scanner sc = new Scanner(System.in);
 
-            String mensaje;
-            while (true) { // Bucle para enviar múltiples mensajes
+            String mensaje; // Variable para almacenar los mensajes enviados
+            while (true) { // Bucle infinito para comunicarse con el servidor
                 System.out.print("Introduce una cadena (* para salir): ");
                 mensaje = sc.nextLine();
 
-                // Enviar mensaje al servidor
-                salida.writeUTF(mensaje);
+                salida.writeUTF(mensaje); // Envía el mensaje al servidor
 
-                // Verificar si el usuario quiere terminar
-                if (mensaje.equals("*")) {
-                    System.out.println("Finalizando conexión con el servidor.");
-                    break;
+                if (mensaje.equals("*")) { // Verifica si el mensaje es un asterisco
+                    System.out.println("Finalizando conexión con el servidor."); // Informa que se cerrará la conexión
+                    break; // Rompe el bucle para cerrar la conexión
                 }
 
                 // Leer respuesta del servidor
