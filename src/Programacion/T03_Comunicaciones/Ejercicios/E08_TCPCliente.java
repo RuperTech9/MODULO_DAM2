@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class E08_TCPCliente {
     public static void main(String[] args) {
-        String host = "localhost";
-        int puerto = 6000;
+        String HOST = "localhost";
+        int PUERTO = 6000;
 
-        try (Socket cliente = new Socket(host, puerto)) {
-            System.out.println("Conectado al servidor en " + host + ":" + puerto);
+        try (Socket cliente = new Socket(HOST, PUERTO)) {
+            System.out.println("Conectado al servidor en " + HOST + ":" + PUERTO);
 
             // Flujos para objetos
             ObjectOutputStream salida = new ObjectOutputStream(cliente.getOutputStream());
