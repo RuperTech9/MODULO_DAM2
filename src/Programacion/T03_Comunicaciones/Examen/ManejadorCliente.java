@@ -1,5 +1,11 @@
 package Programacion.T03_Comunicaciones.Examen;
 
+/*
+El cliente solicitara al usuario la entrada de cadenas hasta que el usuario introduzca un asterisco.
+Las cadenas se limpiaran de espacios y se enviaran al servidor. El servidor ira almacenando las cadenas en un Arraylist.
+Cuando el cliente envie la ultima cadena el servidor ordenara el ArrayList por orden alfabetico inverso y devolvera en una unica cadena el contenido del ArrayList resultante
+ */
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
