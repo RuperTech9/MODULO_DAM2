@@ -5,11 +5,11 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-public class ManejadorCliente_EliminarVocales implements Runnable {
+public class ManejadorClienteTCP_EliminarVocales implements Runnable {
     private Socket cliente; // Socket asociado al cliente conectado
 
     // Constructor que recibe el socket del cliente
-    public ManejadorCliente_EliminarVocales(Socket cliente) {
+    public ManejadorClienteTCP_EliminarVocales(Socket cliente) {
         this.cliente = cliente; // Asigna el socket recibido al atributo de la clase
     }
 

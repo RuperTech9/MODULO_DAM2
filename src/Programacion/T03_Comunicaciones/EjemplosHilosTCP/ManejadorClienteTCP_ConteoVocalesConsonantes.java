@@ -3,10 +3,10 @@ package Programacion.T03_Comunicaciones.EjemplosHilosTCP;
 import java.io.*;
 import java.net.*;
 
-public class ManejadorCliente_ConvertirMayusculas implements Runnable {
+public class ManejadorClienteTCP_ConteoVocalesConsonantes implements Runnable {
     private Socket cliente;
 
-    public ManejadorCliente_ConvertirMayusculas(Socket cliente) {
+    public ManejadorClienteTCP_ConteoVocalesConsonantes(Socket cliente) {
         this.cliente = cliente;
     }
 
@@ -26,7 +26,9 @@ public class ManejadorCliente_ConvertirMayusculas implements Runnable {
                     break;
                 }
 
-                String procesado = mensaje.toUpperCase();
+                int vocales = mensaje.replaceAll("[^aeiouAEIOU]", "").length();
+                int consonantes = mensaje.replaceAll("[^a-zA-Z]", "").length() - vocales;
+                String procesado = "Vocales: " + vocales + ", Consonantes: " + consonantes;
                 System.out.println("Procesado: " + procesado);
 
                 salida.writeUTF(procesado);

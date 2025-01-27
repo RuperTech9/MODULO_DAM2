@@ -3,10 +3,10 @@ package Programacion.T03_Comunicaciones.EjemplosHilosTCP;
 import java.io.*;
 import java.net.*;
 
-public class ManejadorCliente_InvertirCadena implements Runnable {
+public class ManejadorClienteTCP_CifradoCesar implements Runnable {
     private Socket cliente;
 
-    public ManejadorCliente_InvertirCadena(Socket cliente) {
+    public ManejadorClienteTCP_CifradoCesar(Socket cliente) {
         this.cliente = cliente;
     }
 
@@ -26,10 +26,17 @@ public class ManejadorCliente_InvertirCadena implements Runnable {
                     break;
                 }
 
-                String procesado = new StringBuilder(mensaje).reverse().toString();
-                System.out.println("Procesado: " + procesado);
+                StringBuilder cifrado = new StringBuilder();
+                for (char c : mensaje.toCharArray()) {
+                    if (Character.isLetter(c)) {
+                        char base = Character.isLowerCase(c) ? 'a' : 'A';
+                        c = (char) ((c - base + 3) % 26 + base);
+                    }
+                    cifrado.append(c);
+                }
+                System.out.println("Procesado: " + cifrado);
 
-                salida.writeUTF(procesado);
+                salida.writeUTF(cifrado.toString());
             }
 
             entrada.close();

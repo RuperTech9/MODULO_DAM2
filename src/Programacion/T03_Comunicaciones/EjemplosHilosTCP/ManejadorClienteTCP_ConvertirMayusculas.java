@@ -3,10 +3,10 @@ package Programacion.T03_Comunicaciones.EjemplosHilosTCP;
 import java.io.*;
 import java.net.*;
 
-public class ManejadorCliente_Palindromo implements Runnable {
+public class ManejadorClienteTCP_ConvertirMayusculas implements Runnable {
     private Socket cliente;
 
-    public ManejadorCliente_Palindromo(Socket cliente) {
+    public ManejadorClienteTCP_ConvertirMayusculas(Socket cliente) {
         this.cliente = cliente;
     }
 
@@ -26,10 +26,7 @@ public class ManejadorCliente_Palindromo implements Runnable {
                     break;
                 }
 
-                String limpio = mensaje.replaceAll("[^a-zA-Z]", "").toLowerCase();
-                String inverso = new StringBuilder(limpio).reverse().toString();
-                boolean esPalindromo = limpio.equals(inverso);
-                String procesado = esPalindromo ? "Es un palíndromo" : "No es un palíndromo";
+                String procesado = mensaje.toUpperCase();
                 System.out.println("Procesado: " + procesado);
 
                 salida.writeUTF(procesado);

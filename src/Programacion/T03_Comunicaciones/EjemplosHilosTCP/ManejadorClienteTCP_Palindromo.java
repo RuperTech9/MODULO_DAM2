@@ -3,10 +3,10 @@ package Programacion.T03_Comunicaciones.EjemplosHilosTCP;
 import java.io.*;
 import java.net.*;
 
-public class ManejadorCliente_ConteoVocalesConsonantes implements Runnable {
+public class ManejadorClienteTCP_Palindromo implements Runnable {
     private Socket cliente;
 
-    public ManejadorCliente_ConteoVocalesConsonantes(Socket cliente) {
+    public ManejadorClienteTCP_Palindromo(Socket cliente) {
         this.cliente = cliente;
     }
 
@@ -26,9 +26,10 @@ public class ManejadorCliente_ConteoVocalesConsonantes implements Runnable {
                     break;
                 }
 
-                int vocales = mensaje.replaceAll("[^aeiouAEIOU]", "").length();
-                int consonantes = mensaje.replaceAll("[^a-zA-Z]", "").length() - vocales;
-                String procesado = "Vocales: " + vocales + ", Consonantes: " + consonantes;
+                String limpio = mensaje.replaceAll("[^a-zA-Z]", "").toLowerCase();
+                String inverso = new StringBuilder(limpio).reverse().toString();
+                boolean esPalindromo = limpio.equals(inverso);
+                String procesado = esPalindromo ? "Es un palíndromo" : "No es un palíndromo";
                 System.out.println("Procesado: " + procesado);
 
                 salida.writeUTF(procesado);

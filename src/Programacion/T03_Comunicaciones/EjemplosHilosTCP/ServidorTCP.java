@@ -14,7 +14,7 @@ public class ServidorTCP {
                 Socket cliente = servidor.accept();
                 System.out.println("Cliente conectado: " + cliente.getInetAddress());
 
-                ManejadorCliente_Palindromo manejador = new ManejadorCliente_Palindromo(cliente);
+                ManejadorClienteTCP_Palindromo manejador = new ManejadorClienteTCP_Palindromo(cliente);
                 Thread hilo = new Thread(manejador); // Crear un hilo para el manejo
                 hilo.start(); // Inicia el hilo para atender al cliente
             }
