@@ -9,7 +9,7 @@ public class SubirFichero {
 
 		String servidor = "localhost";
 		String user = "usuario1";
-		String pasw = "usuario1";
+		String pasw = "1234";
 
 		try {
 		   System.out.println("Conectandose a " + servidor);
@@ -40,11 +40,11 @@ public class SubirFichero {
 			  System.out.println("Directorio actual: " +
 				   cliente.printWorkingDirectory());
 					
-			  String archivo ="D:\\Fernando\\Lorem_ipsum.pdf";				
+			  String archivo ="C:\\Users\\Ruper\\Downloads\\Examen_UT4.pdf";
 			  BufferedInputStream in = new BufferedInputStream
 						(new FileInputStream(archivo));
 				
-			  if (cliente.storeFile("Lorem_ipsum.pdf", in))
+			  if (cliente.storeFile("Examen_UT4.pdf", in))
 				   System.out.println("Subido correctamente... ");
 				else
 				   System.out.println("No se ha podido subir el fichero... ");

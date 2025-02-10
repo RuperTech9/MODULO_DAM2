@@ -38,7 +38,7 @@ public class clienteFTPBasico extends JFrame {
 	static FTPClient cliente = new FTPClient();//cliente FTP
 	String servidor = "localhost";
 	String user = "usuario1";
-	String pasw = "usuario1";
+	String pasw = "1234";
 	boolean login;
     static String direcInicial = "/";
 
