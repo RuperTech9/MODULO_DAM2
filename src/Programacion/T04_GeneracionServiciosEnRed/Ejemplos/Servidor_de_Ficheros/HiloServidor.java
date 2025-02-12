@@ -27,6 +27,18 @@ class HiloServidor extends Thread {
 				// primero leo lo que me pide cliente
 				Object peticion = inObjeto.readObject();
 
+				// estructura actualizada
+				if (peticion instanceof PideDirectorio) {
+					PideDirectorio pideDirectorio = (PideDirectorio) peticion;
+					String directorioPath = pideDirectorio.getPath();
+
+					// creo una nueva estructura para el directorio solicitado
+					EstructuraFicheros nuevoDirectorio = new EstructuraFicheros(directorioPath);
+
+					// envio la nueva estructura al cliente
+					outObjeto.writeObject(nuevoDirectorio);
+				}
+
 				if (peticion instanceof PideFichero) {
 					PideFichero fichero = (PideFichero) peticion;
 					// escribo en el stream

@@ -31,6 +31,8 @@ public class clienteFicheros extends JFrame implements Runnable {
 	JButton botonCargar = new JButton("Subir fichero");
 	JButton botonDescargar = new JButton("Descargar fichero");
 	JButton botonSalir = new JButton("Salir");
+	// Botón Actualizar
+	JButton botonActualizar = new JButton("Actualizar");
 	
 	// lista para los datos del directorio
 	@SuppressWarnings("rawtypes")
@@ -82,7 +84,9 @@ public class clienteFicheros extends JFrame implements Runnable {
 		botonCargar.setBounds(new Rectangle(350, 100, 140, 30));
 		botonDescargar.setBounds(new Rectangle(350, 150, 140, 30));
 		botonSalir.setBounds(new Rectangle(350, 200, 140, 30));
-	
+		// Boton Actualizar
+		botonActualizar.setBounds(new Rectangle(350, 250, 140, 30));
+
 		listaDirec.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);// SINGLE_INTERVAL_SELECTION);
 		JScrollPane barraDesplazamiento = new JScrollPane(listaDirec);
 		barraDesplazamiento.setPreferredSize(new Dimension(335, 300));
@@ -96,7 +100,8 @@ public class clienteFicheros extends JFrame implements Runnable {
 		campo2.setEditable(false);
 		c.add(botonCargar);
 		c.add(botonDescargar);
-
+		// Boton Actualizar
+		c.add(botonActualizar);
 		c.add(botonSalir);
 
 		c.add(cab);
@@ -143,7 +148,31 @@ public class clienteFicheros extends JFrame implements Runnable {
 		});
 
 		// --al hacer clic en el bot�n Actualizar
-		
+		// Acción del botón Actualizar
+		botonActualizar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					// Enviar una solicitud PideDirectorio al servidor
+					PideDirectorio pideDirectorio = new PideDirectorio(direcSelec);
+					outObjeto.writeObject(pideDirectorio);
+
+					// Recibir la respuesta con la nueva estructura de directorios
+					EstructuraFicheros nuevoDirectorio = (EstructuraFicheros) inObjeto.readObject();
+					EstructuraFicheros[] lista = nuevoDirectorio.getLista();
+					direcSelec = nuevoDirectorio.getPath();
+
+					// Actualizar la lista en pantalla
+					llenarLista(lista, nuevoDirectorio.getNumeFich());
+					campo2.setText("Número de ficheros en el directorio: " + lista.length);
+
+					System.out.println("Directorio actualizado correctamente.");
+				} catch (IOException | ClassNotFoundException ex) {
+					ex.printStackTrace();
+					JOptionPane.showMessageDialog(null, "Error al actualizar el directorio.");
+				}
+			}
+		});
 		
 		// --al hacer clic en el bot�n Descargar
 		botonDescargar.addActionListener(new ActionListener() {
