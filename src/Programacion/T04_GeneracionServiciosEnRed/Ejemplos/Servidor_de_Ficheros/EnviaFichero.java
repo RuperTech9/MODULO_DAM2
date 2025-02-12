@@ -27,3 +27,4 @@ public class EnviaFichero implements Serializable {
 		return contenidoFichero;
 	}
 }
+

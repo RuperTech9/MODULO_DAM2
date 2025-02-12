@@ -14,10 +14,11 @@ import javax.net.ssl.KeyManagerFactory;
 import org.apache.commons.net.smtp.*;
 
 public class ClienteSMTP3_NOTLS {
-	public static void main(String[] args) throws NoSuchAlgorithmException, UnrecoverableKeyException,
+	public static void main(String[] args) throws
+			NoSuchAlgorithmException, UnrecoverableKeyException,
 			KeyStoreException, InvalidKeyException, InvalidKeySpecException {
 
-		AuthenticatingSMTPClient client = new AuthenticatingSMTPClient("SSL");
+		AuthenticatingSMTPClient authenticatingSMTPClient = new AuthenticatingSMTPClient("SSL");
 
 		// datos del usuario y del servidor
 		String server = "smtpserver";
@@ -28,89 +29,86 @@ public class ClienteSMTP3_NOTLS {
 
 		try {
 			int respuesta;
-			// Creaci�n de la clave para establecer un canal seguro
-			KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-			kmf.init(null, null);
-			KeyManager km = kmf.getKeyManagers()[0];
+			// Creacion de la clave para establecer un canal seguro
+			KeyManagerFactory keyManagerFactory = KeyManagerFactory
+					.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+			keyManagerFactory.init(null, null);
+			KeyManager keyManager = keyManagerFactory.getKeyManagers()[0];
 
 			// nos conectamos
-			client.connect(server, puerto);
-			System.out.println("1 - " + client.getReplyString());
+			authenticatingSMTPClient.connect(server, puerto);
+			System.out.println("1 - " + authenticatingSMTPClient.getReplyString());
 
-			client.login(server);		
+			authenticatingSMTPClient.login(server);
 
 			// se establece la clave
-			client.setKeyManager(km);
+			authenticatingSMTPClient.setKeyManager(keyManager);
 
-			respuesta = client.getReplyCode();
+			respuesta = authenticatingSMTPClient.getReplyCode();
 			if (!SMTPReply.isPositiveCompletion(respuesta)) {
-				client.disconnect();
+				authenticatingSMTPClient.disconnect();
 				System.err.println("SMTP server refused connection.");
 				System.exit(1);
 			}
 
-			client.ehlo(server);// necesario
+			authenticatingSMTPClient.ehlo(server);// necesario
 
-			System.out.println("2 - " + client.getReplyString());
+			System.out.println("2 - " + authenticatingSMTPClient.getReplyString());
 
-			// NO NECESITA NEGOCIACI�N TLS
-		
+			// NO NECESITA NEGOCIACIÓN TLS
 
-			if (client.auth(AuthenticatingSMTPClient.AUTH_METHOD.LOGIN, username, password)) {
-				System.out.println("4 - " + client.getReplyString());
+
+			if (authenticatingSMTPClient.auth(AuthenticatingSMTPClient.AUTH_METHOD.LOGIN, username, password)) {
+				System.out.println("4 - " + authenticatingSMTPClient.getReplyString());
 
 				String destino1 = "destino1@servidor1.com";
 				String asunto = "Prueba de SMTPClient NO TLS";
 				String mensaje = "Hola. \nEnviando saludos.\nSin negociacion TLS.\nChao.";
 
 				// se crea la cabecera
-				SimpleSMTPHeader cabecera = new SimpleSMTPHeader(remitente, destino1, asunto);
-				client.setSender(remitente);
-				client.addRecipient(destino1);
-				System.out.println("5 - " + client.getReplyString());
+				SimpleSMTPHeader simpleSMTPHeader = new SimpleSMTPHeader(remitente, destino1, asunto);
+				authenticatingSMTPClient.setSender(remitente);
+				authenticatingSMTPClient.addRecipient(destino1);
+				System.out.println("5 - " + authenticatingSMTPClient.getReplyString());
 
 				// se envia DATA
-				Writer writer = client.sendMessageData();
+				Writer writer = authenticatingSMTPClient.sendMessageData();
 
 				if (writer == null) { // fallo
 					System.out.println("FALLO AL ENVIAR DATA.");
 					System.exit(1);
 				}
-				writer.write(cabecera.toString()); // primero escribo
-													// cabecera
+				writer.write(simpleSMTPHeader.toString()); // primero escribo
+				// cabecera
 				writer.write(mensaje);// luego mensaje
 				writer.close();
 
-				System.out.println("6 - " + client.getReplyString());
+				System.out.println("6 - " + authenticatingSMTPClient.getReplyString());
 
-				boolean exito = client.completePendingCommand();
+				boolean exito = authenticatingSMTPClient.completePendingCommand();
 
-				System.out.println("7 - " + client.getReplyString());
+				System.out.println("7 - " + authenticatingSMTPClient.getReplyString());
 
 				if (!exito) { // fallo
 					System.out.println("FALLO AL FINALIZAR LA TRANSACCI�N.");
 					System.exit(1);
 				} else
 					System.out.println("MENSAJE ENVIADO CON EXITO......");
-
 			} else {
 				System.out.println("USUARIO NO AUTENTICADO: ");
-				System.out.println(client.getReplyString());
-
+				System.out.println(authenticatingSMTPClient.getReplyString());
 			}
-
 		} catch (IOException e) {
 			System.err.println("Could not connect to server.");
 			e.printStackTrace();
 			System.exit(1);
 		}
 		try {
-			client.disconnect();
+			authenticatingSMTPClient.disconnect();
 		} catch (IOException f) {
 			f.printStackTrace();
 		}
-
-		System.out.println("Fin de env�o.");
+		System.out.println("Fin de envío.");
 		System.exit(0);
 	}// main
 

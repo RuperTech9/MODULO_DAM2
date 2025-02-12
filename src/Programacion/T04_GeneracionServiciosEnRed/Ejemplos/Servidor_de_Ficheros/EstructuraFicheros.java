@@ -3,59 +3,61 @@ package Programacion.T04_GeneracionServiciosEnRed.Ejemplos.Servidor_de_Ficheros;
 import java.io.*;
 
 public class EstructuraFicheros implements Serializable {
-
 	private static final long serialVersionUID = 1L;
 	private String name; // nombre
 	private String path; // nombre completo
 	private boolean isDir;// es un directorio
 
-	private EstructuraFicheros[] lista; // lista de ficheros y carpetas
-	private int numeFich; // numero de fich de la carpeta
+	private EstructuraFicheros[] estructuraFicheros; // lista de ficheros y carpetas
+	private int numeroFicheros; // numero de fich de la carpeta
 
-	
-    //constructores
+	// constructores
 	public EstructuraFicheros(String name) throws FileNotFoundException {
 		// Construtor por defecto que se usa en el servidor
 		// name: Nombre completo (directorio+nombre) del fichero/directorio
 		// en el servidor local
-		File file = new File(name);		
+		File file = new File(name);
 		this.name = file.getName();
 		this.path = file.getPath();
 		this.isDir = file.isDirectory();
-		
-		this.lista = getListaFiles();
+
+		this.estructuraFicheros = getListaFiles();
 		if (file.isDirectory()) {
 			File[] ficheros = file.listFiles();
-			this.numeFich = 0;
+			this.numeroFicheros = 0;
 			if (!(ficheros == null))
-				this.numeFich = ficheros.length;
+				this.numeroFicheros = ficheros.length;
 		}
 	}
-	public EstructuraFicheros(String name, String path, boolean isDir, 
-			int numF) {
+
+	public EstructuraFicheros(String name, String path, boolean isDir, int numeroFicheros) {
 		// Este constructor se usa en las operaciones
 		// de actualizacion del arbol presentado en el cliente
 		// No es obligatorio implementar este metodo
 		this.name = name;
 		this.path = path;
-		this.isDir = isDir;		
-		this.numeFich = numF; // num ficheros si es directorio
+		this.isDir = isDir;
+		this.numeroFicheros = numeroFicheros; // num ficheros si es directorio
 	}
 
-	public int getNumeFich() {
-		return numeFich;
+	public int getNumeroFicheros() {
+		return numeroFicheros;
 	}
-	public EstructuraFicheros[] getLista() {
-		return lista;
+
+	public EstructuraFicheros[] getEstructuraFicheros() {
+		return estructuraFicheros;
 	}
+
 	public String toString() {
 		String nom = this.name;
 		if (this.isDir)
 			nom = "(DIR) " + name;
 		return nom;
-	}	
+	}
 
-	public boolean isDir() {	return isDir;	}
+	public boolean isDir() {
+		return isDir;
+	}
 
 	public String getName() {
 		String name_dir = name;
@@ -72,39 +74,40 @@ public class EstructuraFicheros implements Serializable {
 		return name_dir;
 	}
 
-	public String getPath() {	return path;	}
+	public String getPath() {
+		return path;
+	}
 
-	//M�todo interno para llevar el array con los ficheros y directorios del directorio seleccionado.
-	//Cada elemento del array es de tipo EstructuraFicheros
+	// Método interno para llenar el array con los ficheros y directorios del
+	// directorio seleccionado.
+	// Cada elemento del array es de tipo EstructuraFicheros
 	EstructuraFicheros[] getListaFiles() {
-		EstructuraFicheros[] lista = null;		
+		EstructuraFicheros[] estructuraFicheros = null;
 		String sDirectorio = this.path;
-		File f = new File(sDirectorio);
-		File[] ficheros = f.listFiles();
-		int longitud = ficheros.length;
-		if (longitud > 0) {//por si se selecciona carpeta vacia
+		File file = new File(sDirectorio);
+		File[] files = file.listFiles();
+		int longitud = files.length;
+		if (longitud > 0) {// por si se selecciona carpeta vacia
 			// es un directorio, creo un nuevo nodo
-			lista = new EstructuraFicheros[longitud]; // array con todos los ficheros
-			for (int x = 0; x < ficheros.length; x++) {
-				EstructuraFicheros elemento;
-				String nombre = ficheros[x].getName();
-				String path = ficheros[x].getPath();
-				boolean isDir = ficheros[x].isDirectory();
+			estructuraFicheros = new EstructuraFicheros[longitud]; // array con todos los ficheros
+			for (int i = 0; i < files.length; i++) {
+				EstructuraFicheros estructFicheros;
+				String nombre = files[i].getName();
+				String path = files[i].getPath();
+				boolean isDir = files[i].isDirectory();
 				int num = 0;
-				//String parent = ficheros[x].getParent();
-                //si alguno de los ficheros del directorio seleccionado es 
-				//a su vez un directorio calculo el numero de ficheros
-				if (isDir) {					
-					File[] fic = ficheros[x].listFiles();
+				// String parent = files[i].getParent();
+				// si alguno de los ficheros del directorio seleccionado es
+				// a su vez un directorio calculo el numero de ficheros
+				if (isDir) {
+					File[] fic = files[i].listFiles();
 					if (!(fic == null))
 						num = fic.length;
 				}
-				elemento = new EstructuraFicheros(nombre, path, isDir,  num);
-				lista[x] = elemento;
-
-			}// for
+				estructFicheros = new EstructuraFicheros(nombre, path, isDir, num);
+				estructuraFicheros[i] = estructFicheros;
+			} // for
 		}
-		return lista;
+		return estructuraFicheros;
 	}
-
 }// ..EstructuraFicheros
