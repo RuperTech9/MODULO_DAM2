@@ -21,9 +21,9 @@ public class ClienteSMTP1_sendSimple {
 
 			// REALIZAR ACCIONES, por ejemplo enviar un correo
 			clienteSMTP.login();
-			String destinatario = "usuario@correo.com";
+			String destinatario = "ruper1903@gmail.com";
 			String mensaje = "Hola, \n Mensaje de prueba. \n Saludos.";
-			String remitente = "yo@localhost.com";
+			String remitente = "ruper.dam1@gmail.com";
 
 			if (clienteSMTP.sendSimpleMessage(remitente, destinatario, mensaje))
 				System.out.println("Mensaje enviado a " + destinatario);

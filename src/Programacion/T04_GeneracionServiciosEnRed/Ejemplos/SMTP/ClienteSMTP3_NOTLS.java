@@ -21,11 +21,11 @@ public class ClienteSMTP3_NOTLS {
 		AuthenticatingSMTPClient authenticatingSMTPClient = new AuthenticatingSMTPClient("SSL");
 
 		// datos del usuario y del servidor
-		String server = "smtpserver";
-		String username = "usuario1";
-		String password = "password";
+		String server = "smtp.gmail.com";
+		String username = "ruper.dam1@gmail.com";
+		String password = "wblwjmdzqqvkdcjw";
 		int puerto = 25;
-		String remitente = "usuario1@servidor1.com";
+		String remitente = "ruper.dam1@gmail.com";
 
 		try {
 			int respuesta;
@@ -61,7 +61,7 @@ public class ClienteSMTP3_NOTLS {
 			if (authenticatingSMTPClient.auth(AuthenticatingSMTPClient.AUTH_METHOD.LOGIN, username, password)) {
 				System.out.println("4 - " + authenticatingSMTPClient.getReplyString());
 
-				String destino1 = "destino1@servidor1.com";
+				String destino1 = "ruper1903@gmail.com";
 				String asunto = "Prueba de SMTPClient NO TLS";
 				String mensaje = "Hola. \nEnviando saludos.\nSin negociacion TLS.\nChao.";
 

@@ -32,15 +32,15 @@ public class ClienteSMTPAutenticado {
             client.ehlo("localhost");
 
             // Autenticación SMTP
-            if (!client.auth(AuthenticatingSMTPClient.AUTH_METHOD.PLAIN, "ruper1903@gmail.com", "axoe pawf wrux bqse")) {
+            if (!client.auth(AuthenticatingSMTPClient.AUTH_METHOD.PLAIN, "ruper.dam1@gmail.com", "wblwjmdzqqvkdcjw")) {
                 System.err.println("Autenticación fallida.");
                 client.disconnect();
                 return;
             }
 
             // Configuración del mensaje
-            String remitente = "postmaster@localhost";
-            String destinatario = "ruper.dam1@gmail.com";
+            String remitente = "ruper.dam1@gmail.com";
+            String destinatario = "ruper1903@gmail.com";
             String asunto = "Prueba de SMTP Autenticado";
             String mensaje = "Hola,\nEste es un mensaje de prueba enviado desde Java.\nSaludos.";
 
