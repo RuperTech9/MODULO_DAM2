@@ -20,7 +20,7 @@ public class ClienteSMTPRelay {
         // Configuración del servidor Mercury (localhost) con relay a Gmail
         String servidorSMTP = "localhost"; // Mercury Mail en localhost
         int puertoSMTP = 25; // Puerto estándar para SMTP
-        String remitente = "usuario1@localhost"; // Usuario configurado en Mercury Mail
+        String remitente = "postmaster@localhost"; // Usuario configurado en Mercury Mail
         String destinatario = "ruper1903@gmail.com"; // Correo real de destino
         String asunto = "Correo enviado a través de Mercury y relay con Gmail";
         String mensajeTexto = "Hola,\nEste correo fue enviado desde Mercury Mail utilizando un retransmisor SMTP configurado con Gmail.\nSaludos.";
@@ -50,13 +50,6 @@ public class ClienteSMTPRelay {
             clienteSMTP.ehlo("localhost");
             System.out.println("Respuesta EHLO: " + clienteSMTP.getReplyString());
 
-            // Iniciar STARTTLS si el servidor lo requiere
-            if (!clienteSMTP.execTLS()) {
-                System.err.println("Error al iniciar STARTTLS: " + clienteSMTP.getReplyString());
-                clienteSMTP.disconnect();
-                return;
-            }
-            System.out.println("STARTTLS iniciado correctamente.");
 
             // Configuración del mensaje
             SimpleSMTPHeader cabecera = new SimpleSMTPHeader(remitente, destinatario, asunto);

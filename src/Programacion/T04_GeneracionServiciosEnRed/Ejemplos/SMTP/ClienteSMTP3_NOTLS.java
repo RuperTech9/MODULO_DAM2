@@ -18,30 +18,31 @@ public class ClienteSMTP3_NOTLS {
 			NoSuchAlgorithmException, UnrecoverableKeyException,
 			KeyStoreException, InvalidKeyException, InvalidKeySpecException {
 
-		AuthenticatingSMTPClient authenticatingSMTPClient = new AuthenticatingSMTPClient("SSL");
+		AuthenticatingSMTPClient authenticatingSMTPClient = new AuthenticatingSMTPClient("TLS");
 
-		// datos del usuario y del servidor
-		String server = "smtp.gmail.com";
-		String username = "ruper.dam1@gmail.com";
-		String password = "wblwjmdzqqvkdcjw";
-		int puerto = 25;
-		String remitente = "ruper.dam1@gmail.com";
+		// Datos del usuario y del servidor
+		String server = "localhost"; // Mercury está corriendo en localhost
+		String username = "ruper.dam1@gmail.com"; // Tu correo de Gmail
+		String password = "wblwjmdzqqvkdcjw"; // Contraseña de aplicación de Gmail
+		int puerto = 25; // Puerto configurado para Mercury
+		String remitente = "postmaster@localhost"; // Remitente configurado en Mercury
 
 		try {
 			int respuesta;
-			// Creacion de la clave para establecer un canal seguro
+
+			// Creación de la clave para establecer un canal seguro
 			KeyManagerFactory keyManagerFactory = KeyManagerFactory
 					.getInstance(KeyManagerFactory.getDefaultAlgorithm());
 			keyManagerFactory.init(null, null);
 			KeyManager keyManager = keyManagerFactory.getKeyManagers()[0];
 
-			// nos conectamos
+			// Conexión al servidor Mercury
 			authenticatingSMTPClient.connect(server, puerto);
 			System.out.println("1 - " + authenticatingSMTPClient.getReplyString());
 
 			authenticatingSMTPClient.login(server);
 
-			// se establece la clave
+			// Se establece la clave
 			authenticatingSMTPClient.setKeyManager(keyManager);
 
 			respuesta = authenticatingSMTPClient.getReplyCode();
@@ -51,55 +52,58 @@ public class ClienteSMTP3_NOTLS {
 				System.exit(1);
 			}
 
-			authenticatingSMTPClient.ehlo(server);// necesario
-
+			authenticatingSMTPClient.ehlo(server); // Necesario para el saludo EHLO
 			System.out.println("2 - " + authenticatingSMTPClient.getReplyString());
 
-			// NO NECESITA NEGOCIACIÓN TLS
+			// Negociación TLS
+			if (authenticatingSMTPClient.execTLS()) {
+				System.out.println("3 - " + authenticatingSMTPClient.getReplyString());
 
+				// Autenticación con Mercury y retransmisión a Gmail
+				if (authenticatingSMTPClient.auth(AuthenticatingSMTPClient.AUTH_METHOD.LOGIN, username, password)) {
+					System.out.println("4 - " + authenticatingSMTPClient.getReplyString());
 
-			if (authenticatingSMTPClient.auth(AuthenticatingSMTPClient.AUTH_METHOD.LOGIN, username, password)) {
-				System.out.println("4 - " + authenticatingSMTPClient.getReplyString());
+					String destino1 = "ruper1903@gmail.com";
+					String asunto = "Prueba de SMTPClient con Mercury y Gmail";
+					String mensaje = "Hola. \nEnviando saludos.\nUsando Mercury como relay.\nChao.";
 
-				String destino1 = "ruper1903@gmail.com";
-				String asunto = "Prueba de SMTPClient NO TLS";
-				String mensaje = "Hola. \nEnviando saludos.\nSin negociacion TLS.\nChao.";
+					// Crear cabecera
+					SimpleSMTPHeader simpleSMTPHeader = new SimpleSMTPHeader(remitente, destino1, asunto);
+					authenticatingSMTPClient.setSender(remitente);
+					authenticatingSMTPClient.addRecipient(destino1);
+					System.out.println("5 - " + authenticatingSMTPClient.getReplyString());
 
-				// se crea la cabecera
-				SimpleSMTPHeader simpleSMTPHeader = new SimpleSMTPHeader(remitente, destino1, asunto);
-				authenticatingSMTPClient.setSender(remitente);
-				authenticatingSMTPClient.addRecipient(destino1);
-				System.out.println("5 - " + authenticatingSMTPClient.getReplyString());
+					// Enviar DATA
+					Writer writer = authenticatingSMTPClient.sendMessageData();
 
-				// se envia DATA
-				Writer writer = authenticatingSMTPClient.sendMessageData();
+					if (writer == null) { // Falla al enviar
+						System.out.println("FALLO AL ENVIAR DATA.");
+						System.exit(1);
+					}
+					writer.write(simpleSMTPHeader.toString()); // Escribe cabecera
+					writer.write(mensaje); // Escribe mensaje
+					writer.close();
 
-				if (writer == null) { // fallo
-					System.out.println("FALLO AL ENVIAR DATA.");
-					System.exit(1);
+					System.out.println("6 - " + authenticatingSMTPClient.getReplyString());
+
+					boolean exito = authenticatingSMTPClient.completePendingCommand();
+
+					System.out.println("7 - " + authenticatingSMTPClient.getReplyString());
+
+					if (!exito) { // Falla al finalizar
+						System.out.println("FALLO AL FINALIZAR LA TRANSACCIÓN.");
+						System.exit(1);
+					} else
+						System.out.println("MENSAJE ENVIADO CON ÉXITO......");
+				} else {
+					System.out.println("USUARIO NO AUTENTICADO: ");
+					System.out.println(authenticatingSMTPClient.getReplyString());
 				}
-				writer.write(simpleSMTPHeader.toString()); // primero escribo
-				// cabecera
-				writer.write(mensaje);// luego mensaje
-				writer.close();
-
-				System.out.println("6 - " + authenticatingSMTPClient.getReplyString());
-
-				boolean exito = authenticatingSMTPClient.completePendingCommand();
-
-				System.out.println("7 - " + authenticatingSMTPClient.getReplyString());
-
-				if (!exito) { // fallo
-					System.out.println("FALLO AL FINALIZAR LA TRANSACCI�N.");
-					System.exit(1);
-				} else
-					System.out.println("MENSAJE ENVIADO CON EXITO......");
 			} else {
-				System.out.println("USUARIO NO AUTENTICADO: ");
-				System.out.println(authenticatingSMTPClient.getReplyString());
+				System.out.println("FALLO AL EJECUTAR STARTTLS.");
 			}
 		} catch (IOException e) {
-			System.err.println("Could not connect to server.");
+			System.err.println("No se pudo conectar al servidor.");
 			e.printStackTrace();
 			System.exit(1);
 		}
@@ -110,6 +114,5 @@ public class ClienteSMTP3_NOTLS {
 		}
 		System.out.println("Fin de envío.");
 		System.exit(0);
-	}// main
-
-}// ..ClienteSMTP3
+	}
+}
