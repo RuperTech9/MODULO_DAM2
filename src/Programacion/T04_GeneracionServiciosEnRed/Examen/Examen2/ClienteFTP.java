@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class ClienteFTP {
     public static void main(String[] args) {
-        String servidor = "127.0.0.1";
+        String servidor = "localhost";
         int puerto = 21;
         String usuario = "usuario1";
         String contrasena = "1234";

@@ -11,7 +11,7 @@ import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
 import org.apache.commons.net.smtp.*;
 
-public class ClienteSMTPRelay {
+public class ClienteSMTP_EnviarCorreo_Relay {
     public static void main(String[] args) throws NoSuchAlgorithmException, UnrecoverableKeyException, KeyStoreException, InvalidKeyException, InvalidKeySpecException {
 
         // Crear cliente SMTP
