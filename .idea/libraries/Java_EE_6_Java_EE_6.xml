@@ -15,6 +15,7 @@
       <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T02_Conectores/JAR_Conectores/mysql-connector-j-8.0.31.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T02_Conectores/JAR_Conectores/db4o-8.0.276.16149-all-java5.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/Programacion/T04_GeneracionServiciosEnRed/JAR/commons-net-3.11.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/AccesoADatos/T06_DesarrolloComponentes/JAR/beans.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
