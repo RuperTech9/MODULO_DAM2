@@ -7,7 +7,7 @@ import org.apache.commons.net.ftp.*;
 public class ClienteFTP2 {
   public static void main(String[] args) {
 	FTPClient cliente = new FTPClient();
-	String servFTP = "ftp.rediris.es";
+	String servFTP = "ftp.iac.es";
 	System.out.println("Nos conectamos a: " + servFTP);
 	String usuario = "anonymous";
 	String clave = "anonymous";

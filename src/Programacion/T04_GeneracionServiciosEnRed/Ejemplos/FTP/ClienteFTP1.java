@@ -7,7 +7,7 @@ import org.apache.commons.net.ftp.*;
 public class ClienteFTP1 {
 	public static void main(String[] args) throws SocketException, IOException {
 		FTPClient cliente = new FTPClient();
-		String servFTP = "ftp.rediris.es"; // servidor FTP
+		String servFTP = "ftp.iac.es"; // servidor FTP
 		System.out.println("Nos conectamos a: " + servFTP);
 		cliente.connect(servFTP);
 
